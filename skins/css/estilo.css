@@ -1,0 +1,124 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+}
+body {
+    background-color: rgb(34, 32, 32) !important;
+}
+a {
+    opacity: 0.6;
+    color: rgb(224, 172, 94) !important;
+}
+a:hover,
+i.icon-instagram:hover {
+    opacity: 1;
+    text-decoration: none !important;
+}
+
+/* INICIO CABEÇALHO */
+.header {
+    height: auto;
+    background-color: #000000;
+}
+.menu-item {
+    display: block;
+    text-align: center;
+    padding: 9px;
+}
+h4 a {
+    color: #FFF;
+}
+h4 a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+/* FIM CABEÇALHO */
+
+/* INICIO BANNER */
+div.title {
+    text-align: center;
+}
+/* FIM BANNER */
+
+/* INICIO CONTEUDO PRINCIPAL */
+.title {
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+.item-conteudo {
+    margin-bottom: 30px;
+}
+.item-conteudo .item-name{
+    padding: 10px;
+}
+/* FIM CONTEUDO PRINCIPAL */
+
+/* INICIO NEWSLETTER */
+.container.newsletter-block {
+    background-color: #000;
+    border-radius: 15px;
+}
+input#newsletter_email {
+    margin: 13px 0px;
+}
+button.btn-newsletter {
+    margin: 13px 0px;
+}
+h3.newsletter-title {
+    text-align: center;
+    letter-spacing: 6px;
+    padding: 15px 0px;
+    margin: 0;
+}
+.botao,
+.btn-newsletter {
+    margin-bottom: 20px;
+    background-color: #c2783c;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 5px 15px;
+}
+input, 
+select {
+    background-color: #585858 !important;
+    border: none;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+/* FIM NEWSLETTER */
+
+/* INICIO RODAPE */
+.footer-externa {
+    background-color: #000;
+    margin-top: 35px;
+}
+i.icon-instagram {
+    font-size: 30px;
+    color: rgb(224, 172, 94);
+    position: relative;
+    top: 6px;
+    margin-right: 4px;
+}
+.redes {
+    margin: 30px 0px;
+}
+/* FIM RODAPE */
+
+.conteudo {
+    padding-bottom: 20px;
+}
+
+
+
+/* INICIO ESTILO MOBILE */
+@media only screen and (max-width: 991px) {
+    button.btn-newsletter {
+        margin: 13px 0px;
+        width: 100%;
+    }
+    .rede-externa {
+        margin: 5px 0px;
+    }
+}
