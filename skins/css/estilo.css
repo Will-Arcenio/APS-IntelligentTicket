@@ -4,6 +4,23 @@
 }
 body {
     background-color: rgb(34, 32, 32) !important;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+.botao,
+.btn-newsletter {
+    margin-bottom: 20px;
+    background-color: #c2783c;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 5px 15px;
+    width: 30%;
 }
 a {
     opacity: 0.6;
@@ -14,6 +31,37 @@ i.icon-instagram:hover {
     opacity: 1;
     text-decoration: none !important;
 }
+
+/* BEGIN HOME LOGIN */
+body.login-page div.container {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.login-box {
+    width: 500px;
+    height: 300px;
+    background-color: #000;
+    border-radius: 5px;
+}
+form.login-form {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: inline-grid;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.botao-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* END   HOME LOGIN */
 
 /* INICIO CABEÇALHO */
 .header {
@@ -58,29 +106,7 @@ div.title {
     background-color: #000;
     border-radius: 15px;
 }
-input#newsletter_email {
-    margin: 13px 0px;
-}
-button.btn-newsletter {
-    margin: 13px 0px;
-}
-h3.newsletter-title {
-    text-align: center;
-    letter-spacing: 6px;
-    padding: 15px 0px;
-    margin: 0;
-}
-.botao,
-.btn-newsletter {
-    margin-bottom: 20px;
-    background-color: #c2783c;
-    border: none;
-    border-radius: 5px;
-    color: #FFF;
-    padding: 5px 15px;
-}
-input, 
-select {
+.campo {
     background-color: #585858 !important;
     border: none;
     width: 100%;
