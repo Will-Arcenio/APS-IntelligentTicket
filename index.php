@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="skins/css/estilo.css">
     <title>Login | Intelligent Ticket</title>
 </head>
-<body class="login-page">
+<body class="login-page-admin adminhtml">
     <div class="container">
         <div class="row">
             <div class="col-md-12 login-box">
