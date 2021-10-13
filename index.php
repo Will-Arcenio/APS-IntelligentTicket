@@ -1,5 +1,5 @@
 <?php
-
+    #LOGIN PAINEL ADM
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -34,7 +34,7 @@
                     <br>
 
                     <div class="botao-div">
-                        <button type="submit" name="enviar" class="botao">Enviar</button>
+                        <button type="submit" name="enviar" class="botao">Entrar</button>
                     </div>
                 </form>
             </div>
