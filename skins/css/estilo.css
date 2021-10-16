@@ -22,7 +22,8 @@ body.adminhtml {
     padding: 5px 15px;
     width: 30%;
 }
-a {
+a,
+span {
     opacity: 0.6;
     color: rgb(224, 172, 94) !important;
 }
@@ -32,7 +33,7 @@ i.icon-instagram:hover {
     text-decoration: none !important;
 }
 
-/* BEGIN HOME LOGIN */
+/* BEGIN HOME LOGIN | ADMIN */
 body.login-page-admin div.container {
     margin: 0;
     display: flex;
@@ -61,7 +62,27 @@ form.login-form {
     justify-content: center;
     align-items: center;
 }
-/* END   HOME LOGIN */
+.erro-message {
+    background-color: #e53a3a;
+    padding: 10px 10px;
+    display: inline-flex;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    opacity: 1;
+    color: #FFF !important;
+}
+/* END   HOME LOGIN | ADMIN */
+
+/* BEGIN PAINEL | ADMIN */
+body.painel-admin {
+    background-color: rgb(34, 32, 32) !important;
+}
+.icon-seta-baixo:before {
+    font-size: 10px;
+    color: #c7954c;
+}
+/* END   PAINEL | ADMIN */
 
 /* INICIO CABEÇALHO */
 .header {

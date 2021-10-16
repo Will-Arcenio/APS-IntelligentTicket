@@ -1,5 +1,5 @@
 <?php
-    #LOGIN PAINEL ADM
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -19,8 +19,19 @@
 <body class="login-page-admin adminhtml">
     <div class="container">
         <div class="row">
+        <div class="msg-erro">
+            <?php
+                if (isset($_GET['erro'])) {
+                    if ($_GET['erro'] == 'userPwd') {
+            ?>
+                        <span class="erro-message">Usuário ou senha inválido.</span>
+            <?php
+                    }
+                }
+            ?>
+        </div>
             <div class="col-md-12 login-box">
-                <form action="login_DB.php" method="POST" class="login-form">
+                <form action="model/admin/login_DB.php" method="POST" class="login-form">
                     <label for="login" class="label-login">Login:</label>
                     <input type="text" name="login" id="login" size="50" required="required" class="campo">
 
