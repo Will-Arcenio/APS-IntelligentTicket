@@ -1,6 +1,6 @@
 * {
     font-family: 'Montserrat', sans-serif;
-    color: #FFF;
+    color: black;
 }
 body.adminhtml {
     background-color: rgb(34, 32, 32) !important;
@@ -25,12 +25,13 @@ body.adminhtml {
 a,
 span {
     opacity: 0.6;
-    color: rgb(224, 172, 94) !important;
+    color: black;
 }
 a:hover,
 i.icon-instagram:hover {
     opacity: 1;
     text-decoration: none !important;
+    color: black;
 }
 
 /* BEGIN HOME LOGIN | ADMIN */
@@ -72,6 +73,9 @@ form.login-form {
     opacity: 1;
     color: #FFF !important;
 }
+footer.rodape{
+    background-color: #ff914d;
+}
 /* END   HOME LOGIN | ADMIN */
 
 /* BEGIN PAINEL | ADMIN */
@@ -82,24 +86,66 @@ body.painel-admin {
     font-size: 10px;
     color: #c7954c;
 }
+ul{
+    list-style: none;
+}
+li.nav-item {
+    padding: 20px;
+}
+.search-area {
+    margin: 25px 0;
+}
+.form-control:focus {
+    border-color: #ffbd94;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(255 145 77);
+}
+.container-fluid.menu {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+}
+.navbar-nav>li {
+    float: initial;
+    display: inline-block;
+}
+.navbar-nav {
+    float: initial;
+    text-align: center;
+    padding: 0;
+}
+.navbar{
+    margin-bottom: 0;
+}
+h1.logo {
+    margin-top: 15px;
+}
 /* END   PAINEL | ADMIN */
 
 /* INICIO CABEÇALHO */
 .header {
     height: auto;
-    background-color: #000000;
+    background-color: #fff;
 }
 .menu-item {
     display: block;
     text-align: center;
     padding: 9px;
 }
-h4 a {
-    color: #FFF;
+input#search {
+    border-bottom: 1px solid black!important;
+    border: none;
+    margin: 50px 0;
+    opacity: 0.2;
 }
-h4 a:hover {
-    color: #FFF;
-    text-decoration: none;
+.container-fluid.menu {
+    background: #fff;
+}
+.rodape span,
+.rodape a,
+.rodape h3,
+.rodape p,
+.rodape strong,
+.rodape small
+ {
+    color: white;
 }
 /* FIM CABEÇALHO */
 
