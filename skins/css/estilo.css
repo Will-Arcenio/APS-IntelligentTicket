@@ -75,6 +75,7 @@ form.login-form {
 }
 footer.rodape{
     background-color: #ff914d;
+    padding: 30px 50px;
 }
 /* END   HOME LOGIN | ADMIN */
 
@@ -116,7 +117,7 @@ body.painel-admin {
 }
 .box-eventos {
     position: relative;
-    margin-bottom: 5%;
+    margin-bottom: 20px;
     margin-top: 100px;
 }
 ul{
