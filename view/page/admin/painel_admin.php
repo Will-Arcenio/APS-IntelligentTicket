@@ -18,22 +18,10 @@
     <title>Painel | Intelligent Ticket</title>
 </head>
 <body class="painel-admin">
-    <div class="cabecalho-admin">
-        <div class="col-md-12 menu">
-            <ul class="menu-cliente">
-                <li class="menu-items">
-                    <a href="">Clientes<i class="icon-seta-baixo"></i></a>
-                </li>
-                <div class="submenu" id="#submenu_cliente" style="display: none;">
-                    <div class="containerr">
-                        <ul class="submenu">
-                            <li class="submenu-item"><a href="">Lista de Clientes</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </ul>
-        </div>
-    </div>
+    <?php 
+        # CABEÇALHO ADMIN
+        include('docs/header_admin.php');
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">

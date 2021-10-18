@@ -10,7 +10,7 @@ body.adminhtml {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 .botao,
 .btn-newsletter {
@@ -32,6 +32,12 @@ i.icon-instagram:hover {
     opacity: 1;
     text-decoration: none !important;
     color: black;
+}
+span.success-message {
+    background-color: #6c9d6c;
+    color: #FFF !important;
+    border-radius: 10px;
+    padding: 12px 15px;
 }
 
 /* BEGIN HOME LOGIN | ADMIN */
@@ -81,12 +87,16 @@ footer.rodape{
 
 /* BEGIN PAINEL | ADMIN */
 body.painel-admin {
-    background-color: rgb(34, 32, 32) !important;
+    background-color: rgb(104 104 104) !important;
 }
 .icon-seta-baixo:before {
     font-size: 10px;
     color: #c7954c;
 }
+ul {
+    list-style: none;
+}
+/* END   PAINEL | ADMIN */
 .thumbnail {
     background: none;
     border: none;
@@ -117,11 +127,8 @@ body.painel-admin {
 }
 .box-eventos {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
     margin-top: 100px;
-}
-ul{
-    list-style: none;
 }
 li.nav-item {
     padding: 20px;
@@ -151,12 +158,73 @@ li.nav-item {
 h1.logo {
     margin-top: 15px;
 }
-/* END   PAINEL | ADMIN */
+/* BEGIN LISTA CLIENTES | ADMIN */
+tr {
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+}
+th, td {
+    padding: 15px 5px;
+}
+th.table-title {
+    text-align: center;
+}
+.qtd-clientes {
+    margin: 15px 5px;
+}
+body.painel-admin a,
+body.painel-admin span {
+    opacity: 1;
+    color: #c7954c;
+}
+/* END   LISTA CLIENTES | ADMIN */
+
+/* BEGIN CABEÇALHO | ADMIN */
+.menu {
+    background-color: #000;
+}
+li.menu-items {
+    text-align: center;
+    padding: 15px;
+    background-color: #000;
+}
+.logout {
+    text-align: center;
+    padding: 15px;
+}
+.header-admin {
+    margin-bottom: 70px;
+}
+/* END   CABEÇALHO | ADMIN */
+
+/* BEGIN EDIT | ADMIN */
+input {
+    background-color: #585858 !important;
+    border: none;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+/* END   EDIT | ADMIN */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* INICIO CABEÇALHO */
 .header {
     height: auto;
-    background-color: #fff;
+    background-color: #000000;
 }
 .menu-item {
     display: block;
@@ -180,6 +248,13 @@ input#search {
 .rodape small
  {
     color: white;
+}
+h4 a {
+    color: #FFF;
+}
+h4 a:hover {
+    color: #FFF;
+    text-decoration: none;
 }
 /* FIM CABEÇALHO */
 
