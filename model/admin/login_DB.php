@@ -18,3 +18,5 @@ if ($query) {
         header('Location: ../../index.php?erro=userPwd');
     }
 }
+
+mysqli_close($conexao);
