@@ -59,8 +59,20 @@
               </nav>
         </div>
     </div>
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="container relative">
+                    <ul class="bc-links">
+                        <li class="Cart">
+                        </li>
+                    </ul>
+                    <h1 class="title-bread">Seu carrinho</h1>
+                </div> 
+            </div>
+        </div>
+    </div>
     <div class="container SeuCarrinho">
-        <h1 class="title-carrinho">Seu carrinho</h1>
         <div class="conteudo col-md-6  col-xs-12">      
             <thead>
                 <tr>
@@ -79,7 +91,7 @@
             </thead>  
         </div>
         <div class="container">
-            <div class="col-md-6 title col-xs-12" style="background-color:LightGray;">
+            <div class="col-md-6 title col-xs-12" style="background-color:#f3f3f3;">
                 <h1 class="title">Valores da compra</h1>                
                 <div class="conteudo-carrinho-valores col-md-12 col-xs-12">
                     <div class="subtotal col-md-6 col-xs-6 text-left"><span>Subtotal</span></div>
