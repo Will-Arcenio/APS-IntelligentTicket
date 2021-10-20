@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../../../../skins/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../../../skins/css/bootstrap-theme.min.css">
         <script src="../../../../js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="/skins/css/estilo.css">
+        <link rel="stylesheet" href="../../../../skins/css/estilo.css">
         <title>Footer | Intelligent Ticket</title>
     </head>
     <body>
@@ -23,7 +23,7 @@
                       </form>
                 </div>
                 <div class="div-logo col-md-6 col-xs-12 logo-area text-center">
-                    <h1 class="logo"><a href="" title="Blablabla" class="logo"><img src="/skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>
+                    <h1 class="logo"><a href="" title="Blablabla" class="logo"><img src="../../../../skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>
                 </div>
             </div> 
         </div>
@@ -58,35 +58,6 @@
               </nav>
         </div>
     </div>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol> 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="/skins/images/banner-principal-1.png" alt="blablabla">
-          </div>      
-          <div class="item">
-            <img src="/skins/images/banner-principal-2.png" alt="teatro blablabla">
-          </div>      
-          <div class="item">
-            <img src="/skins/images/banner-principal-3.png" alt="teatro">
-          </div>
-        </div>
-        <!-- Left and right controls -->
-        <a href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
 
     <div class="container SeuCarrinho">
         <div class="col-md-12 title col-xs-12">
@@ -96,12 +67,12 @@
         <thead>
             <tr>
                 <th>Ingressos</th>
-                <th>Preço</th>
+                <th>Preï¿½o</th>
                 <th>Quantidade</th>
                 <br>
             </tr>
             <div class="imagem">
-                <img src="/skins/images/ticket.png" alt="Evento">
+                <img src="../../../../skins/images/ticket.png" alt="Evento">
                 <th>R$:60</th>
                 <input type = "number" name="quantidade" id="quantidade" >
             </div>   
@@ -147,14 +118,14 @@
                             <div class="col-md-12 col-xs-12 box-email"><strong class="show mail"><em class="icon-email"></em>E-mail</strong> <span>contato@blablabla.com.br</span></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xs-12 box-loja"><strong class="show loja" style="padding-left: 0;"><em class="icon-endereco"></em>Endereço loja física</strong>
-                    <div><span class="nlj">Nações Shopping</span><span class="nlj">Av Jorge Elias de Lucca, 765, </span><span class="nlj">Ns da Salete / Criciúma - SC</span></div>
+                    <div class="col-md-6 col-xs-12 box-loja"><strong class="show loja" style="padding-left: 0;"><em class="icon-endereco"></em>Endereï¿½o loja fï¿½sica</strong>
+                    <div><span class="nlj">Naï¿½ï¿½es Shopping</span><span class="nlj">Av Jorge Elias de Lucca, 765, </span><span class="nlj">Ns da Salete / Criciï¿½ma - SC</span></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-12 box-hr">
-                        <span><strong class="show "><em class="icon-horario"></em>Horário de funcionamento</strong></span>
-                        <p class="show">Segunda a sexta-feira<br>8h às 12h e 13h às 17h</p>
+                        <span><strong class="show "><em class="icon-horario"></em>Horï¿½rio de funcionamento</strong></span>
+                        <p class="show">Segunda a sexta-feira<br>8h ï¿½s 12h e 13h ï¿½s 17h</p>
                     </div>
                     <div class="col-md-6 col-xs-12 box-redes">
                         <h3>Siga a gente</h3>
@@ -164,14 +135,14 @@
             </div>
             <div class="col-md-4 col-xs-12 custom"><h3 class="h-marca">A Marca</h3>
                 <p><a class="show" href="https://www.blablabla.com.br/conheca-empresa" title="Sobre a Blablabla"> Sobre a Blablabla </a>
-                <h3 class="h-ajuda">Ajuda</h3> <a class="show" href="https://www.blablabla.com.br/duvidas-frequentes" title="Dúvidas Frequentes"> Dúvidas Frequentes </a> <a class="show" href="https://www.blablabla.com.br/contato" title="Contato"> Contato </a></p>
+                <h3 class="h-ajuda">Ajuda</h3> <a class="show" href="https://www.blablabla.com.br/duvidas-frequentes" title="Dï¿½vidas Frequentes"> Dï¿½vidas Frequentes </a> <a class="show" href="https://www.blablabla.com.br/contato" title="Contato"> Contato </a></p>
             </div>
         </div>
         <div class="rodape-extra">
             <div class="info-desenv col-md-12 col-xs-12">
                 <div class="row">
                     <div class="col-xs-12 col-md-2 col-lg-1 logo-n">
-                        <a href="https://www.intelligent.com.br" target="_blank" title="Conheça o site do desenvolvedor deste e-commerce" class="logo-nitro">
+                        <a href="https://www.intelligent.com.br" target="_blank" title="Conheï¿½a o site do desenvolvedor deste e-commerce" class="logo-nitro">
                         <span>Desenvolvido por</span>
                         <img alt="Intelligent Tecnologia e-commerce Ltda" src="/skins/">
                         </a>
@@ -179,7 +150,7 @@
                     <div class="col-xs-12 col-md-10 col-lg-11 text-c">
                         <address class="txt-copright">
                         <div class="linha"></div>
-                        <small>© 2021 Blablabla. Todos os Direitos Reservados. | Blablabla Eventos LTDA | Avenida Jorge Elias de Lucca, 765, Nossa Senhora da Salete / Criciúma - SC – CEP 88813-360 | CNPJ: 04.999-999/0001-32</small>
+                        <small>ï¿½ 2021 Blablabla. Todos os Direitos Reservados. | Blablabla Eventos LTDA | Avenida Jorge Elias de Lucca, 765, Nossa Senhora da Salete / Criciï¿½ma - SC ï¿½ CEP 88813-360 | CNPJ: 04.999-999/0001-32</small>
                         </address>
                     </div>
                 </div>

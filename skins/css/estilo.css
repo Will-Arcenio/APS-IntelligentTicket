@@ -199,7 +199,7 @@ li.menu-items {
 
 /* BEGIN EDIT | ADMIN */
 input {
-    background-color: #585858 !important;
+    background-color: #fff;
     border: none;
     width: 100%;
     padding: 5px 10px;
@@ -224,7 +224,7 @@ input {
 /* INICIO CABEÇALHO */
 .header {
     height: auto;
-    background-color: #000000;
+    background-color: #fff;
 }
 .menu-item {
     display: block;
