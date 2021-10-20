@@ -18,14 +18,12 @@
     <script src="js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../skins/css/estilo.css">
     <link rel="stylesheet" href="../../../skins/css/style.css">
-    <title>Painel | Intelligent Ticket</title>
+    <title>Clientes | Intelligent Ticket</title>
 </head>
 <body class="painel-admin">
     <?php 
         # CABEÇALHO ADMIN
-        include('docs/header_admin.php');
-
-        
+        include('docs/header_admin.php');        
     ?>
     <div class="container">
         <div class="row">

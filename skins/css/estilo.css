@@ -3,7 +3,7 @@
     color: black;
 }
 body.adminhtml {
-    background-color: rgb(34, 32, 32) !important;
+    background-color: rgb(104 104 104) !important;
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -53,7 +53,7 @@ body.login-page-admin div.container {
 .login-box {
     width: 500px;
     height: 300px;
-    background-color: #000;
+    background-color: #323232;
     border-radius: 5px;
 }
 form.login-form {
@@ -183,12 +183,12 @@ body.painel-admin span {
 
 /* BEGIN CABEÇALHO | ADMIN */
 .menu {
-    background-color: #000;
+    background-color: #FFF;
 }
 li.menu-items {
     text-align: center;
     padding: 15px;
-    background-color: #000;
+    background-color: #FFF;
 }
 .logout {
     text-align: center;
