@@ -39,7 +39,9 @@ span.success-message {
     border-radius: 10px;
     padding: 12px 15px;
 }
-
+.container.SeuCarrinho {
+    padding-bottom: 10%;
+}
 /* BEGIN HOME LOGIN | ADMIN */
 body.login-page-admin div.container {
     margin: 0;
@@ -266,9 +268,32 @@ div.title {
 
 /* INICIO CONTEUDO PRINCIPAL */
 .title {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     padding-top: 20px;
 }
+/* CARRINHO*/
+.title-carrinho {
+    padding-bottom: 60px;
+}
+.subtotal, .preco {
+    margin-bottom: 25px;
+}
+.conteudo-carrinho-valores {
+    margin-bottom: 30px;
+}
+button.btnFinalizar {
+    padding: 10px 0;
+    width: 60%;
+    color: white;
+    background: #176521;
+    margin-bottom: 30px;
+    border: 1px solid #176521;
+}
+button.btnFinalizar:hover {
+    background: #0f4c17;
+    border: 1px solid #0f4c17;
+}
+/*FIM CARRINHO*/
 .item-conteudo {
     margin-bottom: 30px;
 }

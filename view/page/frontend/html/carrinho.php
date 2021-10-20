@@ -60,7 +60,7 @@
         </div>
     </div>
     <div class="container SeuCarrinho">
-        <h1 class="title">Seu carrinho</h1>
+        <h1 class="title-carrinho">Seu carrinho</h1>
         <div class="conteudo col-md-6  col-xs-12">      
             <thead>
                 <tr>
@@ -78,20 +78,17 @@
                 <th>R$:60,00</th>             
             </thead>  
         </div>
-        <div class="col-md-6 title col-xs-12" style="background-color:LightGray;">
-            <h1 class="title">Valores da compra</h1>
-            <thead>
-                <tr>
-                    <th>Subtotal</th>
-                    <th>R$:60,00</th>
-                    <br>
-                    <th>Total</th>
-                    <th>R$:60,00</th>
-                </tr>
-              <form>
-                <button type="submit" name="btnFinalizar" style="background-color:LimeGreen";>Finalizar </button>
-              </form>
-            </thead>
+        <div class="container">
+            <div class="col-md-6 title col-xs-12" style="background-color:LightGray;">
+                <h1 class="title">Valores da compra</h1>                
+                <div class="conteudo-carrinho-valores col-md-12 col-xs-12">
+                    <div class="subtotal col-md-6 col-xs-6 text-left"><span>Subtotal</span></div>
+                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$60,00</span></div>
+                    <div class="total col-md-6 col-xs-6 text-left"><span>Total</span></div>
+                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$60,00</span></div>                    
+                </div>
+                <button class="btnFinalizar" type="submit" name="btnFinalizar">Finalizar </button>
+            </div>
         </div>    
     </div>
 
