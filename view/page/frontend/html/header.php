@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../../../../skins/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../../../skins/css/bootstrap-theme.min.css">
-        <script src="../../../../js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="/skins/css/estilo.css">
-        <title>Footer | Intelligent Ticket</title>
-    </head>
-    <body>
+<?php
+    include('../../../Conexao/conexao.php');
+
+    $sqlInstruct = "SELECT * FROM categorias ORDER BY categorias.id DESC";
+    $query = mysqli_query($conexao, $sqlInstruct);
+?>
         <div class="header">
             <div class="header container-fluid">
                 <div class="col-md-3 col-xs-12 search-area">
@@ -23,17 +13,38 @@
                       </form>
                 </div>
                 <div class="div-logo col-md-6 col-xs-12 logo-area text-center">
-                    <h1 class="logo"><a href="../html/homepage.php" title="Blablabla" class="logo"><img src="../../../../skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>
+                    <h1 class="logo"><a href="homepage.php" title="Blablabla" class="logo"><img src="../../../../skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>
                 </div>
                 <div class="div-logo col-md-3 col-xs-12 icons">
-                    <div class="col-md-6 login-cad"><i class="icon-user"></i></div>
-                    <div class="col-md-6 cart"><i class="icon-cart"></i></div>
+                    <div class="col-md-6 login-cad"><a href="" ><i class="icon-user"></i></a></div>
+                    <div class="col-md-6 cart"><a href="../../frontend/html/carrinho.php"><i class="icon-cart"></i></a></div>
                 </div>
             </div> 
         </div>
         <div class="container-fluid menu">
             <nav class="navbar-nav">                 
-                    <div class="navbar" id="navbarSupportedContent">
+                <div class="navbar" id="navbarSupportedContent">
+                <?php
+                    if (!$query) {
+                ?>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!"></a>
+                        </li>
+                    </ul>
+                    <?php
+                        } else {
+                            $html = '';
+                            while ($categoria = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                                $html = '<ul class="navbar-nav">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#!">'. $categoria['nome'] .'</a>
+                                            </li>
+                                        </ul>';
+                                echo $html;
+                            }
+                        }
+                    ?>
                         <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#!">Home</a>
