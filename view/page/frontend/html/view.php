@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +11,8 @@
         <link rel="stylesheet" href="../../../../skins/css/bootstrap-theme.min.css">
         <script src="../../../../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../../../../skins/css/estilo.css">
-        <title>Carrinho | Intelligent Ticket</title>
+        <link rel="stylesheet" href="../../../../skins/css/style.css">
+        <title>Compre seu ingresso online | Bla³</title>
     </head>
     <body>
         <div class="header">
@@ -27,8 +27,8 @@
                     <h1 class="logo"><a href="../html/homepage.php" title="Blablabla" class="logo"><img src="../../../../skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>
                 </div>
                 <div class="div-logo col-md-3 col-xs-12 icons">
-                    <div class="col-md-6 login-cad"><i class="icon-user"></i></div>
-                    <div class="col-md-6 cart"><i class="icon-cart"></i></div>
+                    <div class="col-md-6 login-cad"><a href="" ><i class="icon-user"></i></a></div>
+                    <div class="col-md-6 cart"><a href="../../frontend/html/carrinho.php"><i class="icon-cart"></i></a></div>
                 </div>
             </div> 
         </div>
@@ -71,66 +71,22 @@
                         <li class="Cart">
                         </li>
                     </ul>
-                    <h1 class="title-bread">Seu carrinho</h1>
+                    <h1 class="title-bread">Categoria > evento</h1>
                 </div> 
             </div>
         </div>
     </div>
-    <div class="container SeuCarrinho">
-        <div class="conteudo col-md-8  col-xs-12">      
-            <table id="shopping-cart-table" class="data-table cart-table">
-                <thead>
-                    <tr class="first last">
-                        <th rowspan="1"><span class="nobr">Ingressos</span></th>
-                        <th rowspan="1">&nbsp;</th>
-                        <th rowspan="1">&nbsp;</th>
-                        <th colspan="1"><span class="nobr">Preço Unitário</span></th>
-                        <th rowspan="1">Quantidade</th>
-                        <th class="last" colspan="1">Subtotal</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                <tr class="first last">
-                    <td colspan="50" class="a-right last">
-                        <button type="submit" name="limpar-carrinho" value="limpar-carrinho" title="Limpar Carrinho" class="limpar-carrinho" id="limpar-carrinho">Limpar Carrinho (FAZER DINAMICO)</button>
-                    </td>
-                </tr>
-                </tfoot>
-                <tbody>
-                    <tr class="first last odd">
-                        <td class="pr-img-td"><a href="" title="EVENTO PADRÃO" class="product-image"><img src="../../../../skins/images/ticket.png" alt="evento padrão"></a></td>
-                        <td colspan="2" class="product-name-td">
-                            <span class="product-name"> EVENTO PADRÃO</span>
-                        </td>
-                        <td class="unit-price">
-                            <span class="cart-price">
-                                <span class="price">R$60,00</span>
-                            </span>
-                        </td>
-                        <td class="qtd-cart">
-                            <div class="qty-holder">
-                            1
-                            </div>
-                        </td>
-                        <td class="td-total last">
-                            <span class="cart-price" id="ing">
-                                <span class="price">R$60,00</span>
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="container imagem-ingresso">
+        <div class="conteudo col-md-6  col-xs-12">      
+            <img class="img-responsive" src="../../../../skins/images/imagem01.jpg" alt="blablabla">
         </div>
-        <div class="container">
-            <div class="col-md-4 title col-xs-12" style="background-color:#f3f3f3;">
-                <h1 class="title">Valores da compra</h1>                
-                <div class="conteudo-carrinho-valores col-md-12 col-xs-12">
-                    <div class="subtotal col-md-6 col-xs-6 text-left"><span>Subtotal</span></div>
-                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$60,00</span></div>
-                    <div class="total col-md-6 col-xs-6 text-left"><span>Total</span></div>
-                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$60,00</span></div>                    
-                </div>
-                <button class="btnFinalizar" type="submit" name="btnFinalizar">Finalizar </button>
+        <div class="container info-ingresso">
+            <div class="info-evento col-md-6 col-xs-12">
+                <h1 class="nome-evento">Nome do evento</h1>                
+                <div class="referencia"><span>Referência: 0123456</span></div>
+                <div class="preco"><span>R$60,00</span></div>  
+                <div class="qty"><input type="number" name="qty" id="qty" maxlength="12" value="1" title="Qtd" class="input-text qty"></div>   
+                <button class="btnFinalizar" type="submit" name="btnFinalizar">Adicionar ao carrinho </button>
             </div>
         </div>    
     </div>

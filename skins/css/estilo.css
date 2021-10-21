@@ -108,11 +108,45 @@ ul {
     list-style: none;
 }
 /* END   PAINEL | ADMIN */
+/*INTERNA*/
+.qty input {
+    background-color: #fff;
+    border: 1px solid #a5a3a3;
+    width: 12%;
+    padding: 10px 10px;
+    border-radius: 3px;
+    margin-bottom: 25px;
+}
+/*FIM INTERNA*/
 .thumbnail {
     background: none;
     border: none;
     box-shadow: none;
     padding: 0;
+}
+.login-cad i.icon-user {
+    font-size: 30px;
+    float: right;
+    margin-top: 25px;
+    color: #ff914d;
+}
+a.logo {
+    opacity: 1;
+}
+.info-evento .preco span{
+    font-size: 30px;
+}
+.info-evento .preco{
+    margin-top: 30px;
+}
+.nome-produto{
+    margin: 0;
+}
+.cart i.icon-cart {
+    font-size: 30px;
+    margin-top: 25px;
+    float: left;
+    color: #ff914d;
 }
 .bg-eventos {
     background: #ff914d;
