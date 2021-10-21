@@ -22,13 +22,19 @@ body.adminhtml {
     padding: 5px 15px;
     width: 30%;
 }
-a,
 span {
+    opacity: 1;
+    color: black;
+}
+a{
     opacity: 0.6;
     color: black;
 }
-.input-number {
-    text-align: right;
+.limpar-carrinho {
+    background: #f3f3f3;
+    border: 1px solid #e5dcdc;
+    padding: 3px 5px;
+    float: right;
 }
 a:hover,
 i.icon-instagram:hover {
@@ -169,7 +175,7 @@ tr {
     border-bottom: 1px solid #FFF;
 }
 th, td {
-    padding: 15px 5px;
+    padding: 15px 20px;
 }
 th.table-title {
     text-align: center;
@@ -262,7 +268,16 @@ h4 a:hover {
     text-decoration: none;
 }
 /* FIM CABEÇALHO */
-
+/* BREADCRUMBS */
+.breadcrumbs {
+    background: #f3f3f3;
+    margin-top: 5px;
+    margin-bottom: 5%;
+}
+.title-bread {
+    margin: 20px 0px;
+}
+/*FIM BREADCRUMBS*/
 /* INICIO BANNER */
 div.title {
     text-align: center;
@@ -286,11 +301,14 @@ div.title {
 }
 button.btnFinalizar {
     padding: 10px 0;
-    width: 60%;
+    width: 100%;
     color: white;
     background: #176521;
     margin-bottom: 30px;
     border: 1px solid #176521;
+}
+tr.first.last {
+    border-bottom: 1px solid #dfdada;
 }
 button.btnFinalizar:hover {
     background: #0f4c17;

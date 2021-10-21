@@ -24,7 +24,7 @@
                       </form>
                 </div>
                 <div class="div-logo col-md-6 col-xs-12 logo-area text-center">
-                    <h1 class="logo"><a href="" title="Blablabla" class="logo"><img src="../../../../skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>
+                    <h1 class="logo"><a href="../html/homepage.html" title="Blablabla" class="logo"><img src="../../../../skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>
                 </div>
             </div> 
         </div>
@@ -73,25 +73,53 @@
         </div>
     </div>
     <div class="container SeuCarrinho">
-        <div class="conteudo col-md-6  col-xs-12">      
-            <thead>
-                <tr>
-                    <th>Ingressos</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <br>
-                </tr>
-                <div class="imagem">
-                    <img src="../../../../skins/images/ticket.png" alt="Evento">
-                    <th>R$:60,00</th>
-                    <input type = "number" name="quantidade" id="quantidade" >
-                </div>               
-                <th>Subtotal:</th>
-                <th>R$:60,00</th>             
-            </thead>  
+        <div class="conteudo col-md-8  col-xs-12">      
+            <table id="shopping-cart-table" class="data-table cart-table">
+                <thead>
+                    <tr class="first last">
+                        <th rowspan="1"><span class="nobr">Ingressos</span></th>
+                        <th rowspan="1">&nbsp;</th>
+                        <th rowspan="1">&nbsp;</th>
+                        <th colspan="2"><span class="nobr">Preço Unitário</span></th>
+                        <th rowspan="1">Quantidade</th>
+                        <th class="last" colspan="1">Subtotal</th>
+                    </tr>
+                </thead>
+            <tfoot>
+            <tr class="first last">
+                <td colspan="50" class="a-right last">
+                <button type="submit" name="limpar-carrinho" value="limpar-carrinho" title="Limpar Carrinho" class="limpar-carrinho" id="limpar-carrinho">Limpar Carrinho (FAZER DINAMICO)</button>
+                
+                </td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr class="first last odd">
+            <td class="pr-img-td"><a href="" title="SHORT LINHO COM FAIXA" class="product-image"><img src="../../../../skins/images/ticket.png" alt="SHORT LINHO COM FAIXA"></a></td>
+            <td colspan="2" class="product-name-td">
+            <span class="product-name"> EVENTO PADRÃO</span>
+            </td>
+            <td class="unit-price">
+            <span class="cart-price">
+            <span class="price">R$60,00</span>
+            </span>
+            </td>
+            <td class="qtd-cart">
+            <div class="qty-holder">
+            1
+            </div>
+            </td>
+            <td class="td-total last">
+            <span class="cart-price" id="span-45073">
+            <span class="price">R$293,90</span>
+            </span>
+            </td>
+            </tr>
+            </tbody>
+            </table>
         </div>
         <div class="container">
-            <div class="col-md-6 title col-xs-12" style="background-color:#f3f3f3;">
+            <div class="col-md-4 title col-xs-12" style="background-color:#f3f3f3;">
                 <h1 class="title">Valores da compra</h1>                
                 <div class="conteudo-carrinho-valores col-md-12 col-xs-12">
                     <div class="subtotal col-md-6 col-xs-6 text-left"><span>Subtotal</span></div>
