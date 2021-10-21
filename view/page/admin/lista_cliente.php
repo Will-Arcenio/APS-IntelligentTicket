@@ -18,7 +18,7 @@
     <script src="js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../skins/css/estilo.css">
     <link rel="stylesheet" href="../../../skins/css/style.css">
-    <title>Clientes | Intelligent Ticket</title>
+    <title>Clientes | Painel Bla³</title>
 </head>
 <body class="painel-admin">
     <?php 

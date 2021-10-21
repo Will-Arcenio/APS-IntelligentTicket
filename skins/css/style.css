@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?cytws9');
-  src:  url('fonts/icomoon.eot?cytws9#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?cytws9') format('truetype'),
-    url('fonts/icomoon.woff?cytws9') format('woff'),
-    url('fonts/icomoon.svg?cytws9#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?19lu4y');
+  src:  url('fonts/icomoon.eot?19lu4y#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?19lu4y') format('truetype'),
+    url('fonts/icomoon.woff?19lu4y') format('woff'),
+    url('fonts/icomoon.svg?19lu4y#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -31,8 +31,23 @@
 .icon-home:before {
   content: "\e900";
 }
+.icon-barcode:before {
+  content: "\e937";
+}
+.icon-qrcode:before {
+  content: "\e938";
+}
+.icon-ticket:before {
+  content: "\e939";
+}
 .icon-cart:before {
   content: "\e93a";
+}
+.icon-coin-dollar:before {
+  content: "\e93b";
+}
+.icon-credit-card:before {
+  content: "\e93f";
 }
 .icon-location:before {
   content: "\e947";
@@ -45,6 +60,21 @@
 }
 .icon-printer:before {
   content: "\e954";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-spinner6:before {
+  content: "\e97f";
+}
+.icon-spinner7:before {
+  content: "\e980";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-bin:before {
+  content: "\e9ac";
 }
 .icon-menu:before {
   content: "\e9bd";
@@ -76,6 +106,12 @@
 .icon-share2:before {
   content: "\ea82";
 }
+.icon-google:before {
+  content: "\ea88";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
 .icon-instagram:before {
   content: "\ea92";
 }
@@ -84,6 +120,9 @@
 }
 .icon-twitter:before {
   content: "\ea96";
+}
+.icon-onedrive:before {
+  content: "\eaaf";
 }
 .icon-github:before {
   content: "\eab0";

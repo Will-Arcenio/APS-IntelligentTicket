@@ -16,7 +16,7 @@
     <script src="js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../skins/css/estilo.css">
     <link rel="stylesheet" href="../../../skins/css/style.css">
-    <title>Editar Cliente | Intelligent Ticket</title>
+    <title>Editar Cliente | Painel Bla³</title>
 </head>
 <body class="painel-admin">
     <?php 
@@ -36,16 +36,17 @@
                         $cliente = mysqli_fetch_array($query, MYSQLI_ASSOC);
                     ?>
 
-                    <label for="id">Código</label>
-                    <input type="text" name="id" id="id" readonly="true" value="<?php echo $cliente['id']; ?>" required="required">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="id">Código</label>
+                            <input type="text" name="id" id="id" readonly="true" value="<?php echo $cliente['id']; ?>" class="input-number" required="required">
+                        </div>
+                        <div class="col-md-10">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="nome" size="50" value="<?php echo $cliente['nome']; ?>" required="required">
+                        </div>
+                    </div>
 
-                    <br>
-                    <br>
-
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" size="50" value="<?php echo $cliente['nome']; ?>" required="required">
-
-                    <br>
                     <br>
                     
                     <label for="cpf">CPF</label>
