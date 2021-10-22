@@ -10,7 +10,10 @@
                         <a href="lista_cliente.php" class="item-menu">Clientes</a>
                     </li>
                     <li class="menu-items col-md-2">
-                        <span class="item-menu">Eventos<i class="icon-seta-baixo"></i></span>
+                        <a href="lista_evento.php" class="item-menu">Eventos</a>
+                    </li>
+                    <li class="menu-items col-md-2">
+                        <a href="lista_categoria.php" class="item-menu">Categorias</a>
                     </li>
                     <li class="menu-items col-md-2">
                         <span class="item-menu">Ambientes<i class="icon-seta-baixo"></i></span>
@@ -24,7 +27,7 @@
                 </ul>
             </div>
             <div class="logout col-md-2">
-                <a href="logout.php">Sair</a>
+                <a href="logout.php"><i class="icon-exit" title="Desconectar"></i></a>
             </div>
         </div>
     </div>

@@ -1,8 +1,10 @@
 <?php
     include('../../../Conexao/conexao.php');
 
-    $sqlInstruct = "SELECT * FROM clientes ORDER BY clientes.id DESC";
+    $sqlInstruct = "SELECT * FROM eventos ORDER BY eventos.id DESC";
     $query = mysqli_query($conexao, $sqlInstruct);
+
+    //  AQUI DENTRO PRECISA TER COMO CADASTRAR CATEGORIAS DE EVENTOS.
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -18,7 +20,7 @@
     <script src="js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../skins/css/estilo-admin.css">
     <link rel="stylesheet" href="../../../skins/css/style.css">
-    <title>Clientes | Painel Bla³</title>
+    <title>Eventos | Painel Bla³</title>
 </head>
 <body class="painel-admin">
     <?php 
@@ -33,7 +35,7 @@
                         if ($_GET['updated'] == 1) {
                             if ($_GET['user_id']) {
                 ?>
-                                <span class="success-message">Cliente de ID <?php echo $_GET['user_id']; ?> atualizado.</span>
+                                <span class="success-message">Evento de ID <?php echo $_GET['user_id']; ?> atualizado.</span>
                 <?php
                             }
                         }
@@ -41,25 +43,38 @@
                 ?>
             </div>
             <div class="col-md-12 lista-cliente">
-                <div class="qtd-clientes">
-                <?php
-                    if ($query->num_rows != 0) {
-                ?>
-                        <span>Há <?php echo $query->num_rows; ?> clientes cadastrados.</span>
-                <?php 
-                    }
-                ?>
+                <div class="row info-btns">
+                    <div class="col-md-6">
+                        <div class="qtd-eventos">
+                        <?php
+                            if ($query->num_rows != 0) {
+                        ?>
+                                <span>Há <?php echo $query->num_rows; ?> eventos cadastrados.</span>
+                        <?php 
+                            }
+                        ?>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="acoes">
+                            <div class="botoes">
+                                <a href="criar-evento.php" class="white-font">Criar Evento</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <table style="width: 100%;">
                     <thead>
                         <tr>
-                            <th colspan="4" class="table-title">CLIENTES</th>
+                            <th colspan="4" class="table-title">EVENTOS</th>
                         </tr>
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>CPF</th>
-                            <th>Endereço</th>
+                            <th>Categoria</th>
+                            <th>Data</th>
+                            <th>Classificação Indicativa</th>
+                            <th>Total de Ingressos</th>
                             <th>Ação</th>
                         </tr>
                     </thead>
@@ -68,19 +83,21 @@
                         if (!$query->num_rows != 0) {
                     ?>
                             <tr>
-                                <td>Não há clientes para listar.</td>
+                                <td>Não há eventos para listar.</td>
                             </tr>
                     <?php
                         } else {
                             $html = '';
-                            while ($cliente = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                            while ($evento = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                                 $html = '<tr>
-                                            <td>' . $cliente['id'] . '</td>
-                                            <td>' . $cliente['nome'] . '</td>
-                                            <td>' . $cliente['cpf'] . '</td>
-                                            <td>' . $cliente['endereco'] . '</td>
-                                            <td><a href="cliente_edit.php?id=' . $cliente['id'] . '">Editar</a></td>
-                                        </tr>';
+                                            <td>' . $evento['id'] . '</td>
+                                            <td>' . $evento['nome'] . '</td>
+                                            <td>' . $evento['categoria'] . '</td>
+                                            <td>' . $evento['data_evento'] . '</td>
+                                            <td>' . $evento['classificacao_indicativa'] . '</td>
+                                            <td>' . $evento['total_ingresso'] . '</td>
+                                            <td><a href="evento_edit.php?id=' . $evento['id'] . '">Editar</a></td>
+                                            </tr>';
                                 echo $html;
                             }
                         }

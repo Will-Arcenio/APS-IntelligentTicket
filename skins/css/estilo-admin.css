@@ -113,6 +113,10 @@ body.painel-admin {
 ul {
     list-style: none;
 }
+.icon-exit:before {
+    color: #ff914d;
+    font-size: 27px;
+}
 /* END   PAINEL | ADMIN */
 
 /* BEGIN LISTA CLIENTES | ADMIN */
@@ -135,6 +139,24 @@ body.painel-admin span {
     color: #c7954c;
 }
 /* END   LISTA CLIENTES | ADMIN */
+
+/* BEGIN LISTA EVENTOS | ADMIN */
+.acoes {
+    float: right;
+}
+.botoes {
+    border: 1px solid #e16429;
+    background-color: #e16429;
+    padding: 5px;
+    border-radius: 3px;
+}
+.botoes .white-font {
+    color: #FFF;
+}
+.info-btns {
+    margin-bottom: 25px;
+}
+/* END   LISTA EVENTOS | ADMIN */
 
 /* BEGIN CABEÇALHO | ADMIN */
 .menu {
