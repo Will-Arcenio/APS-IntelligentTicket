@@ -1,5 +1,5 @@
 <?php
-    include('../../../Conexao/conexao.php');
+    include('../../../../Conexao/conexao.php');
 
     $sqlInstruct = "SELECT * FROM categorias ORDER BY categorias.id DESC";
     $query = mysqli_query($conexao, $sqlInstruct);
@@ -24,50 +24,25 @@
         <div class="container-fluid menu">
             <nav class="navbar-nav">                 
                 <div class="navbar" id="navbarSupportedContent">
-                <?php
-                    if (!$query) {
-                ?>
-                    <ul class="navbar-nav">
+                <ul class="navbar-nav">
+                    <?php
+                        if (!$query) {
+                    ?>
                         <li class="nav-item">
                             <a class="nav-link" href="#!"></a>
                         </li>
-                    </ul>
-                    <?php
-                        } else {
-                            $html = '';
-                            while ($categoria = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-                                $html = '<ul class="navbar-nav">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#!">'. $categoria['nome'] .'</a>
-                                            </li>
-                                        </ul>';
-                                echo $html;
+                        <?php
+                            } else {
+                                $html = '';
+                                while ($categoria = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                                    $html = '<li class="nav-item">
+                                                <a class="nav-link" href="'.$categoria['url'].'">'. $categoria['nome'] .'</a>
+                                            </li>';
+                                    echo $html;
+                                }
                             }
-                        }
-                    ?>
-                        <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Outro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Outro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Outro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Outro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Outro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Outro</a>
-                        </li>
-                        </ul>
+                        ?>      
+                    </ul>                  
                   </div>
                 </div>
               </nav>
