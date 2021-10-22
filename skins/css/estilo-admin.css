@@ -42,6 +42,25 @@ span.success-message {
 .conteudo {
     padding-bottom: 20px;
 }
+div.loja a h3,
+div.painel a h3 {
+    border: 1px solid #cf7426;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    font-size: 50px;
+    background-color: #cf7426;
+    border-radius: 50px;
+    color: #FFF;
+}
+div.loja,
+div.painel {
+    width: 100%;
+    text-align: -webkit-center;
+    margin-bottom: 35px;
+    margin-top: 35px;
+}
+
 /* BEGIN HOME LOGIN | ADMIN */
 body.login-page-admin div.container {
     margin: 0;

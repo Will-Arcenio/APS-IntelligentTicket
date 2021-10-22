@@ -15,7 +15,7 @@ if ($query) {
     if (($usuario['usuario'] == $login) && ($usuario['senha'] == $senha)) {
         header('Location: ../../view/page/admin/painel_admin.php');
     } else {
-        header('Location: ../../index.php?erro=userPwd');
+        header('Location: ../../view/page/admin/login.php?erro=userPwd');
     }
 }
 

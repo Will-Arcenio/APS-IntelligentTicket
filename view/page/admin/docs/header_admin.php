@@ -2,13 +2,10 @@
     <div class="menu">
         <div class="container">
             <div class="logo col-md-2">
-                <img src="../../../skins/images/logo-painel.png" alt="Bla³ Eventos" class="img-responsive"/>
+                <a href="painel_admin.php"><img src="../../../skins/images/logo-painel.png" alt="Bla³ Eventos" class="img-responsive"/></a>
             </div>
             <div class="col-md-8 categorias-menu">
                 <ul class="menu-cliente  row">
-                    <li class="menu-items col-md-2">
-                        <a href="painel_admin.php" class="item-menu">Home</a>
-                    </li>
                     <li class="menu-items col-md-2">
                         <a href="lista_cliente.php" class="item-menu">Clientes</a>
                     </li>
