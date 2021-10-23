@@ -1,3 +1,9 @@
+<?php 
+    include('../../../../Conexao/conexao.php');
+
+    $sqlInstruct = "SELECT * FROM eventos where id_categoria = '2'";
+    $query1 = mysqli_query($conexao, $sqlInstruct);
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -12,7 +18,7 @@
         <script src="../../../../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../../../../skins/css/estilo.css">
         <link rel="stylesheet" href="../../../../skins/css/style.css">
-        <title>Compre seu ingresso online | Bla³</title>
+        <title>Educação | Bla³</title>
     </head>
     <body>
     <?php 
@@ -31,21 +37,40 @@
                 </div> 
             </div>
         </div>
-    </div>
-    <div class="category-products">
-        <div class="products-grid col-md-12 hide-addtolinks hide-addtocart">
-            <div class="row">
-                <div class="product-image-area">
-                    <a href="!#" title="" class="product-image">
-                        <img class="img-responsive" alt="" src="">
-                    </a>
+    </div>   
+    <div class="category-eventos">
+        <div class="evento-grid col-md-12 hide-addtolinks hide-addtocart">
+            <div class="container">
+                <div class="row">
+                    <?php
+                        if (!$query1) {                        
+                    ?>
+                        <div>
+                            <span>Esta categoria está vazia.</span>
+                        </div>
+                    <?php 
+                        } else {
+                            $html = ''; 
+                            while ($evento = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
+                                $html = '<div class="item col-md-3">
+                                        <div class="evento-image-area">
+                                            <a href="!#" title="" class="evento-image">
+                                                <img class="img-responsive" alt="'.$evento['nome'].'" src="../../../../skins/images/eventos/'.$evento['imagem'].'.png">
+                                            </a>
+                                        </div>
+                                        <div class="details-area">
+                                            <h3 class="evento-name"><a href="'.$evento['url'].'.php" title="'.$evento['nome'].'">'.$evento['nome'].'</a></h3>
+                                        </div>      
+                                    </div>';
+                        
+                                echo $html;
+                            } 
+                        }
+                    ?>                     
                 </div>
-                <div class="details-area">
-                    <h2 class="product-name"><a href="" title="">Evento</a></h2>
-                </div>           
             </div>
         </div>
-    </div> 
+    </div>    
 </body>
 <?php 
     # FOOTER

@@ -59,7 +59,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento01.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -70,7 +70,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento02.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -81,7 +81,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento03.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -92,7 +92,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento04.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -107,7 +107,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento05.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -118,7 +118,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento05.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -235,12 +235,12 @@
                     <div class="row">
                         <div class="col-md-6 col-xs-6">
                             <div class="img-esq">
-                                <img class="img-responsive" src="../../../../skins/images/img-dupla.png" alt="">
+                                <img class="img-responsive" src="../../../../skins/images/img01.png" alt="">
                             </div>
                         </div>
                         <div class="col-md-6 col-xs-6">
                             <div class="img-dir">
-                                <img class="img-responsive" src="../../../../skins/images/img-dupla.png" alt="">
+                                <img class="img-responsive" src="../../../../skins/images/img02.png" alt="">
                             </div>
                         </div>
                     </div>

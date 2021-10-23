@@ -190,8 +190,11 @@ li.nav-item {
     box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
 }
 .navbar-nav>li {
-    float: initial;
-    display: inline-block;
+    display: inline-block;    
+    float: inherit;
+}
+h3.evento-name {
+    font-size: 20px;
 }
 .navbar-nav {
     float: initial;
