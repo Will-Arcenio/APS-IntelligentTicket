@@ -16,7 +16,7 @@
     <script src="js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../skins/css/estilo-admin.css">
     <link rel="stylesheet" href="../../../skins/css/style.css">
-    <title>Cadastrar Evento | Painel Bla³</title>
+    <title>Editar evento | Painel Bla³</title>
 </head>
 <body class="painel-admin">
     <?php 
@@ -26,21 +26,24 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 lista-evento">
-                <form action="../../../model/admin/evento_create_DB.php" method="POST">
+                <form action="../../../model/admin/evento_edit_DB.php" method="POST">
                     <?php
-                        $sql   = "SELECT * FROM categorias ORDER BY nome ASC";
-                        
-                        $query = mysqli_query($conexao, $sql);
+                        $id = @$_GET['id'];
+
+                        $sql = "SELECT * FROM eventos WHERE id = {$id}";
+
+                        $query     = mysqli_query($conexao, $sql);
+                        $evento = mysqli_fetch_array($query, MYSQLI_ASSOC);
                     ?>
 
                     <div class="row">
                         <div class="col-md-2">
                             <label for="id">Código</label>
-                            <input type="text" name="id" id="id" readonly="true" class="input-number" required="required">
+                            <input type="text" name="id" id="id" readonly="true" value="<?php echo $evento['id']; ?>" class="input-number" required="required">
                         </div>
                         <div class="col-md-10">
                             <label for="nome">Nome</label>
-                            <input type="text" name="nome" id="nome" size="50" required="required">
+                            <input type="text" name="nome" id="nome" size="50" value="<?php echo $evento['nome']; ?>" required="required">
                         </div>
                     </div>
 
@@ -51,9 +54,12 @@
                             <label for="categoria">Categoria</label>
                             <select name="categoria" id="categoria">
                             <?php
-                                while ($categoria = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                                $sqlCateg   = "SELECT * FROM categorias ORDER BY nome ASC";
+                                $queryCateg = mysqli_query($conexao, $sqlCateg);
+
+                                while ($categoria = mysqli_fetch_array($queryCateg, MYSQLI_ASSOC)) {
                             ?>
-                                <option value="<?php echo $categoria['id']; ?>"><?php echo $categoria['nome']; ?></option>
+                                <option value="<?php echo $categoria['id']; ?>" <?php if ($categoria['id'] == $evento['id_categoria']) { ?>selected="selected" <?php } ?>><?php echo $categoria['nome']; ?></option>
                             <?php
                                 }
                             ?>
@@ -64,12 +70,12 @@
                             <select name="ambiente" id="ambiente">
                                 <!-- <option value="0">Selecione um local</option> -->
                             <?php
-                                $sql   = "SELECT * FROM ambientes ORDER BY nome ASC";
-                                $query = mysqli_query($conexao, $sql);
+                                $sqlAmb   = "SELECT * FROM ambientes ORDER BY nome ASC";
+                                $queryAmb = mysqli_query($conexao, $sqlAmb);
 
-                                while ($ambiente = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+                                while ($ambiente = mysqli_fetch_array($queryAmb, MYSQLI_ASSOC)) {
                             ?>
-                                <option value="<?php echo $ambiente['id']; ?>"><?php echo $ambiente['nome']; ?></option>
+                                <option value="<?php echo $ambiente['id']; ?>" <?php if ($ambiente['id'] == $evento['id_ambiente']) { ?>selected="selected" <?php } ?>><?php echo $ambiente['nome']; ?></option>
                             <?php
                                 }
                             ?>
@@ -77,7 +83,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="data">Data</label>
-                            <input type="date" id="data" name="data" required="required">
+                            <input type="date" id="data" name="data" value="<?php echo date('Y-m-d', strtotime($evento['data_evento'])); ?>" required="required">
                         </div>
                     </div>
 
@@ -86,14 +92,18 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="classificacao_indicativa">Classificação Indicativa</label>
-                            <input type="text" id="classificacao_indicativa" name="classificacao_indicativa" required="required">
+                            <input type="text" id="classificacao_indicativa" name="classificacao_indicativa" value="<?php echo $evento['classificacao_indicativa'] ?>" required="required">
                         </div>
                         <div class="col-md-3">
                             <label for="emite_certificado">Emite Certificado</label>
                             <select name="emite_certificado" id="emite_certificado">
-                                <option value="0">Não</option>
-                                <option value="1">Sim</option>
+                                <option value="0" <?php if ($evento['emite_certificado']  == 0) { ?> selected="selected" <?php } ?>>Não</option>
+                                <option value="1" <?php if ($evento['emite_certificado']  == 1) { ?> selected="selected" <?php } ?>>Sim</option>
                             </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="total_ingressos">Total de Ingressos</label>
+                            <input type="text" id="total_ingressos" name="total_ingressos" value="<?php echo $evento['total_ingresso']; ?>" readonly>
                         </div>
                     </div>
 

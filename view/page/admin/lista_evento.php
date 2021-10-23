@@ -1,7 +1,7 @@
 <?php
     include('../../../Conexao/conexao.php');
 
-    $sqlInstruct = "SELECT * FROM eventos ORDER BY eventos.id DESC";
+    $sqlInstruct = "SELECT eventos.id, eventos.nome, categorias.nome AS categ_nome, eventos.data_evento, ambientes.nome AS amb_nome, eventos.classificacao_indicativa, eventos.total_ingresso FROM eventos INNER JOIN categorias ON (eventos.id_categoria = categorias.id) INNER JOIN ambientes ON (eventos.id_ambiente = ambientes.id) ORDER BY eventos.id DESC";
     $query = mysqli_query($conexao, $sqlInstruct);
 
     //  AQUI DENTRO PRECISA TER COMO CADASTRAR CATEGORIAS DE EVENTOS.
@@ -31,13 +31,37 @@
         <div class="row">
             <div class="msg col-md-6">
                 <?php
-                    if (isset($_GET['updated']) && isset($_GET['user_id'])) {
+                    if (isset($_GET['updated']) && isset($_GET['event_id'])) {
                         if ($_GET['updated'] == 1) {
-                            if ($_GET['user_id']) {
+                            if ($_GET['event_id']) {
                 ?>
-                                <span class="success-message">Evento de ID <?php echo $_GET['user_id']; ?> atualizado.</span>
+                                <span class="success-message">Evento de ID <?php echo $_GET['event_id']; ?> atualizado.</span>
                 <?php
                             }
+                        }
+                    }
+                ?>
+                <?php
+                    # Mensagem de Sucesso ao Criar Evento
+                    if (isset($_GET['success'])) {
+                        if ($_GET['success'] == 1) {
+                ?>
+                            <span class="success-message">Evento adicionado.</span>
+                <?php
+                        }
+                    }
+                ?>
+                <?php
+                    # Mensagem de Erro ao Criar Evento
+                    if (isset($_GET['error'])) {
+                        if ($_GET['error'] == 1) {
+                ?>
+                            <span class="erro-message">
+                                Ocorreu um problema ao adicionar o evento.
+                                <br>
+                                Erro: <?php echo $_GET['msg']; ?>
+                            </span>
+                <?php
                         }
                     }
                 ?>
@@ -66,14 +90,15 @@
                 <table style="width: 100%;">
                     <thead>
                         <tr>
-                            <th colspan="4" class="table-title">EVENTOS</th>
+                            <th colspan="8" class="table-title">EVENTOS</th>
                         </tr>
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Categoria</th>
                             <th>Data</th>
-                            <th>Classificação Indicativa</th>
+                            <th>Local</th>
+                            <th>Classificação</th>
                             <th>Total de Ingressos</th>
                             <th>Ação</th>
                         </tr>
@@ -92,8 +117,9 @@
                                 $html = '<tr>
                                             <td>' . $evento['id'] . '</td>
                                             <td>' . $evento['nome'] . '</td>
-                                            <td>' . $evento['categoria'] . '</td>
+                                            <td>' . $evento['categ_nome'] . '</td>
                                             <td>' . $evento['data_evento'] . '</td>
+                                            <td>' . $evento['amb_nome'] . '</td>
                                             <td>' . $evento['classificacao_indicativa'] . '</td>
                                             <td>' . $evento['total_ingresso'] . '</td>
                                             <td><a href="evento_edit.php?id=' . $evento['id'] . '">Editar</a></td>
