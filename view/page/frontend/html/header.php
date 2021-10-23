@@ -36,7 +36,7 @@
                                 $html = '';
                                 while ($categoria = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                                     $html = '<li class="nav-item">
-                                                <a class="nav-link" href="'.$categoria['url'].'">'. $categoria['nome'] .'</a>
+                                                <a class="nav-link" href="'.$categoria['url'].'.php">'. $categoria['nome'] .'</a>
                                             </li>';
                                     echo $html;
                                 }
