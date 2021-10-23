@@ -38,6 +38,8 @@ span.success-message {
     color: #FFF !important;
     border-radius: 10px;
     padding: 12px 15px;
+    display: block;
+    margin-bottom: 15px;
 }
 .conteudo {
     padding-bottom: 20px;
@@ -52,6 +54,11 @@ div.painel a h3 {
     background-color: #cf7426;
     border-radius: 50px;
     color: #FFF;
+}
+div.loja a h3:hover, div.painel a h3:hover {
+    background-color: #FFF;
+    color: #cf7426;
+    border: 1px solid #FFF;
 }
 div.loja,
 div.painel {
@@ -147,7 +154,7 @@ body.painel-admin span {
 .botoes {
     border: 1px solid #e16429;
     background-color: #e16429;
-    padding: 5px;
+    padding: 5px 15px;
     border-radius: 3px;
 }
 .botoes .white-font {
@@ -177,7 +184,8 @@ li.menu-items {
 /* END   CABEÇALHO | ADMIN */
 
 /* BEGIN EDIT | ADMIN */
-input {
+input,
+select {
     background-color: #FFF;
     border: none;
     width: 100%;
@@ -185,6 +193,19 @@ input {
     border-radius: 5px;
 }
 /* END   EDIT | ADMIN */
+
+/* BEGIN CONFIG | ADMIN */
+.botao-save {
+    margin-bottom: 20px;
+    background-color: #c2783c;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 5px 15px;
+    width: 20%;
+    float: right;
+}
+/* END   CONFIG | ADMIN */
 
 /* INICIO ESTILO MOBILE */
 @media only screen and (max-width: 991px) {
