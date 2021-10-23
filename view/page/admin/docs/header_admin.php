@@ -22,7 +22,7 @@
                         <span class="item-menu">Pedidos<i class="icon-seta-baixo"></i></span>
                     </li>
                     <li class="menu-items col-md-2">
-                        <span class="item-menu">Configurações<i class="icon-seta-baixo"></i></span>
+                        <a href="configuracoes.php" class="item-menu">Configurações</a>
                     </li>
                 </ul>
             </div>
