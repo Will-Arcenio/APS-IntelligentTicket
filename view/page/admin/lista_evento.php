@@ -82,7 +82,7 @@
                     <div class="col-md-6">
                         <div class="acoes">
                             <div class="botoes">
-                                <a href="criar-evento.php" class="white-font">Criar Evento</a>
+                                <a href="criar_evento.php" class="white-font">Criar Evento</a>
                             </div>
                         </div>
                     </div>

@@ -100,7 +100,7 @@
                     <br>
 
                     <div class="botao-div">
-                        <button type="submit" name="enviar" class="botao">Enviar</button>
+                        <button type="submit" name="salvar" class="botao">Salvar</button>
                     </div>
                 </form>
             </div>
