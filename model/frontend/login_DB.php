@@ -6,16 +6,16 @@ include('../../Conexao/conexao.php');
 $email = $_POST['email'];
 $senha = md5($_POST['senha']);
 
-$sqlInstruct = "SELECT id, usuario, senha, acesso FROM usuarios WHERE usuario='{$email}' AND acesso=2";
+$sqlInstruct = "SELECT id, email, senha, acesso FROM usuarios WHERE email ='{$email}' AND acesso=2";
 
 $query = mysqli_query($conexao, $sqlInstruct);
 $usuario = mysqli_fetch_array($query, MYSQLI_ASSOC);
 
 if ($query) {
-    if (($usuario['usuario'] == $email) && ($usuario['senha'] == $senha)) {
-        header('Location: ../../view/page/frontend/login.php');
+    if (($usuario['email'] == $email) && ($usuario['senha'] == $senha)) {
+        header('Location: ../../view/page/frontend/html/homepage.php');
     } else {
-        header('Location: ../../view/page/frontend/login.php?erro=userPwd');
+        header('Location: ../../view/page/frontend/html/login.php?erro=userPwd');
     }
 }
 

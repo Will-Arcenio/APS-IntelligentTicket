@@ -39,7 +39,7 @@
                 <div class="page-title text-center">
                     <h3>Fazer login na Blablabla</h3>
                 </div>
-                <form action="../../../model/frontend/login_DB.php" method="POST" class="login-form">
+                <form action="../../../../model/frontend/login_DB.php" method="POST" class="login-form">
                     <label for="email" class="label-email">E-mail:</label>
                     <input type="text" name="email" id="email" size="40" required="required" class="campo">
                     <br>
