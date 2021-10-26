@@ -16,7 +16,7 @@
                         <a href="lista_categoria.php" class="item-menu">Categorias</a>
                     </li>
                     <li class="menu-items col-md-2">
-                        <span class="item-menu">Ambientes<i class="icon-seta-baixo"></i></span>
+                    <a href="lista_ambiente.php" class="item-menu">Ambientes</a>
                     </li>
                     <li class="menu-items col-md-2">
                         <span class="item-menu">Pedidos<i class="icon-seta-baixo"></i></span>
