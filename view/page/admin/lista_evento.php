@@ -66,7 +66,7 @@
                     }
                 ?>
             </div>
-            <div class="col-md-12 lista-cliente">
+            <div class="col-md-12 lista-evento">
                 <div class="row info-btns">
                     <div class="col-md-6">
                         <div class="qtd-eventos">
