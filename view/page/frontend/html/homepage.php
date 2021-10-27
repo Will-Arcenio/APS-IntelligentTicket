@@ -59,7 +59,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento01.png" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/dance.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -70,7 +70,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento02.png" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/the-jazz-night.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -81,7 +81,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento03.png" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/noite-de-trivia.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -92,7 +92,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento04.png" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/tech-dev-virtual-expo.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -101,103 +101,7 @@
                                 </div>
                             </li>
                         </ul>
-                  </div><!-- /Slide1 --> 
-                <div class="item">
-                        <ul class="thumbnails">
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento05.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/evento05.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide2 --> 
-                <div class="item">
-                        <ul class="thumbnails">
-                            <li class="col-sm-3">	
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide3 --> 
+                  </div><!-- /Slide1 -->                 
             </div>
         </div>
         <script>
@@ -219,7 +123,7 @@
                     <div class="row">
                         <div class="col-md-11 col-md-offset-1">
                             <div class="box-evento-info">
-                                <span>Compre seu ingresso <br>online com a BLABLABLA!</span>
+                                <span>Ei! Vamos para o evento? <br> Compre o ingresso <br> conosco! <br><br> <a href="../../frontend/html/cadastro.php">CADASTRE-SE AQUI</a></span>
                             </div>
                         </div>
                     </div>
@@ -259,7 +163,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/luzes-de-natal.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -270,7 +174,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/menina-super-poderosa.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -281,7 +185,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/moda.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -292,7 +196,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
+                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/rock.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -302,102 +206,6 @@
                             </li>
                         </ul>
                   </div><!-- /Slide1 --> 
-                <div class="item">
-                        <ul class="thumbnails">
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide2 --> 
-                <div class="item">
-                        <ul class="thumbnails">
-                            <li class="col-sm-3">	
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/imagem01.jpg" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide3 --> 
             </div>
         </div>
         <script>

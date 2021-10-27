@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-4 col-xs-12 custom">
                     <h3>Siga a gente</h3>
-                    <a class="facebppl" href="https://www.facebook.com/blablabla" title="Vem curtir a gente no facebook" target="_blank"><em class="icon-facebook1"></em></a> <a class="insta" href="https://www.instagram.com/blablabla" title="Vem ver as nossas fotos no Instagram" target="_blank"><em class="icon-instagram"></em></a>
+                    <a class="facebppl" href="https://www.facebook.com/blablabla" title="Vem curtir a gente no facebook" target="_blank"><em class="icon-facebook"></em></a> <a class="insta" href="https://www.instagram.com/blablabla" title="Vem ver as nossas fotos no Instagram" target="_blank"><em class="icon-instagram"></em></a>
                 </div>
             </div>
                 

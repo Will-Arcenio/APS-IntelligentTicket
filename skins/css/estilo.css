@@ -96,7 +96,15 @@ footer.rodape{
     padding: 30px 50px;
 }
 /* END   HOME LOGIN | ADMIN */
-
+/*ICONS*/
+em.icon-instagram, em.icon-facebook {
+    color: white;
+    font-size: 25px;
+}
+/*FIM ICONS*/
+p.show{
+    margin-bottom: 30px;
+}
 /* BEGIN PAINEL | ADMIN */
 body.painel-admin {
     background-color: rgb(104 104 104) !important;
