@@ -15,7 +15,7 @@
         <script src="../../../../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../../../../skins/css/estilo.css">
         <link rel="stylesheet" href="../../../../skins/css/style.css">
-        <title>Carrinho | Intelligent Ticket</title>
+        <title>Login | Bla³</title>
     </head>
     <body>
     <?php 
@@ -24,22 +24,24 @@
     ?>
     <div class="container">
         <div class="row">
-        <div class="msg-erro">
-            <?php
-                if (isset($_GET['erro'])) {
-                    if ($_GET['erro'] == 'userPwd') {
-            ?>
-                        <span class="erro-message">E-mail ou senha inválido.</span>
-            <?php
-                    }
-                }
-            ?>
-        </div>
+        
             <div class="col-md-12 login-box">
                 <div class="page-title text-center">
-                    <h3>Fazer login na Blablabla</h3>
+                    <h3>Fazer login na Bla³</h3>
                 </div>
+                
                 <form action="../../../../model/frontend/login_DB.php" method="POST" class="login-form">
+                <div class="msg-erro text-center">
+                    <?php
+                        if (isset($_GET['erro'])) {
+                            if ($_GET['erro'] == 'userPwd') {
+                    ?>
+                                <span class="erro-message">E-mail ou senha inválido.</span>
+                    <?php
+                            }
+                        }
+                    ?>
+                </div>
                     <label for="email" class="label-email">E-mail:</label>
                     <input type="text" name="email" id="email" size="40" required="required" class="campo">
                     <br>
@@ -54,7 +56,7 @@
                 </form>
                 <div class="cadastro text-center col-md-12">
                     <span class="form-instructions">Não é cadastrado?</span>
-                    <a href="" title="Criar conta" class="criar-conta"> Criar conta </a>
+                    <a href="../../frontend/html/cadastro.php" title="Criar conta" class="criar-conta"> Criar conta </a>
                 </div>
             </div>
         </div>
