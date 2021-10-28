@@ -150,12 +150,12 @@
                     <div class="row">
                         <div class="col-md-6 col-xs-6">
                             <div class="img-esq">
-                                <img class="img-responsive" src="../../../../skins/images/img01.png" alt="">
+                                <a href="../../frontend/html/teatro.php" ><img class="img-responsive" src="../../../../skins/images/img01.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-md-6 col-xs-6">
                             <div class="img-dir">
-                                <img class="img-responsive" src="../../../../skins/images/img02.png" alt="">
+                            <a href="../../frontend/html/cinema.php" ><img class="img-responsive" src="../../../../skins/images/img02.png" alt=""></a>
                             </div>
                         </div>
                     </div>

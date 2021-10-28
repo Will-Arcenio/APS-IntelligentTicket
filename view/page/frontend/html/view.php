@@ -1,3 +1,27 @@
+<?php
+
+    include('../../Conexao/conexao.php');
+
+    $id                        = $_GET['id'];
+    $nome                      = $_GET['nome'];
+    $categoria                 = $_GET['categoria'];
+    $ambiente                  = $_GET['ambiente'];
+    $data                      = $_GET['data'];
+    $classificacao_indicativa  = $_GET['classificacao_indicativa'];
+    $emite_certificado         = $_GET['emite_certificado'];
+    $url                       = $_GET['url'];
+
+    $sqlEvento   = "SELECT * FROM eventos WHERE id = '{$id}'";
+    $queryEvento = mysqli_query($conexao, $sqlEvento);
+    $eventoInfos = mysqli_fetch_array($queryEvento, MYSQLI_ASSOC);
+
+    if ($query) {
+        header('Location: ../../view/page/frontend/view.php?id=' . $id);
+    } else {
+        echo "Erro: " . mysqli_error($conexao);
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
