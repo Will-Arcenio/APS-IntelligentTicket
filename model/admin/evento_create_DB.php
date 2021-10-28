@@ -8,6 +8,17 @@
     $data                      = $_POST['data'];
     $classificacao_indicativa  = $_POST['classificacao_indicativa'];
     $emite_certificado         = $_POST['emite_certificado'];
+    $preco_unitario            = $_POST['preco_unitario'];
+    
+    # Pega o nome da Imagem
+    $nome_imagem               = $_FILES['imagem']['name'];
+
+    # Pega o local temporário da Imagem
+    $imagem_temp               = $_FILES['imagem']['tmp_name'];
+
+    # Diretório das imagens dos eventos
+    $diretorio                 = '../../skins/images/eventos/';
+    
 
     # Variáveis
     $amb_qtdPublico = '';
@@ -34,7 +45,14 @@
     $ingressos_tot = round($amb_qtdPublico * ($percentual / 100));
 
     # Criando evento
-    $sqlInstruct = "INSERT INTO eventos (nome, id_categoria, id_ambiente, data_evento, classificacao_indicativa, emite_certificado, total_ingresso) VALUES ('{$nome}', '{$categoria}', '{$ambiente}', '{$data}', '{$classificacao_indicativa}', '{$emite_certificado}', '{$ingressos_tot}')";
+    $sqlInstruct = "INSERT INTO eventos (nome, id_categoria, id_ambiente, data_evento, classificacao_indicativa, emite_certificado, total_ingresso, preco_unitario, url_imagem) VALUES ('{$nome}', '{$categoria}', '{$ambiente}', '{$data}', '{$classificacao_indicativa}', '{$emite_certificado}', '{$ingressos_tot}', '{$preco_unitario}', '{$nome_imagem}')";
+
+
+    if (move_uploaded_file($imagem_temp, $diretorio . $nome_imagem)) {
+        echo 'Imagem salva.';
+    } else {
+        echo 'Não foi possível salvar a imagem.';
+    }
 
     $query = mysqli_query($conexao, $sqlInstruct);
 

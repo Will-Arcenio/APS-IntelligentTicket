@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 lista-evento">
-                <form action="../../../model/admin/evento_create_DB.php" method="POST">
+                <form action="../../../model/admin/evento_create_DB.php" method="POST" enctype="multipart/form-data">
                     <?php
                         $sql   = "SELECT * FROM categorias ORDER BY nome ASC";
                         
@@ -94,6 +94,19 @@
                                 <option value="0">Não</option>
                                 <option value="1">Sim</option>
                             </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="preco_unitario">Preço Unitário</label>
+                            <input type="text" id="preco_unitario" name="preco_unitario" class="input-number" required="required">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="imagem">Imagem</label>
+                            <input type="file" id="imagem" name="imagem">
                         </div>
                     </div>
 
