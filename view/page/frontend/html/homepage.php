@@ -49,6 +49,17 @@
         </a>
     </div>
     <div class="container novos-eventos">
+            <div class="msg col-md-6" id="msg-here">
+            <?php
+                if (isset($_GET['account_create'])) {
+                    if ($_GET['account_create'] == 1) {
+            ?>
+                        <span class="success-message">Conta criada com sucesso.</span>
+            <?php
+                    }
+                }
+            ?>
+            </div>
         <div class="col-md-12 title col-xs-12">
             <h1 class="title">Novos Eventos</h1>
         </div>
