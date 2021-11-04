@@ -1,6 +1,6 @@
 <?php
 
-    include('../../Conexao/conexao.php');
+    include('../../../../Conexao/conexao.php');
 
     $id                        = $_GET['id'];
     $nome                      = $_GET['nome'];
@@ -15,8 +15,10 @@
     $queryEvento = mysqli_query($conexao, $sqlEvento);
     $eventoInfos = mysqli_fetch_array($queryEvento, MYSQLI_ASSOC);
 
-    if ($query) {
-        header('Location: ../../view/page/frontend/view.php?id=' . $id);
+    $query1 = mysqli_query($conexao, $sqlEvento);
+
+    if ($query1) {
+        header('Location: ../../frontend/view.php?id=' . $id);
     } else {
         echo "Erro: " . mysqli_error($conexao);
     }
