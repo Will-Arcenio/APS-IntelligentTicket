@@ -70,7 +70,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/dance.png" alt=""></a>
+                                        <a href="../../frontend/html/view.php?id=1"><img src="../../../../skins/images/eventos/dance.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
@@ -81,7 +81,7 @@
                             <li class="col-sm-3">
                                 <div class="fff">
                                     <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/the-jazz-night.png" alt=""></a>
+                                        <a href="../../frontend/html/view.php?id=4"><img src="../../../../skins/images/eventos/the-jazz-night.png" alt=""></a>
                                     </div>
                                     <div class="caption">
                                         <h4>Nome do evento</h4>
