@@ -35,6 +35,13 @@
                         $query     = mysqli_query($conexao, $sql);
                         $evento = mysqli_fetch_array($query, MYSQLI_ASSOC);
                     ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-back">
+                                <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>"><i class="icon-arrow-left2"></i> Voltar</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-2">

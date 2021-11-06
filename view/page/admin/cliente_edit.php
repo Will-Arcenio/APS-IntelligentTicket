@@ -37,6 +37,14 @@
                     ?>
 
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-back">
+                                <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>"><i class="icon-arrow-left2"></i> Voltar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-2">
                             <label for="id">Código</label>
                             <input type="text" name="id" id="id" readonly="true" value="<?php echo $cliente['id']; ?>" class="input-number" required="required">

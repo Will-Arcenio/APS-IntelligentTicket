@@ -163,6 +163,14 @@ body.painel-admin span {
 .info-btns {
     margin-bottom: 25px;
 }
+i {
+    vertical-align: middle;
+    color: #c7954c;
+}
+.btn-back {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 /* END   LISTA EVENTOS | ADMIN */
 
 /* BEGIN CABEÇALHO | ADMIN */
