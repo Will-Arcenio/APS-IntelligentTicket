@@ -73,6 +73,35 @@
 
                     <?php
                             }
+
+                            if ($config['nome'] == 'qtd_pedidos') {
+                    ?>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="qtd_pedidos">Quantidade de pedidos para Desconto</label>
+                                        <input type="text" name="qtd_pedidos" id="qtd_pedidos" class="input-number" value="<?php echo $config['valor']; ?>">
+                                    </div>
+                                </div>
+            
+                    <?php
+                            }
+
+                            if ($config['nome'] == 'percentual_desconto') {
+                    ?>
+
+                                <br>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="percentual_desconto">Percentual de Desconto</label>
+                                        <input type="text" name="percentual_desconto" id="percentual_desconto" class="input-number" value="<?php echo $config['valor']; ?>">
+                                    </div>
+                                </div>
+                        
+                    <?php
+                            }
                         }
                     ?>
 
