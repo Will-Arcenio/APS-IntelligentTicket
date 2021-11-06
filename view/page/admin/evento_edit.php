@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 lista-evento">
-                <form action="../../../model/admin/evento_edit_DB.php" method="POST">
+                <form action="../../../model/admin/evento_edit_DB.php" method="POST" enctype="multipart/form-data">
                     <?php
                         $id = @$_GET['id'];
 
@@ -97,7 +97,7 @@
                     <br>
 
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="classificacao_indicativa">Classificação Indicativa</label>
                             <input type="text" id="classificacao_indicativa" name="classificacao_indicativa" value="<?php echo $evento['classificacao_indicativa'] ?>" required="required">
                         </div>
@@ -111,6 +111,47 @@
                         <div class="col-md-3">
                             <label for="total_ingressos">Total de Ingressos</label>
                             <input type="text" id="total_ingressos" name="total_ingressos" value="<?php echo $evento['total_ingresso']; ?>" readonly>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="preco_unitario">Preço Unitário</label>
+                            <input type="text" id="preco_unitario" name="preco_unitario" class="input-number" value="<?php echo $evento['preco_unitario']; ?>">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="imagem">Imagem</label><br>
+                            <?php
+                            # Caso o evento possua imagem
+                            if ($evento['url_imagem']) {
+                            ?>
+                                <img src="../../../skins/images/eventos/<?php echo $evento['url_imagem'] ?>" alt="<?php echo $evento['url_imagem'] ?>" width="22px" height="22px" title="<?php echo $evento['url_imagem'] ?>"/>
+                                <input type="file" id="imagem" name="imagem" value="<?php echo $evento['url_imagem'] ?>" style="display: inline; width: 92%;">
+                            <?php
+                            } else {
+                            ?>
+                                <input type="file" id="imagem" name="imagem" value>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="col-md-3 ev-destaque">
+                            <div class="col-md-12 ev-label-check">
+                                <label for="evento_destaque">Destaque</label>
+                            </div>
+                            <div class="col-md-12 ev-input-check">
+                                <input type="checkbox" id="evento_destaque" name="evento_destaque" <?php if ($evento['destaque'] == 'S') { ?> checked <?php } ?>>
+                            </div>
+                        </div>
+                        <div class="col-md-3 ev-mais-vendido">
+                            <div class="col-md-12 ev-label-mais-vendido">
+                                <label for="evento_mais_vendido">Mais Vendido</label>
+                            </div>
+                            <div class="col-md-12 ev-input-mais-vendido">
+                                <input type="checkbox" id="evento_mais_vendido" name="evento_mais_vendido" <?php if ($evento['mais_vendido'] == 'S') { ?> checked <?php } ?>>
+                            </div>
                         </div>
                     </div>
 

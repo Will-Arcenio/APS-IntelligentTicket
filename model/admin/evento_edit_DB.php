@@ -9,6 +9,18 @@
     $data                      = $_POST['data'];
     $classificacao_indicativa  = $_POST['classificacao_indicativa'];
     $emite_certificado         = $_POST['emite_certificado'];
+    $preco_unitario            = $_POST['preco_unitario'];
+    $destaque                  = (isset($_POST['evento_destaque']) ? 'S' : 'N');
+    $mais_vendido              = (isset($_POST['evento_mais_vendido']) ? 'S' : 'N');
+    
+    # Pega o nome da Imagem
+    $nome_imagem               = $_FILES['imagem']['name'];
+
+    # Pega o local temporário da Imagem
+    $imagem_temp               = $_FILES['imagem']['tmp_name'];
+
+    # Diretório das imagens dos eventos
+    $diretorio                 = '../../skins/images/eventos/';
 
 
     # SQL Ambiente
@@ -30,7 +42,23 @@
     // Calcula a quantidade de ingressos que o evento pode vender, de acordo com a configuração do percentual de público do GOVERNO
     $ingressos_tot = round($amb_qtdPublico * ($percentual / 100));
 
-    $sqlInstruct = "UPDATE eventos SET nome = '{$nome}', id_categoria = '{$categoria}', id_ambiente = '{$ambiente}', data_evento = '{$data}', classificacao_indicativa = '{$classificacao_indicativa}', emite_certificado = '{$emite_certificado}', total_ingresso = '{$ingressos_tot}' WHERE id = '{$id}'";
+    $sqlInstruct = "UPDATE eventos SET nome = '{$nome}', id_categoria = '{$categoria}', id_ambiente = '{$ambiente}', data_evento = '{$data}', classificacao_indicativa = '{$classificacao_indicativa}', emite_certificado = '{$emite_certificado}', preco_unitario = '{$preco_unitario}', url_imagem = '{$nome_imagem}', total_ingresso = '{$ingressos_tot}', destaque = '{$destaque}', mais_vendido = '{$mais_vendido}' WHERE id = '{$id}'";
+
+    if (move_uploaded_file($imagem_temp, $diretorio . $nome_imagem)) {
+        echo 'Imagem salva.';
+    } else {
+        echo 'Não foi possível salvar a imagem.';
+        if ($_FILES['imagem']['name'] == '') {
+            
+            # Caso não tenha imagem, pega a imagem anterior para, posteriormente, excluir do diretório
+            $sqlSelect   = "SELECT url_imagem FROM eventos WHERE id = '{$id}'";
+            $querySelect = mysqli_query($conexao, $sqlSelect);
+            $evt         = mysqli_fetch_array($querySelect, MYSQLI_ASSOC);
+
+            # Excluir a imagem no Diretório
+            unlink($_SERVER['DOCUMENT_ROOT'] . '/IntelligentTicket/skins/images/eventos/' . $evt['url_imagem']);
+        }
+    }
 
     $query = mysqli_query($conexao, $sqlInstruct);
 

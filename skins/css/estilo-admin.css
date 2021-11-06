@@ -171,6 +171,25 @@ i {
     margin-bottom: 10px;
     font-size: 14px;
 }
+
+.ev-destaque, .ev-mais-vendido {
+    height: 58px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+}
+.ev-destaque .ev-label-check, .ev-destaque .ev-input-check,
+.ev-mais-vendido .ev-label-mais-vendido, .ev-mais-vendido .ev-input-mais-vendido {
+    display: flex;
+    justify-content: center;
+}
+input#evento_destaque, input#evento_mais_vendido {
+    width: 18px;
+    height: 16px;
+}
 /* END   LISTA EVENTOS | ADMIN */
 
 /* BEGIN CABEÇALHO | ADMIN */

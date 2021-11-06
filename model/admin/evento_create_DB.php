@@ -9,6 +9,8 @@
     $classificacao_indicativa  = $_POST['classificacao_indicativa'];
     $emite_certificado         = $_POST['emite_certificado'];
     $preco_unitario            = $_POST['preco_unitario'];
+    $destaque                  = (isset($_POST['evento_destaque']) ? 'S' : 'N');
+    $mais_vendido              = (isset($_POST['evento_mais_vendido']) ? 'S' : 'N');
     
     # Pega o nome da Imagem
     $nome_imagem               = $_FILES['imagem']['name'];
@@ -45,7 +47,7 @@
     $ingressos_tot = round($amb_qtdPublico * ($percentual / 100));
 
     # Criando evento
-    $sqlInstruct = "INSERT INTO eventos (nome, id_categoria, id_ambiente, data_evento, classificacao_indicativa, emite_certificado, total_ingresso, preco_unitario, url_imagem) VALUES ('{$nome}', '{$categoria}', '{$ambiente}', '{$data}', '{$classificacao_indicativa}', '{$emite_certificado}', '{$ingressos_tot}', '{$preco_unitario}', '{$nome_imagem}')";
+    $sqlInstruct = "INSERT INTO eventos (nome, id_categoria, id_ambiente, data_evento, classificacao_indicativa, emite_certificado, total_ingresso, preco_unitario, url_imagem, destaque, mais_vendido) VALUES ('{$nome}', '{$categoria}', '{$ambiente}', '{$data}', '{$classificacao_indicativa}', '{$emite_certificado}', '{$ingressos_tot}', '{$preco_unitario}', '{$nome_imagem}', '{$destaque}', '{$mais_vendido}')";
 
 
     if (move_uploaded_file($imagem_temp, $diretorio . $nome_imagem)) {

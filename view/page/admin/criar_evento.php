@@ -108,6 +108,22 @@
                             <label for="imagem">Imagem</label>
                             <input type="file" id="imagem" name="imagem">
                         </div>
+                        <div class="col-md-3 ev-destaque">
+                            <div class="col-md-12 ev-label-check">
+                                <label for="evento_destaque">Destaque</label>
+                            </div>
+                            <div class="col-md-12 ev-input-check">
+                                <input type="checkbox" id="evento_destaque" name="evento_destaque">
+                            </div>
+                        </div>
+                        <div class="col-md-3 ev-mais-vendido">
+                            <div class="col-md-12 ev-label-mais-vendido">
+                                <label for="evento_mais_vendido">Mais Vendido</label>
+                            </div>
+                            <div class="col-md-12 ev-input-mais-vendido">
+                                <input type="checkbox" id="evento_mais_vendido" name="evento_mais_vendido">
+                            </div>
+                        </div>
                     </div>
 
                     <br>
