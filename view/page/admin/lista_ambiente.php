@@ -90,7 +90,7 @@
                 <table style="width: 100%;">
                     <thead>
                         <tr>
-                            <th colspan="5" class="table-title">AMBIENTES</th>
+                            <th colspan="6" class="table-title">AMBIENTES</th>
                         </tr>
                         <tr>
                             <th>ID</th>
@@ -98,7 +98,7 @@
                             <th>Endereço</th>
                             <th>Qtd Público</th>
                             <th>Ambiente Fechado</th>
-                            <th>Ação</th>
+                            <th colspan="2" class="th-action">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -118,7 +118,8 @@
                                             <td>' . $ambiente['endereco'] . '</td>
                                             <td>' . $ambiente['qtd_publico'] . '</td>
                                             <td>' . ($ambiente['ambiente_fechado'] == 'S' ? 'Sim' : 'Não') . '</td>
-                                            <td><a href="ambiente_edit.php?id=' . $ambiente['id'] . '">Editar</a></td>
+                                            <td><a href="ambiente_edit.php?id=' . $ambiente['id'] . '"><i class="icon-pencil"></i></a></td>
+                                            <td><a href="ambiente_delete.php?id=' . $ambiente['id'] . '"><i class="icon-bin"></i></a></td>
                                             </tr>';
                                 echo $html;
                             }

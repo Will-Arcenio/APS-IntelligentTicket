@@ -89,12 +89,12 @@
                 <table style="width: 100%;">
                     <thead>
                         <tr>
-                            <th colspan="3" class="table-title">CATEGORIAS</th>
+                            <th colspan="4" class="table-title">CATEGORIAS</th>
                         </tr>
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>Ação</th>
+                            <th colspan="2" style="text-align: center;" class="th-action">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -111,7 +111,8 @@
                                 $html = '<tr>
                                             <td>' . $categoria['id'] . '</td>
                                             <td>' . $categoria['nome'] . '</td>
-                                            <td><a href="categoria_edit.php?id=' . $categoria['id'] . '">Editar</a></td>
+                                            <td style="text-align: right"><a href="categoria_edit.php?id=' . $categoria['id'] . '"><i class="icon-pencil"></i></a></td>
+                                            <td><a href="categoria_delete.php?id=' . $categoria['id'] . '"><i class="icon-bin"></i></a></td>
                                             </tr>';
                                 echo $html;
                             }

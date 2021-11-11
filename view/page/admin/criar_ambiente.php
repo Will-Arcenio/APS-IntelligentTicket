@@ -72,7 +72,7 @@
                     <br>
 
                     <div class="botao-div">
-                        <button type="submit" name="salvar" class="botao">Salvar</button>
+                        <button type="submit" name="salvar" class="botao"><i class="icon-floppy-disk"></i> Salvar</button>
                     </div>
                 </form>
             </div>

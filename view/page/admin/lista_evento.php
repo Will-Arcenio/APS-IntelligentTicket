@@ -90,7 +90,7 @@
                 <table style="width: 100%;">
                     <thead>
                         <tr>
-                            <th colspan="8" class="table-title">EVENTOS</th>
+                            <th colspan="9" class="table-title">EVENTOS</th>
                         </tr>
                         <tr>
                             <th>ID</th>
@@ -100,7 +100,7 @@
                             <th>Local</th>
                             <th>Classificação</th>
                             <th>Total de Ingressos</th>
-                            <th>Ação</th>
+                            <th colspan="2" class="th-action">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -122,7 +122,8 @@
                                             <td>' . $evento['amb_nome'] . '</td>
                                             <td>' . $evento['classificacao_indicativa'] . '</td>
                                             <td>' . $evento['total_ingresso'] . '</td>
-                                            <td><a href="evento_edit.php?id=' . $evento['id'] . '">Editar</a></td>
+                                            <td><a href="evento_edit.php?id=' . $evento['id'] . '"><i class="icon-pencil"></i></a></td>
+                                            <td><a href="evento_delete.php?id=' . $evento['id'] . '"><i class="icon-bin"></i></a></td>
                                             </tr>';
                                 echo $html;
                             }

@@ -68,6 +68,13 @@ div.painel {
     margin-top: 35px;
 }
 
+/* BEGIN ICONES */
+i.icon-floppy-disk {
+    color: #FFF;
+    padding-right: 8px;
+}
+/* END   ICONES */
+
 /* BEGIN HOME LOGIN | ADMIN */
 body.login-page-admin div.container {
     margin: 0;
@@ -144,6 +151,9 @@ body.painel-admin a,
 body.painel-admin span {
     opacity: 1;
     color: #c7954c;
+}
+.th-action {
+    text-align: center;
 }
 /* END   LISTA CLIENTES | ADMIN */
 

@@ -53,14 +53,14 @@
                 <table style="width: 100%;">
                     <thead>
                         <tr>
-                            <th colspan="4" class="table-title">CLIENTES</th>
+                            <th colspan="5" class="table-title">CLIENTES</th>
                         </tr>
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
                             <th>CPF</th>
                             <th>Endereço</th>
-                            <th>Ação</th>
+                            <th colspan="2" class="th-action">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,7 +79,8 @@
                                             <td>' . $cliente['nome'] . '</td>
                                             <td>' . $cliente['cpf'] . '</td>
                                             <td>' . $cliente['endereco'] . '</td>
-                                            <td><a href="cliente_edit.php?id=' . $cliente['id'] . '">Editar</a></td>
+                                            <td style="text-align: right"><a href="cliente_edit.php?id=' . $cliente['id'] . '"><i class="icon-pencil"></i></a></td>
+                                            <td><a href="cliente_delete.php?id=' . $cliente['id'] . '"><i class="icon-bin"></i></a></td>
                                         </tr>';
                                 echo $html;
                             }
