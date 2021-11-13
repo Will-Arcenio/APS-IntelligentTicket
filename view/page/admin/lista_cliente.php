@@ -39,6 +39,16 @@
                         }
                     }
                 ?>
+                <?php
+                    # Mensagem de Sucesso ao Deletar Cliente
+                    if (isset($_GET['deleted'])) {
+                        if ($_GET['deleted'] == 1) {
+                ?>
+                            <span class="success-message">Cliente deletado.</span>
+                <?php
+                        }
+                    }
+                ?>
             </div>
             <div class="col-md-12 lista-cliente">
                 <div class="qtd-clientes">
@@ -80,7 +90,7 @@
                                             <td>' . $cliente['cpf'] . '</td>
                                             <td>' . $cliente['endereco'] . '</td>
                                             <td style="text-align: right"><a href="cliente_edit.php?id=' . $cliente['id'] . '"><i class="icon-pencil"></i></a></td>
-                                            <td><a href="cliente_delete.php?id=' . $cliente['id'] . '"><i class="icon-bin"></i></a></td>
+                                            <td><a href="../../../model/admin/cliente_delete_DB.php?id=' . $cliente['id'] . '"><i class="icon-bin"></i></a></td>
                                         </tr>';
                                 echo $html;
                             }

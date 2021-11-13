@@ -65,6 +65,16 @@
                         }
                     }
                 ?>
+                <?php
+                    # Mensagem de Sucesso ao Deletar Ambiente
+                    if (isset($_GET['deleted'])) {
+                        if ($_GET['deleted'] == 1) {
+                ?>
+                            <span class="success-message">Ambiente deletado.</span>
+                <?php
+                        }
+                    }
+                ?>
             </div>
             <div class="col-md-12 lista-ambiente">
                 <div class="row info-btns">
@@ -119,7 +129,7 @@
                                             <td>' . $ambiente['qtd_publico'] . '</td>
                                             <td>' . ($ambiente['ambiente_fechado'] == 'S' ? 'Sim' : 'Não') . '</td>
                                             <td><a href="ambiente_edit.php?id=' . $ambiente['id'] . '"><i class="icon-pencil"></i></a></td>
-                                            <td><a href="ambiente_delete.php?id=' . $ambiente['id'] . '"><i class="icon-bin"></i></a></td>
+                                            <td><a href="../../../model/admin/ambiente_delete_DB.php?id=' . $ambiente['id'] . '"><i class="icon-bin"></i></a></td>
                                             </tr>';
                                 echo $html;
                             }

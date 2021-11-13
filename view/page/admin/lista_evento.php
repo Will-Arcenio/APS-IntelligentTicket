@@ -65,6 +65,16 @@
                         }
                     }
                 ?>
+                <?php
+                    # Mensagem de Sucesso ao Deletar Evento
+                    if (isset($_GET['deleted'])) {
+                        if ($_GET['deleted'] == 1) {
+                ?>
+                            <span class="success-message">Evento deletado.</span>
+                <?php
+                        }
+                    }
+                ?>
             </div>
             <div class="col-md-12 lista-evento">
                 <div class="row info-btns">
@@ -123,7 +133,7 @@
                                             <td>' . $evento['classificacao_indicativa'] . '</td>
                                             <td>' . $evento['total_ingresso'] . '</td>
                                             <td><a href="evento_edit.php?id=' . $evento['id'] . '"><i class="icon-pencil"></i></a></td>
-                                            <td><a href="evento_delete.php?id=' . $evento['id'] . '"><i class="icon-bin"></i></a></td>
+                                            <td><a href="../../../model/admin/evento_delete_DB.php?id=' . $evento['id'] . '"><i class="icon-bin"></i></a></td>
                                             </tr>';
                                 echo $html;
                             }
