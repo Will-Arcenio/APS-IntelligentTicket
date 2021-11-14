@@ -1,4 +1,11 @@
 <?php
+
+    # Inicia a sessão e valida
+    session_start();
+    if (!$_SESSION['logged']) {
+        header('Location: login.php');
+    }
+
     include('../../../Conexao/conexao.php');
 
     $sqlInstruct = "SELECT eventos.id, eventos.nome, categorias.nome AS categ_nome, eventos.data_evento, ambientes.nome AS amb_nome, eventos.classificacao_indicativa, eventos.total_ingresso FROM eventos INNER JOIN categorias ON (eventos.id_categoria = categorias.id) INNER JOIN ambientes ON (eventos.id_ambiente = ambientes.id) ORDER BY eventos.id DESC";

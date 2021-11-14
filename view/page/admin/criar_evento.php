@@ -1,4 +1,10 @@
 <?php
+    # Inicia a sessão e valida
+    session_start();
+    if (!$_SESSION['logged']) {
+        header('Location: login.php');
+    }
+
     include('../../../Conexao/conexao.php');
 ?>
 

@@ -1,3 +1,7 @@
+<?php
+    
+?>
+
 <div class="header-admin">
     <div class="menu">
         <div class="container">

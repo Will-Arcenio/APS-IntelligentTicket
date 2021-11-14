@@ -1,4 +1,10 @@
 <?php
+    # Inicia a sessão e valida
+    session_start();
+    if (!$_SESSION['logged']) {
+        header('Location: login.php');
+    }
+
     include('../../../Conexao/conexao.php');
 
     $sqlInstruct = "SELECT pedidos.id, pedidos.data_pedido, pedidos.data_pagamento, fp.nome AS id_forma_pagamento, cli.nome AS cliente_id, pedidos.valor_total FROM pedidos INNER JOIN formas_pagamento AS fp ON (pedidos.id_formapagamento = fp.id) INNER JOIN clientes AS cli ON (pedidos.id_cliente = cli.id) ORDER BY pedidos.id DESC";

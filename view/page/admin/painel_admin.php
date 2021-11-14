@@ -1,5 +1,9 @@
 <?php
-    #LOGIN PAINEL ADM
+    # Inicia a sessão e valida
+    session_start();
+    if (!$_SESSION['logged']) {
+        header('Location: login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

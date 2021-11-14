@@ -1,5 +1,8 @@
 <?php
 
+# Inicia sessão
+session_start();
+
 include('../../Conexao/conexao.php');
 
 // Dados do Formulário de Login - Painel Adm
@@ -13,6 +16,7 @@ $usuario = mysqli_fetch_array($query, MYSQLI_ASSOC);
 
 if ($query) {
     if (($usuario['usuario'] == $login) && ($usuario['senha'] == $senha)) {
+        $_SESSION['logged'] = $login;
         header('Location: ../../view/page/admin/painel_admin.php');
     } else {
         header('Location: ../../view/page/admin/login.php?erro=userPwd');

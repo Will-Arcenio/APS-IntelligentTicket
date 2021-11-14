@@ -1,5 +1,11 @@
 <?php
 
+# Inicia a sessão e valida
+session_start();
+if (!$_SESSION['logged']) {
+    header('Location: ../../view/page/admin/login.php');
+}
+
 include('../../Conexao/conexao.php');
 
 $id = @($_GET['id'] ? $_GET['id'] : '');

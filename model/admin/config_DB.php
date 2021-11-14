@@ -7,8 +7,6 @@ $percentual_publico  = $_POST['percentual_publico'];
 $qtd_pedidos         = $_POST['qtd_pedidos'];
 $percentual_desconto = $_POST['percentual_desconto'];
 
-if ($percentual_publico == '' || $percentual_publico > 100) {
-
 if (trim($percentual_publico) == '' || trim($percentual_publico) > 100 || 
         trim($qtd_pedidos) < 0 || trim($qtd_pedidos) == '' || 
         trim($percentual_desconto) == '' || trim($percentual_desconto > 100)) 
