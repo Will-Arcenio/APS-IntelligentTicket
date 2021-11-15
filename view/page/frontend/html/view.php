@@ -9,12 +9,6 @@
     $queryEvento = mysqli_query($conexao, $sqlEvento);
     $eventoInfos = mysqli_fetch_array($queryEvento, MYSQLI_ASSOC);
 
-    // if ($query1) {
-    //     header('Location: ../../frontend/view.php?id=' . $id);
-    // } else {
-    //     echo "Erro: " . mysqli_error($conexao);
-    // }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -52,7 +46,7 @@
     </div>
     <div class="container imagem-ingresso">
         <div class="conteudo col-md-6  col-xs-12">      
-            <img class="img-responsive" src="../../../../skins/images/imagem01.jpg" alt="blablabla">
+            <img class="img-responsive" src="../../../../skins/images/eventos/<?php echo $eventoInfos['url_imagem'] ?>" alt="blablabla">
         </div>
         <div class="container info-ingresso">
             <div class="info-evento col-md-6 col-xs-12">
@@ -60,7 +54,7 @@
                 <div class="referencia"><span>Referência: <?php echo $eventoInfos['id'] ?></span></div>
                 <div class="preco"><span>R$ <?php echo $eventoInfos['preco_unitario'] ?></span></div>  
                 <div class="qty"><input type="number" name="qty" id="qty" maxlength="12" value="1" title="Qtd" class="input-text qty"></div>   
-                <button class="btnFinalizar" type="submit" name="btnFinalizar">Adicionar ao carrinho </button>
+                <a href="?adicionar=<?php echo $eventoInfos['id']?>" name="btnFinalizar">Adicionar ao carrinho </button>
             </div>
         </div>    
     </div>

@@ -1,8 +1,11 @@
 <?php 
     include('../../../../Conexao/conexao.php');
 
-    $sqlInstruct = "SELECT * FROM eventos where id_categoria = '6'";
+    $sqlInstruct = "SELECT * FROM categorias where id = 6";
+
+    
     $query1 = mysqli_query($conexao, $sqlInstruct);
+    $eventoInfos = mysqli_fetch_array($query1, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -18,7 +21,7 @@
         <script src="../../../../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../../../../skins/css/estilo.css">
         <link rel="stylesheet" href="../../../../skins/css/style.css">
-        <title>Adulto | Bla³</title>
+        <title><?php echo $eventoInfos['nome'] ?> | Bla³</title>
     </head>
     <body>
     <?php 
@@ -33,7 +36,7 @@
                         <li class="Cart">
                         </li>
                     </ul>
-                    <h1 class="title-bread">Adulto</h1>
+                    <h1 class="title-bread"><?php echo $eventoInfos['nome'] ?></h1>
                 </div> 
             </div>
         </div>
@@ -43,25 +46,32 @@
             <div class="container">
                 <div class="row">
                     <?php
-                        if (!$query1) {                        
+                         $sqlInstructEvent = "SELECT eventos.*, categorias.nome AS categoria FROM eventos INNER JOIN categorias ON (eventos.id_categoria = categorias.id) WHERE eventos.id_categoria = '6'";
+                         $queryEvent = mysqli_query($conexao, $sqlInstructEvent);
+
+                        if (!$queryEvent) {                        
                     ?>
                         <div>
                             <span>Esta categoria está vazia.</span>
                         </div>
                     <?php 
                         } else {
-                            $html = ''; 
-                            while ($evento = mysqli_fetch_array($query1, MYSQLI_ASSOC)) {
+                            $html = '';
+                            while ($evento = mysqli_fetch_array($queryEvent, MYSQLI_ASSOC)) {
                                 $html = '<div class="item col-md-3">
-                                        <div class="evento-image-area">
-                                            <a href="!#" title="" class="evento-image">
-                                                <img class="img-responsive" alt="'.$evento['nome'].'" src="../../../../skins/images/eventos/'.$evento['imagem'].'.png">
-                                            </a>
-                                        </div>
-                                        <div class="details-area">
-                                            <h3 class="evento-name"><a href="'.$evento['url'].'.php" title="'.$evento['nome'].'">'.$evento['nome'].'</a></h3>
-                                        </div>      
-                                    </div>';
+                                            <div class="evento-image-area">
+                                                <a href="!#" title="" class="evento-image">
+                                                    <img class="img-responsive" alt="'.$evento['nome'].'" src="../../../../skins/images/eventos/'.$evento['url_imagem'].'">
+                                                </a>
+                                            </div> 
+                                            <div class="caption">
+                                                <h4>'.$evento['nome'].'</h4>
+                                                <p>R$ '.$evento['preco_unitario'].'</p>
+                                            </div> 
+                                            <div class="botaoComprar">
+                                                <a href="carrinho.php?id='.$evento['id'].'" class="btnFinalizar">Adicionar ao carrinho</a>
+                                            </div>    
+                                        </div>';
                         
                                 echo $html;
                             } 

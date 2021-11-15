@@ -216,6 +216,49 @@ h3.evento-name {
 h1.logo {
     margin-top: 15px;
 }
+/*inicio botao comprar*/
+.botaoComprar a.btnFinalizar {
+    color: #ffffff;
+    border: 1px solid #34604c;
+    padding: 12px 0;
+    border-radius: 3px;
+    background: #34604c;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: block;
+    text-align: center;
+    opacity: 1;
+    margin-top: 30px;
+}
+.item.col-md-3 {
+    padding: 0 30px 30px 0;
+}
+.botaoComprar a.btnFinalizar:hover {
+    color: #ffffff;
+    border: 1px solid #213c30;
+    padding: 12px 0;
+    border-radius: 3px;
+    background: #213c30;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: block;
+    text-align: center;
+    opacity: 1;
+    margin-top: 30px;
+}
+a.btnFinalizar {
+    color: white;
+    opacity: 1;
+}
+/*fim botao comprar*/
+.remover a{
+    background: #f95d5b;
+    opacity: 1;
+    padding: 7px 12px;
+    border-radius: 2px;
+    font-weight: bold;
+    color: white;
+}
 /* BEGIN LISTA CLIENTES | ADMIN */
 tr {
     border-top: 1px solid #FFF;

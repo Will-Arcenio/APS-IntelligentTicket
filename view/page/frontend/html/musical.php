@@ -1,7 +1,7 @@
 <?php 
     include('../../../../Conexao/conexao.php');
 
-    $sqlInstruct = "SELECT * FROM categorias where id = 5";
+    $sqlInstruct = "SELECT * FROM categorias where id = 7";
 
     
     $query1 = mysqli_query($conexao, $sqlInstruct);
@@ -46,7 +46,7 @@
             <div class="container">
                 <div class="row">
                     <?php
-                         $sqlInstructEvent = "SELECT eventos.*, categorias.nome AS categoria FROM eventos INNER JOIN categorias ON (eventos.id_categoria = categorias.id) WHERE eventos.id_categoria = '5'";
+                         $sqlInstructEvent = "SELECT eventos.*, categorias.nome AS categoria FROM eventos INNER JOIN categorias ON (eventos.id_categoria = categorias.id) WHERE eventos.id_categoria = '7'";
                          $queryEvent = mysqli_query($conexao, $sqlInstructEvent);
 
                         if (!$queryEvent) {                        

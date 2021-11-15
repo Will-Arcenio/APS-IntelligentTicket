@@ -65,54 +65,43 @@
         </div>
         <div class="carousel slide" id="myCarousel">
             <div class="carousel-inner">
-                <div class="item active">
-                        <ul class="thumbnails">
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php?id=1"><img src="../../../../skins/images/eventos/dance.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php?id=4"><img src="../../../../skins/images/eventos/the-jazz-night.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/noite-de-trivia.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/tech-dev-virtual-expo.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide1 -->                 
+            <div class="item active">
+                <ul class="thumbnails">
+                <?php
+                    $sqlInstructHome = "SELECT * FROM `eventos` WHERE destaque = 'S'";
+                    $queryHome = mysqli_query($conexao, $sqlInstructHome);
+
+                    if (!$queryHome) {                        
+                        ?>
+                        <div>
+                            <span>Não possui novos eventos.</span>
+                        </div>
+                        <?php 
+                    } else {
+                        $html = '';
+
+                        while ($evento = mysqli_fetch_array($queryHome, MYSQLI_ASSOC)) {
+                            $html ='<li class="col-sm-3">
+                                        <div class="fff">
+                                            <div class="thumbnail">
+                                                <a href="../../frontend/html/view.php?id='.$evento['id'].'"> <img src="../../../../skins/images/eventos/'.$evento['url_imagem'].'" alt=""></a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>'.$evento['nome'].'</h4>
+                                                <p>R$ '.$evento['preco_unitario'].'</p>
+                                            </div>
+                                            <div class="botaoComprar">
+                                                <a href="carrinho.php?id='.$evento['id'].'" class="btnFinalizar">Adicionar ao carrinho</a>
+                                            </div>
+                                        </div>
+                                    </li>';
+                        
+                            echo $html;
+                        } 
+                    }
+                ?>           
+                </ul>
+                </div>                
             </div>
         </div>
         <script>
@@ -169,54 +158,43 @@
         </div>
         <div class="carousel slide" id="myCarousel">
             <div class="carousel-inner">
-                <div class="item active">
-                        <ul class="thumbnails">
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/luzes-de-natal.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/menina-super-poderosa.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/moda.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="col-sm-3">
-                                <div class="fff">
-                                    <div class="thumbnail">
-                                        <a href="../../frontend/html/view.php"><img src="../../../../skins/images/eventos/rock.png" alt=""></a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4>Nome do evento</h4>
-                                        <p>R$60,00</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                  </div><!-- /Slide1 --> 
+            <div class="item active">
+                <ul class="thumbnails">
+                <?php
+                    $sqlInstructHome = "SELECT * FROM `eventos` WHERE mais_vendido = 'S'";
+                    $queryHome = mysqli_query($conexao, $sqlInstructHome);
+
+                    if (!$queryHome) {                        
+                        ?>
+                        <div>
+                            <span>Não possui.</span>
+                        </div>
+                        <?php 
+                    } else {
+                        $html = '';
+
+                        while ($evento = mysqli_fetch_array($queryHome, MYSQLI_ASSOC)) {
+                            $html ='<li class="col-sm-3">
+                                        <div class="fff">
+                                            <div class="thumbnail">
+                                                <a href="../../frontend/html/view.php?id='.$evento['id'].'"><img src="../../../../skins/images/eventos/'.$evento['url_imagem'].'" alt=""></a>
+                                            </div>
+                                            <div class="caption">
+                                                <h4>'.$evento['nome'].'</h4>
+                                                <p>R$ '.$evento['preco_unitario'].'</p>
+                                            </div>
+                                            <div class="botaoComprar">
+                                                <a href="carrinho.php?id='.$evento['id'].'" class="btnFinalizar">Adicionar ao carrinho</a>
+                                            </div>
+                                        </div>
+                                    </li>';
+                        
+                            echo $html;
+                        } 
+                    }
+                ?>           
+                </ul>
+                </div>                
             </div>
         </div>
         <script>
