@@ -6,7 +6,7 @@
 
         $sqlInstruct = "SELECT * FROM eventos where nome like concat ('%','$busca','%')";
         $query1 = mysqli_query($conexao, $sqlInstruct);
-        $eventoInfos = mysqli_fetch_array($query1, MYSQLI_ASSOC);   
+           
 ?>
     
 <!DOCTYPE html>
