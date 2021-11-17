@@ -6,7 +6,8 @@
 
         $sqlInstruct = "SELECT * FROM eventos where nome like concat ('%','$busca','%')";
         $query1 = mysqli_query($conexao, $sqlInstruct);
-           
+
+        
 ?>
     
 <!DOCTYPE html>
@@ -48,6 +49,10 @@
             <div class="container">
                 <div class="row">
                     <?php 
+                        if ($query1->num_rows == 0) {
+                            echo '<span class="note-msg">Não encontramos o que você procurou, que tal fazer uma nova busca?</span>';
+                        }else{                          
+                        
                             $html = '';
                             while($eventoInfos = mysqli_fetch_array($query1, MYSQLI_ASSOC)){
                                 $html = '<div class="item col-md-3">
@@ -67,7 +72,7 @@
                             
                                 echo $html;
                             }
-                        
+                        }
                     ?>                     
                 </div>
             </div>

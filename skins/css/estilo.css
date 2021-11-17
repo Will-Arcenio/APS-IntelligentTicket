@@ -94,6 +94,7 @@ form.login-form {
 footer.rodape{
     background-color: #ff914d;
     padding: 30px 50px;
+    margin-top: 6%;
 }
 /* END   HOME LOGIN | ADMIN */
 button.busca {
@@ -103,6 +104,14 @@ button.busca {
     padding: 7px 30px;
     border-radius: 3px;
     margin-left: -16px;
+}
+.note-msg{
+    background-color: #ededed;
+    min-height: 24px;
+    padding: 15px;
+    font-size: 14px;
+    display: block;
+    border-radius: 5px;
 }
 /*ICONS*/
 em.icon-instagram, em.icon-facebook {
