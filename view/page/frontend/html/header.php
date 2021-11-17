@@ -7,10 +7,14 @@
         <div class="header">
             <div class="header container-fluid">
                 <div class="col-md-3 col-xs-12 search-area">
-                    <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
-                        <input autocomplete="off" type="search" class="form-control rounded" placeholder="Buscar">
-                        <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
-                      </form>
+                    <form class="form" role="search" name="busca" method="get" action="busca.php">
+                        <div class="col-md-8">
+                            <input type="text" name="textbusca" class="form-control" placeholder="Digite aqui o que você precisa...">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="busca">Buscar</button>
+                        </div>
+                    </form>
                 </div>
                 <div class="div-logo col-md-6 col-xs-12 logo-area text-center">
                     <h1 class="logo"><a href="homepage.php" title="Blablabla" class="logo"><img src="../../../../skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>

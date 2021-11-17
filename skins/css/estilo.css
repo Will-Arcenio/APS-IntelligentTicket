@@ -96,6 +96,14 @@ footer.rodape{
     padding: 30px 50px;
 }
 /* END   HOME LOGIN | ADMIN */
+button.busca {
+    background: #ff914d;
+    color: white;
+    border: #ff914d;
+    padding: 7px 30px;
+    border-radius: 3px;
+    margin-left: -16px;
+}
 /*ICONS*/
 em.icon-instagram, em.icon-facebook {
     color: white;
