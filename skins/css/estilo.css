@@ -91,10 +91,12 @@ form.login-form {
     opacity: 1;
     color: #FFF !important;
 }
-footer.rodape{
+footer.rodape {
     background-color: #ff914d;
     padding: 30px 50px;
     margin-top: 6%;
+    position: absolute;
+    bottom: 0px;
 }
 /* END   HOME LOGIN | ADMIN */
 button.busca {
