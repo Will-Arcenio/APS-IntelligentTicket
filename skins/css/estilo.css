@@ -522,7 +522,40 @@ ul.dashboard-options li.last-dash-item {
 }
 /* END   DASHBOARD CLIENTE */
 
-
+/*checkout*/
+.step-title {
+    color: #fff;
+    font-size: 16px;
+    background-color: #ff914d;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    border-radius: 5px 5px 0 0;
+}
+.step-body {
+    background-color: #f7f5f6;
+    padding: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.step-body.branco {
+    background-color: #fff;
+}
+.col-md-12.pedidos {
+    padding: 5px 0 25px 0px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.conteudo-checkout-valores{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-top: 1px solid #ccc;
+}
+.total.col-md-6.col-xs-6.text-left,.preco.col-md-6.col-xs-6.text-right {
+    margin-top: 20px;
+}
+.botaoComprar {
+    margin-bottom: 30px;
+}
 /* INICIO ESTILO MOBILE */
 @media only screen and (max-width: 991px) {
     button.btn-newsletter {

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<html lang="pt-BR">
     <head>
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +45,9 @@
                 <tbody>
     <?php
         $total = null;
-
+        if(!isset($_SESSION['carrinho'])){
+            $_SESSION['carrinho'] = array();
+        }
         //criando um loop p sessao carrinho que recebe o id e a quant
         foreach ($_SESSION['carrinho'] as $id => $qtd){
             $sqlInstructCart = "SELECT * FROM `eventos` WHERE id='$id'";
@@ -93,19 +94,14 @@
             <div class="col-md-4 title col-xs-12" style="background-color:#f3f3f3;">
                 <h1 class="title">Valores da compra</h1>                
                 <div class="conteudo-carrinho-valores col-md-12 col-xs-12">
-                    <div class="subtotal col-md-6 col-xs-6 text-left"><span>Subtotal</span></div>
-                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$60,00</span></div>
                     <div class="total col-md-6 col-xs-6 text-left"><span>Total</span></div>
-                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$60,00</span></div>                    
+                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$<?php echo number_format(($total),2,',','.'); ?></span></div>                    
                 </div>
-                <button class="btnFinalizar" type="submit" name="btnFinalizar">Finalizar </button>
+                <div class="botaoComprar">
+                    <a href="checkout.php" class="btnCheck">Finalizar </a>
+                </div>
             </div>
         </div>    
     </div>
 
 </body>
-
-<?php 
-    # FOOTER
-    include('footer.php');
-?>

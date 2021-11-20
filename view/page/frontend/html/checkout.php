@@ -12,7 +12,7 @@
         <script src="../../../../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../../../../skins/css/estilo.css">
         <link rel="stylesheet" href="../../../../skins/css/style.css">
-        <title>Carrinho | Intelligent Ticket</title>
+        <title>Checkout | Bla³</title>
     </head>
     <body>
     <?php
@@ -20,7 +20,7 @@
 
         //verificar se o usuario esta logado
         if (!$_SESSION['logged']) {
-            header('Location: login.php');
+           header('Location: login.php');
         }
  
         # CABEÇALHO
@@ -43,9 +43,9 @@
                 $_SESSION['carrinho'][$id_produto]+=1;
             }
 
-            include ('mostra_carrinho.php');
+            include ('mostra_checkout.php');
         }else{
-            include ('mostra_carrinho.php');
+            include ('mostra_checkout.php');
         }
     ?>
 
