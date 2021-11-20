@@ -383,8 +383,26 @@ h4 a:hover {
 }
 .title-bread {
     margin: 20px 0px;
+    color: #918f8f;
+    text-transform: uppercase;
 }
 /*FIM BREADCRUMBS*/
+.botaoComprar a.btnCheck {
+    color: #ffffff;
+    border: 1px solid #34604c;
+    padding: 12px 130px;
+    border-radius: 3px;
+    background: #34604c;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-align: center;
+    opacity: 1;
+    margin-top: 30px;
+}
+.col-md-4.title.col-xs-12{
+    background-color: #f3f3f3;
+    padding: 0 0 60px 0px;
+}
 /* INICIO BANNER */
 div.title {
     text-align: center;
