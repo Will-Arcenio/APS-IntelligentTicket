@@ -7,7 +7,7 @@
 
     include('../../../Conexao/conexao.php');
 
-    $sqlInstruct = "SELECT * FROM clientes ORDER BY clientes.id DESC";
+    $sqlInstruct = "SELECT * FROM clientes WHERE acesso = 2 ORDER BY clientes.id DESC";
     $query = mysqli_query($conexao, $sqlInstruct);
 ?>
 <!DOCTYPE html>
