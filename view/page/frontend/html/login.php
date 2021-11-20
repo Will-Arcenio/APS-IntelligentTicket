@@ -1,6 +1,13 @@
 <?php
-    // SESSÃO
+session_start();
+
+# Caso a sessão exista
+if (@$_SESSION['logged']) {
+    header('Location: cliente_dashboard.php');
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>

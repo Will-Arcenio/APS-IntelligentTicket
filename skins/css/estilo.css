@@ -485,6 +485,42 @@ i.icon-instagram {
     padding-bottom: 20px;
 }
 
+/* BEGIN DASHBOARD CLIENTE */
+table.dash-pedidos tr th, table.dash-pedidos tr td {
+    padding: 15px 6px;
+}
+table.dash-pedidos tr {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+div.container.content {
+    margin-top: 5rem;
+}
+.dash-title {
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+.icon-exit:before {
+    color: #ff914d;
+    font-size: 27px;
+}
+.dash-logout-user {
+    text-align: right;
+}
+.tabs-options {
+    max-height: 40rem;
+    /* height: 40rem; */
+}
+ul.dashboard-options li {
+    padding: 15px 10px;
+}
+ul.dashboard-options li {
+    border-bottom: 1px solid #000;
+}
+ul.dashboard-options li.last-dash-item {
+    border-bottom: none;
+}
+/* END   DASHBOARD CLIENTE */
 
 
 /* INICIO ESTILO MOBILE */
