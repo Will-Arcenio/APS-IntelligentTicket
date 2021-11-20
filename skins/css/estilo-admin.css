@@ -182,7 +182,7 @@ i {
     font-size: 14px;
 }
 
-.ev-destaque, .ev-mais-vendido {
+.ev-destaque, .ev-mais-vendido, .ev-cancelado, .ev-reembolso {
     height: 58px;
     display: flex;
     justify-content: space-around;
@@ -192,11 +192,13 @@ i {
     flex-wrap: nowrap;
 }
 .ev-destaque .ev-label-check, .ev-destaque .ev-input-check,
-.ev-mais-vendido .ev-label-mais-vendido, .ev-mais-vendido .ev-input-mais-vendido {
+.ev-mais-vendido .ev-label-mais-vendido, .ev-mais-vendido .ev-input-mais-vendido,
+.ev-cancelado .ev-label-cancel, .ev-cancelado .ev-input-cancel,
+.ev-reembolso .ev-label-reembolso, .ev-reembolso .ev-input-reembolso {
     display: flex;
     justify-content: center;
 }
-input#evento_destaque, input#evento_mais_vendido {
+input#evento_destaque, input#evento_mais_vendido, input#evento_cancelado, input#evento_reembolso {
     width: 18px;
     height: 16px;
 }

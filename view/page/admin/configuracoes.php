@@ -32,6 +32,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 lista-evento">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="btn-back">
+                            <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>"><i class="icon-arrow-left2"></i> Voltar</a>
+                        </div>
+                    </div>
+                </div>
                 <form action="../../../model/admin/config_DB.php" method="POST">
                     <div class="col-md-12">
                         <button type="submit" name="salvar-btn" class="botao-save"><i class="icon-floppy-disk"></i> Salvar</button>

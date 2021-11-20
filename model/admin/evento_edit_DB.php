@@ -12,6 +12,13 @@
     $preco_unitario            = $_POST['preco_unitario'];
     $destaque                  = (isset($_POST['evento_destaque']) ? 'S' : 'N');
     $mais_vendido              = (isset($_POST['evento_mais_vendido']) ? 'S' : 'N');
+    $cancelado                 = (isset($_POST['evento_cancelado']) ? 'S' : 'N');
+    $motivo                    = $_POST['evento_motivo_cancel'];
+    $reembolso                 = (isset($_POST['evento_reembolso']) ? 'S' : 'N');
+
+    $reembolsoFeito = false;
+    $qtdIngressos   = 0;
+    $totalReembolso = 0;
     
     # Pega o nome da Imagem
     $nome_imagem               = $_FILES['imagem']['name'];
@@ -42,7 +49,7 @@
     // Calcula a quantidade de ingressos que o evento pode vender, de acordo com a configuração do percentual de público do GOVERNO
     $ingressos_tot = round($amb_qtdPublico * ($percentual / 100));
 
-    $sqlInstruct = "UPDATE eventos SET nome = '{$nome}', id_categoria = '{$categoria}', id_ambiente = '{$ambiente}', data_evento = '{$data}', classificacao_indicativa = '{$classificacao_indicativa}', emite_certificado = '{$emite_certificado}', preco_unitario = '{$preco_unitario}', url_imagem = '{$nome_imagem}', total_ingresso = '{$ingressos_tot}', destaque = '{$destaque}', mais_vendido = '{$mais_vendido}' WHERE id = '{$id}'";
+    $sqlInstruct = "UPDATE eventos SET nome = '{$nome}', id_categoria = '{$categoria}', id_ambiente = '{$ambiente}', data_evento = '{$data}', classificacao_indicativa = '{$classificacao_indicativa}', emite_certificado = '{$emite_certificado}', preco_unitario = '{$preco_unitario}', url_imagem = '{$nome_imagem}', total_ingresso = '{$ingressos_tot}', destaque = '{$destaque}', mais_vendido = '{$mais_vendido}', ev_cancelado = '{$cancelado}', motivo_cancelamento = '{$motivo}', reembolso = '{$reembolso}' WHERE id = '{$id}'";
 
     if (move_uploaded_file($imagem_temp, $diretorio . $nome_imagem)) {
         echo 'Imagem salva.';
@@ -63,6 +70,18 @@
     $query = mysqli_query($conexao, $sqlInstruct);
 
     if ($query) {
+
+        # Fazer reembolso dos Ingressos do Evento caso seja necessário
+        if ($reembolso === 'S' && $cancelado === 'S') {
+            # Select do Reembolso para verificar a quantidade de ingressos vendidos do Evento
+            $sqlSelectReembolso = "SELECT COUNT(id_evento) AS qtd_ingressos, SUM(valor_unitario) AS valor_total_reembolso FROM ingressos INNER JOIN pedidos ON (ingressos.id_cliente = pedidos.id_cliente AND ingressos.id_pedido = pedidos.id) WHERE id_evento = {$id}";
+            $querySelectReembolso = mysqli_query($conexao, $sqlSelectReembolso);
+            $selectReembolso = mysqli_fetch_array($querySelectReembolso, MYSQLI_ASSOC);
+            $qtdIngressos   = $selectReembolso['qtd_ingressos'];
+            $totalReembolso = $selectReembolso['valor_total_reembolso'];;
+            $reembolsoFeito = true;
+            return header('Location: ../../view/page/admin/lista_evento.php?updated=1&event_id=' . $id . '&reembolso=' . $reembolsoFeito . '&qty=' . $qtdIngressos . '&total=' . $totalReembolso);
+        }
         header('Location: ../../view/page/admin/lista_evento.php?updated=1&event_id=' . $id);
     } else {
         echo "Erro: " . mysqli_error($conexao);

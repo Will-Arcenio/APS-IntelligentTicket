@@ -38,12 +38,27 @@
         <div class="row">
             <div class="msg col-md-6">
                 <?php
-                    if (isset($_GET['updated']) && isset($_GET['event_id'])) {
+                    if (isset($_GET['updated']) && isset($_GET['event_id']) && !isset($_GET['reembolso'])) {
                         if ($_GET['updated'] == 1) {
                             if ($_GET['event_id']) {
                 ?>
                                 <span class="success-message">Evento de ID <?php echo $_GET['event_id']; ?> atualizado.</span>
                 <?php
+                            }
+                        }
+                        # Caso o Evento seja reembolsado
+                    } elseif (isset($_GET['updated']) && isset($_GET['event_id']) && isset($_GET['reembolso'])) {
+                        if ($_GET['updated'] == 1) {
+                            if ($_GET['event_id']) {
+                                if ($_GET['reembolso'] == 1) {
+                ?>
+                                    <span class="success-message">
+                                        Evento de ID <?php echo $_GET['event_id']; ?> atualizado.
+                                        <br>
+                                        O Evento foi cancelado e os ingressos comprados foram reembolsados.
+                                    </span>
+                <?php
+                                }
                             }
                         }
                     }

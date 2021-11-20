@@ -40,6 +40,14 @@
                     ?>
 
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-back">
+                                <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>"><i class="icon-arrow-left2"></i> Voltar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <div class="col-md-2">
                             <label for="id">Código</label>
                             <input type="text" name="id" id="id" readonly="true" class="input-number" required="required">
@@ -128,6 +136,35 @@
                             </div>
                             <div class="col-md-12 ev-input-mais-vendido">
                                 <input type="checkbox" id="evento_mais_vendido" name="evento_mais_vendido">
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3 ev-cancelado">
+                            <div class="col-md-12 ev-label-cancel">
+                                <label for="evento_cancelado">Cancelado</label>
+                            </div>
+                            <div class="col-md-12 ev-input-cancel">
+                                <input type="checkbox" id="evento_cancelado" name="evento_cancelado">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ev-motivo-cancel">
+                            <div class="col-md-12 ev-label-motivo-cancel">
+                                <label for="evento_motivo_cancel">Motivo do Cancelamento</label>
+                            </div>
+                            <div class="col-md-12 ev-input-motivo">
+                                <input type="text" id="evento_motivo_cancel" name="evento_motivo_cancel">
+                            </div>
+                        </div>
+                        <div class="col-md-3 ev-reembolso">
+                            <div class="col-md-12 ev-label-reembolso">
+                                <label for="evento_reembolso">Reembolsar</label>
+                            </div>
+                            <div class="col-md-12 ev-input-reembolso">
+                                <input type="checkbox" id="evento_reembolso" name="evento_reembolso">
                             </div>
                         </div>
                     </div>

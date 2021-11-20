@@ -22,7 +22,7 @@
     <script src="js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../skins/css/estilo-admin.css">
     <link rel="stylesheet" href="../../../skins/css/style.css">
-    <title>Editar evento | Painel Bla³</title>
+    <title>Editar Evento | Painel Bla³</title>
 </head>
 <body class="painel-admin">
     <?php 
@@ -157,6 +157,35 @@
                             </div>
                             <div class="col-md-12 ev-input-mais-vendido">
                                 <input type="checkbox" id="evento_mais_vendido" name="evento_mais_vendido" <?php if ($evento['mais_vendido'] == 'S') { ?> checked <?php } ?>>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-3 ev-cancelado">
+                            <div class="col-md-12 ev-label-cancel">
+                                <label for="evento_cancelado">Cancelado</label>
+                            </div>
+                            <div class="col-md-12 ev-input-cancel">
+                                <input type="checkbox" id="evento_cancelado" name="evento_cancelado" <?php if ($evento['ev_cancelado'] == 'S') { ?> checked <?php } ?>>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ev-motivo-cancel">
+                            <div class="col-md-12 ev-label-motivo-cancel">
+                                <label for="evento_motivo_cancel">Motivo do Cancelamento</label>
+                            </div>
+                            <div class="col-md-12 ev-input-motivo">
+                                <input type="text" id="evento_motivo_cancel" name="evento_motivo_cancel" value="<?php echo $evento['motivo_cancelamento'] ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-3 ev-reembolso">
+                            <div class="col-md-12 ev-label-reembolso">
+                                <label for="evento_reembolso">Reembolsar</label>
+                            </div>
+                            <div class="col-md-12 ev-input-reembolso">
+                                <input type="checkbox" id="evento_reembolso" name="evento_reembolso" <?php if ($evento['reembolso'] == 'S') { ?> checked <?php } ?>>
                             </div>
                         </div>
                     </div>
