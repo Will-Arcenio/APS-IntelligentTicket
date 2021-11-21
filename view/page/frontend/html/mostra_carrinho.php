@@ -44,7 +44,8 @@
                 </thead>
                 <tbody>
     <?php
-        $total = null;
+        $total    = null;
+        $subTotal = 0;
         if(!isset($_SESSION['carrinho'])){
             $_SESSION['carrinho'] = array();
         }
@@ -56,7 +57,9 @@
 
             $evento_nome = $exibe['nome'];
             $preco  = number_format(($exibe['preco_unitario']),2,',','.');
-            $total += $exibe['preco_unitario'] * $qtd;
+            $total = $exibe['preco_unitario'] * $qtd;
+            $subTotal += $exibe['preco_unitario'] * $qtd;           
+
  
     
         $html = '<tr class="first last odd">
@@ -95,7 +98,7 @@
                 <h1 class="title">Valores da compra</h1>                
                 <div class="conteudo-carrinho-valores col-md-12 col-xs-12">
                     <div class="total col-md-6 col-xs-6 text-left"><span>Total</span></div>
-                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$<?php echo number_format(($total),2,',','.'); ?></span></div>                    
+                    <div class="preco col-md-6 col-xs-6 text-right"><span>R$<?php echo number_format(($subTotal),2,',','.'); ?></span></div>                    
                 </div>
                 <div class="botaoComprar">
                     <a href="checkout.php" class="btnCheck">Finalizar </a>

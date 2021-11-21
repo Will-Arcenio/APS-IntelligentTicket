@@ -526,7 +526,60 @@ ul.dashboard-options li.last-dash-item {
     color: #ff914d;
 }
 /* END   DASHBOARD CLIENTE */
-
+/*begin sucesso*/
+.mp-details-pix-number-p {
+    border-radius: 100%;
+    width: 26px;
+    height: 24px;
+    padding: 2px 0 0 0;
+    border: solid 1px #009ee3;
+    color: #009ee3;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 13px 0 0;
+    font-family: sans-serif;
+}
+.mp-details-pix {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 10%);
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    padding: 40px;
+}
+.mp-details-pix-button {
+    width: 15%;
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: #009ee3;
+    border: 1px solid #009ee3;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    color: #ffffff;
+}
+.mp-qr-input {
+    width: 70%;
+    padding: 6.3px 0 5.7px 12px;
+    border-radius: 6px;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    margin: 0 12px 0 0;
+}
+.mp-details-list {
+    display: flex;
+    margin-bottom: 28px;
+}
+.mp-details-pix-qr-img {
+    width: 168px;
+    height: 168px;
+    display: block;
+    margin: 16px auto 0 auto;
+}
+/*end sucesso*/
 /*checkout*/
 .step-title {
     color: #fff;

@@ -1,7 +1,16 @@
+<?php 
+    session_start(); //inicia a sessão
+    
+    if(!$_SESSION['compraFinalizada']) {
+        header('Location: homepage.php');
+    die;
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,90 +21,102 @@
         <script src="../../../../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../../../../skins/css/estilo.css">
         <link rel="stylesheet" href="../../../../skins/css/style.css">
-        <title>Compre seu ingresso online | Bla�</title>
+        <title>Sucesso | Bla²</title>
     </head>
     <body>
-    <?php 
-        # CABE�ALHO
-        include('header.php');
-    ?>
-   <div class="container">
-            <div class="col-md-4 title col-xs-12" style="background-color:#f3f3f3;">
-                <h1 class="title">Sucesso</h1>                
-                <div class="conteudo-carrinho-valores col-md-12 col-xs-12">
-                    <div class="chave col-md-6 col-xs-6 text-left"><span>Chave de acesso:</span></div>
-                    <div class="chaveunica col-md-6 col-xs-6 text-right"><span>Venda01</span></div>
-                    <div class="Quantidade col-md-6 col-xs-6 text-left"><span>Quantidade de entradas:</span></div>
-                    <div class="qtd col-md-6 col-xs-6 text-right"><span>2</span></div>                    
+        <?php 
+            //verificar se o usuario esta logado
+            if (!$_SESSION['logged_front']) {
+                header('Location: login.php');
+
+            }
+            include('header.php'); 
+
+            include('../../../../Conexao/conexao.php');            
+
+            $data_pedido       = date ('Y-m-d');
+            $data_pagamento    = date ('Y-m-d');
+            $id_user           = $_SESSION['logged_front']['user_id'];
+
+            foreach ($_SESSION['carrinho'] as $id => $qtd){
+                $sqlInstructCart = "SELECT * FROM `eventos` WHERE id='$id'";
+                $queryHome = mysqli_query($conexao, $sqlInstructCart);
+                $exibe = mysqli_fetch_array($queryHome, MYSQLI_ASSOC);
+    
+                $preco  = number_format(($exibe['preco_unitario']),2,',','.');
+
+                $valor_total = $exibe['preco_unitario'] * $qtd;                              
+            } 
+
+            $sqlInstruct = "INSERT INTO pedidos (data_pedido, data_pagamento, id_formapagamento, id_cliente, valor_total)
+            VALUES('{$data_pedido}', '{$data_pagamento}', '1', '{$id_user}', '{$valor_total}')";
+
+                $query = mysqli_query($conexao, $sqlInstruct);   
+
+
+            $sqlInstructPed = "SELECT * FROM pedidos where id_cliente = '$id_user' ORDER BY pedidos.id desc";
+            
+                
+                $queryPed = mysqli_query($conexao, $sqlInstructPed);
+                $pedInfos = mysqli_fetch_array($queryPed, MYSQLI_ASSOC);
+         ?>
+    <div class="container">
+        <div class="pedido-recebido col-md-12">
+            <h2 class="title">Seu pedido foi recebido. Obrigado por comprar conosco!!</h2>
+            <h3> O número do seu pedido é <?php echo $pedInfos['id'] ?></h3>
+        </div>
+        <div class="col-md-12 pedidoss mp-details-pix">
+            <div class="col-md-4">
+                <h4 class="mp-details-pix-title">Como pagar com Pix:</h4><br>
+                <ul class="mp-steps-congrats mp-pix-left">
+                    <li class="mp-details-list">
+                        <p class="mp-details-pix-number-p">1</p>
+                        <p class="mp-details-list-description">Acesse o app ou site do seu banco</p>
+                    </li>
+                    <li class="mp-details-list">
+                        <p class="mp-details-pix-number-p">2</p>
+                        <p class="mp-details-list-description">Busque a opção de pagar com Pix</p>
+                    </li>
+                    <li class="mp-details-list">
+                        <p class="mp-details-pix-number-p">3</p>
+                        <p class="mp-details-list-description">Leia o QR code ou código Pix</p>
+                    </li>
+                    <li class="mp-details-list">
+                        <p class="mp-details-pix-number-p">4</p>
+                        <p class="mp-details-list-description">Pronto! Você verá a confirmação do pagamento</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8 mp-text-center mp-pix-right">
+                <p class="mp-details-pix-amount text-center">
+                    <span class="mp-details-pix-qr">Valor a pagar:</span>
+                    <span class="mp-details-pix-qr-value">R$ <?php echo number_format($valor_total,2,',','.'); ?></span>
+                </p>
+                <p class="mp-details-pix-qr-title text-center"> Escaneie o QR code:</p>
+                <img class="mp-details-pix-qr-img" src="../../../../skins/images/pix.jpg">
+            <div class="mp-details-pix-container">
+                <p class="mp-details-pix-qr-description text-center">Se preferir, você pode pagar copiando e colando o seguinte código</p>
+                <div class="mp-row-checkout-pix-container text-center">
+                    <input id="mp-qr-code" value="Aa3qA4JvW3TTdo4n89CJd24Su4x29riNI2RoeFzdTCEGKdy5CE" class="mp-qr-input">
+                    <button onclick="copy_qr_code()" class="mp-details-pix-button">Copiar</button>
+                    <script>
+                        function copy_qr_code() {
+                            var copyText = document.getElementById("mp-qr-code");
+                            copyText.select();
+                            copyText.setSelectionRange(0, 99999)
+                            document.execCommand("copy");
+                        }
+                    </script>
                 </div>
             </div>
-        </div>    
-    <script>
-            // Carousel Auto-Cycle
-            $(document).ready(function() {
-                $('.carousel').carousel({
-                interval: 6000
-                })
-            });
-        </script>
-
-    <div class="container os-mais-vendidos">
-        <div class="col-md-12 title col-xs-12">
-            <h1 class="title">Os mais vendidos</h1>
         </div>
-        <div class="carousel slide" id="myCarousel">
-            <div class="carousel-inner">
-            <div class="item active">
-                <ul class="thumbnails">
-                <?php
-                    $sqlInstructHome = "SELECT * FROM `eventos` WHERE mais_vendido = 'S'";
-                    $queryHome = mysqli_query($conexao, $sqlInstructHome);
-
-                    if (!$queryHome) {                        
-                        ?>
-                        <div>
-                            <span>N�o possui.</span>
-                        </div>
-                        <?php 
-                    } else {
-                        $html = '';
-
-                        while ($evento = mysqli_fetch_array($queryHome, MYSQLI_ASSOC)) {
-                            $html ='<li class="col-sm-3">
-                                        <div class="fff">
-                                            <div class="thumbnail">
-                                                <a href="../../frontend/html/view.php?id='.$evento['id'].'"><img src="../../../../skins/images/eventos/'.$evento['url_imagem'].'" alt=""></a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4>'.$evento['nome'].'</h4>
-                                                <p>R$ '.$evento['preco_unitario'].'</p>
-                                            </div>
-                                            <div class="botaoComprar">
-                                                <a href="carrinho.php?id='.$evento['id'].'" class="btnFinalizar">Adicionar ao carrinho</a>
-                                            </div>
-                                        </div>
-                                    </li>';
-                        
-                            echo $html;
-                        } 
-                    }
-                ?>           
-                </ul>
-                </div>                
-            </div>
-        </div>
-        <script>
-            // Carousel Auto-Cycle
-            $(document).ready(function() {
-                $('.carousel').carousel({
-                interval: 6000
-                })
-            });
-        </script>
     </div>
+ </div>
+
 </body>
+
 <?php 
+    unset($_SESSION['compraFinalizada']);
     # FOOTER
     include('footer.php');
 ?>
-</html>

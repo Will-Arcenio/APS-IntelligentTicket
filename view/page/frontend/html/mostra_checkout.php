@@ -1,7 +1,7 @@
 <?php 
     include('../../../../Conexao/conexao.php');
 
-    $sqlInstruct = "SELECT * FROM clientes where id = '{$_SESSION['logged']['user_id']}'";
+    $sqlInstruct = "SELECT * FROM clientes where id = '{$_SESSION['logged_front']['user_id']}'";
 
     
     $query1 = mysqli_query($conexao, $sqlInstruct);
@@ -53,35 +53,35 @@
                     </div>
                 </div>
                 <div class="info-pagamento branco col-md-4 col-xs-12">
-                <div class="step-title step-1">Forma de Pagamento</div>
-                    <div class="step-body branco dados-user">
-                    <?php
-                    $sqlInstructPagamento = "SELECT * FROM `formas_pagamento`";
-                    $queryPagamento = mysqli_query($conexao, $sqlInstructPagamento);
+                    <div class="step-title step-1">Forma de Pagamento</div>
+                        <div class="step-body branco dados-user">
+                        <?php
+                        $sqlInstructPagamento = "SELECT * FROM `formas_pagamento`";
+                        $queryPagamento = mysqli_query($conexao, $sqlInstructPagamento);
 
-                    if (!$queryPagamento) {                        
-                        ?>
-                        <div>
-                            <span>Formas de pagamento indisponíveis.</span>
-                        </div>
-                        <?php 
-                    } else {
-                        $html = '';
+                        if (!$queryPagamento) {                        
+                            ?>
+                            <div>
+                                <span>Formas de pagamento indisponíveis.</span>
+                            </div>
+                            <?php 
+                        } else {
+                            $html = '';
 
-                        while ($fpagamento = mysqli_fetch_array($queryPagamento, MYSQLI_ASSOC)) {
-                            $html =' <div class="col-md-12">
-                                        <div class="col-md-2"> 
-                                            <input type="radio" id="'.$fpagamento['nome'].'" name="'.$fpagamento['nome'].'" value="'.$fpagamento['nome'].'">
-                                        </div>
-                                        <div class="col=md-10">
-                                            <span for="'.$fpagamento['nome'].'">'.$fpagamento['nome'].'</span>
-                                        </div>
-                                    </div>' ;
-                        
-                            echo $html;
-                        } 
-                    }
-                ?> 
+                            while ($fpagamento = mysqli_fetch_array($queryPagamento, MYSQLI_ASSOC)) {
+                                $html =' <div class="col-md-12">
+                                            <div class="col-md-2"> 
+                                                <input type="radio" id="'.$fpagamento['nome'].'" name="forma-pagamento" value="'.$fpagamento['nome'].'" checked="checked">
+                                            </div>
+                                            <div class="col=md-10">
+                                                <span for="'.$fpagamento['nome'].'">'.$fpagamento['nome'].'</span>
+                                            </div>
+                                        </div>' ;
+                            
+                                echo $html;
+                            } 
+                        }
+                    ?> 
                     </div>
                 </div>
                 <div class="info-pedido cinza col-md-4 col-xs-12">
@@ -125,7 +125,10 @@
                                     <div class="preco col-md-6 col-xs-6 text-right"><span>R$<?php echo number_format(($total),2,',','.'); ?></span></div>                    
                                 </div>
                                 <div class="botaoComprar">
-                                    <a href="finalizar_compra.php" class="btnCheck">Finalizar </a>
+                                    <?php 
+                                        $_SESSION['compraFinalizada'] = true;
+                                    ?>
+                                    <a href="sucesso.php" class="btnCheck">Finalizar </a>
                                 </div>
                     </div>
                 </div>
