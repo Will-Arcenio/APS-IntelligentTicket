@@ -521,6 +521,10 @@ ul.dashboard-options li {
 ul.dashboard-options li.last-dash-item {
     border-bottom: none;
 }
+.icon-eye {
+    font-size: 16px;
+    color: #ff914d;
+}
 /* END   DASHBOARD CLIENTE */
 
 /*checkout*/
