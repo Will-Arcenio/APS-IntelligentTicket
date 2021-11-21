@@ -1,7 +1,7 @@
 <?php
     # Inicia a sessão e valida
     session_start();
-    if (!$_SESSION['logged']) {
+    if (!$_SESSION['painel-logged']) {
         header('Location: login.php');
     }
 ?>
@@ -29,6 +29,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div class="user-name-loggedin">
+                    <h3>Bem-vindo, <?php echo $_SESSION['painel-logged']['user_name'] ?></h3>
+                </div>
             </div>
         </div>
     </div>

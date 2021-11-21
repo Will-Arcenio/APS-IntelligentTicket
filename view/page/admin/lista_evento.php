@@ -2,7 +2,7 @@
 
     # Inicia a sessão e valida
     session_start();
-    if (!$_SESSION['logged']) {
+    if (!$_SESSION['painel-logged']) {
         header('Location: login.php');
     }
 

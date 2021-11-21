@@ -2,8 +2,8 @@
 
     include('../../Conexao/conexao.php');
 
-    $nome                      = $_POST['nome'];
-    $url                       = $_POST['url'];
+    $nome = $_POST['nome'];
+    $url  = $_POST['url'];
 
     # Criando categoria
     $sqlInstruct = "INSERT INTO categorias (nome, url) VALUES ('{$nome}', '{$url}')";

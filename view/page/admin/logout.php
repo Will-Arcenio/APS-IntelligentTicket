@@ -1,5 +1,5 @@
 <?php
 session_start();
 
-unset($_SESSION['logged']);
+unset($_SESSION['painel-logged']);
 header('Location: login.php');
