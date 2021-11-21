@@ -3,7 +3,7 @@ session_start();
 
 include('../../Conexao/conexao.php');
 
-$id = $_SESSION['logged']['user_id'];
+$id = $_SESSION['logged_front']['user_id'];
 $nome = $_POST['nome'];
 $cpf = $_POST['cpf'];
 $endereco = $_POST['endereco'];

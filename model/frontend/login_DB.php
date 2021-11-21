@@ -16,7 +16,7 @@ $usuario = mysqli_fetch_array($query, MYSQLI_ASSOC);
 
 if ($query) {
     if (($usuario['email'] == $email) && ($usuario['senha'] == $senha) && ($usuario['acesso'] == 2)) {
-        $_SESSION['logged'] = [
+        $_SESSION['logged_front'] = [
             'user_name' => $usuario['nome'],
             'user_id' => $usuario['id']
         ];

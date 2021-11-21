@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!$_SESSION['logged']) {
+if (!$_SESSION['logged_front']) {
     header('Location: login.php');
 }
 
@@ -31,7 +31,7 @@ include('../../../../Conexao/conexao.php');
     ?>
     <div class="container content">
         <?php
-        #var_dump($_SESSION['logged']);
+        #var_dump($_SESSION['logged_front']);
         ?>
         <div class="row">
             <div class="col-md-3 tabs-options">
@@ -52,7 +52,7 @@ include('../../../../Conexao/conexao.php');
 
             <?php
             # SQL para pegar os últimos pedidos do Cliente
-            $sqlGetPedidos = "SELECT *, fp.nome AS forma_pagamento FROM pedidos INNER JOIN formas_pagamento AS fp ON (fp.id = pedidos.id_formapagamento) WHERE id_cliente = '{$_SESSION['logged']['user_id']}' LIMIT 5";
+            $sqlGetPedidos = "SELECT *, fp.nome AS forma_pagamento FROM pedidos INNER JOIN formas_pagamento AS fp ON (fp.id = pedidos.id_formapagamento) WHERE id_cliente = '{$_SESSION['logged_front']['user_id']}' LIMIT 5";
             
             $queryPedidos = mysqli_query($conexao, $sqlGetPedidos);
             

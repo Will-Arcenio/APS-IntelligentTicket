@@ -19,12 +19,12 @@
         session_start(); //inicia a sessão
 
         //verificar se o usuario esta logado
-        if (!$_SESSION['logged']) {
+        if (!$_SESSION['logged_front']) {
            header('Location: login.php');
         }
  
         # CABEÇALHO
-        include('header.php');
+        include('header_sucesso.php');
 
         //verificando se o id esta vazio
         if(!empty($_GET['id'])){
@@ -54,4 +54,5 @@
 <?php 
     # FOOTER
     include('footer.php');
+    
 ?>

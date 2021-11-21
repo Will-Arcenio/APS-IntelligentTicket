@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!$_SESSION['logged']) {
+if (!$_SESSION['logged_front']) {
     header('Location: login.php');
 }
 
@@ -31,7 +31,7 @@ include('../../../../Conexao/conexao.php');
     ?>
     <div class="container content">
         <?php
-        #var_dump($_SESSION['logged']);
+        #var_dump($_SESSION['logged_front']);
         ?>
         <div class="row">
             <div class="col-md-3 tabs-options">
@@ -52,7 +52,7 @@ include('../../../../Conexao/conexao.php');
 
             <?php
             # SQL para pegar os últimos pedidos do Cliente
-            $sqlAccInfo = "SELECT * FROM clientes WHERE id = '{$_SESSION['logged']['user_id']}'";
+            $sqlAccInfo = "SELECT * FROM clientes WHERE id = '{$_SESSION['logged_front']['user_id']}'";
             #var_dump($sqlAccInfo);
             
             $queryAccInfo = mysqli_query($conexao, $sqlAccInfo);

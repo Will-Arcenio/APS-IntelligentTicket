@@ -2,7 +2,7 @@
 session_start();
 
 # Caso a sessão exista
-if (@$_SESSION['logged']) {
+if (@$_SESSION['logged_front']) {
     header('Location: cliente_dashboard.php');
 }
 

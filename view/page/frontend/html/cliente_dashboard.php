@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!$_SESSION['logged']) {
+if (!$_SESSION['logged_front']) {
     header('Location: login.php');
 }
 
@@ -54,7 +54,7 @@ include('../../../../Conexao/conexao.php');
                 <div class="col-md-9 ultimos-pedidos">
                     <div class="row">
                         <div class="dash-hello-user col-md-10">
-                            <h3 class="dash-title">Olá, <?php echo $_SESSION['logged']['user_name'] ?>!</h3>
+                            <h3 class="dash-title">Olá, <?php echo $_SESSION['logged_front']['user_name'] ?>!</h3>
                         </div>
                         <div class="dash-logout-user col-md-2">
                             <a href="logout.php"><i class="icon-exit" title="Desconectar"></i></a>
@@ -63,7 +63,7 @@ include('../../../../Conexao/conexao.php');
 
                     <?php
                     # SQL para pegar os últimos pedidos do Cliente
-                    $sqlGetPedidos = "SELECT *, fp.nome AS forma_pagamento FROM pedidos INNER JOIN formas_pagamento AS fp ON (fp.id = pedidos.id_formapagamento) WHERE id_cliente = '{$_SESSION['logged']['user_id']}' LIMIT 5";
+                    $sqlGetPedidos = "SELECT *, fp.nome AS forma_pagamento FROM pedidos INNER JOIN formas_pagamento AS fp ON (fp.id = pedidos.id_formapagamento) WHERE id_cliente = '{$_SESSION['logged_front']['user_id']}' LIMIT 5";
                     
                     $queryPedidos = mysqli_query($conexao, $sqlGetPedidos);
                     

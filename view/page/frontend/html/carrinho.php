@@ -19,7 +19,7 @@
         session_start(); //inicia a sessão
 
         //verificar se o usuario esta logado
-        if (!$_SESSION['logged']) {
+        if (!$_SESSION['logged_front']) {
             header('Location: login.php');
         }
  
