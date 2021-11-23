@@ -8,10 +8,10 @@
             <div class="header container-fluid">
                 <div class="col-md-3 col-xs-12 search-area">
                     <form class="form" role="search" name="busca" method="get" action="busca.php">
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-xs-8">
                             <input type="text" name="textbusca" class="form-control" placeholder="Digite aqui o que você precisa...">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-xs-4">
                             <button type="submit" class="busca">Buscar</button>
                         </div>
                     </form>

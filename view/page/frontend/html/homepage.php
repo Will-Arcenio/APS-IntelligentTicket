@@ -121,7 +121,7 @@
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-xs-12">
                     <div class="row">
-                        <div class="col-md-11 col-md-offset-1">
+                        <div class="col-md-11 col-md-offset-1 div-box-evento">
                             <div class="box-evento-info">
                                 <span>Ei! Vamos para o evento? <br> Compre o ingresso <br> conosco! <br><br> <a href="../../frontend/html/cadastro.php">CADASTRE-SE AQUI</a></span>
                             </div>

@@ -64,38 +64,40 @@ include('../../../../Conexao/conexao.php');
                 <div class="table-title">
                     <h4>Pedidos</h4>
                 </div>
-                <table class="dash-pedidos" style="width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Nº Pedido</th>
-                            <th>Data Pedido</th>
-                            <th>Data Pagamento</th>
-                            <th>Forma de Pagamento</th>
-                            <th>Parcelas</th>
-                            <th>Valor Total</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                    <?php
-                    while ($pedido = mysqli_fetch_array($queryPedidos, MYSQLI_ASSOC)) {
-                    ?>
-                        <tr>
-                            <td><?php echo $pedido['id'] ?></td>
-                            <td><?php echo $pedido['data_pedido'] ?></td>
-                            <td><?php echo $pedido['data_pagamento'] ?></td>
-                            <td><?php echo $pedido['forma_pagamento'] ?></td>
-                            <td><?php echo $pedido['qtd_parcelas'] ?></td>
-                            <td><?php echo $pedido['valor_total'] ?></td>
-                            <td style="text-align: center;"><a href="pedido_view.php?id=<?php echo $pedido['id'] ?>" enabled="false"><i class="icon-eye" title="Visualizar Pedido"></i></a></td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
+                <div class="table-content">
+                    <table class="dash-pedidos" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>Nº Pedido</th>
+                                <th>Data Pedido</th>
+                                <th>Data Pagamento</th>
+                                <th>Forma de Pagamento</th>
+                                <th>Parcelas</th>
+                                <th>Valor Total</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                        <?php
+                        while ($pedido = mysqli_fetch_array($queryPedidos, MYSQLI_ASSOC)) {
+                        ?>
+                            <tr>
+                                <td><?php echo $pedido['id'] ?></td>
+                                <td><?php echo $pedido['data_pedido'] ?></td>
+                                <td><?php echo $pedido['data_pagamento'] ?></td>
+                                <td><?php echo $pedido['forma_pagamento'] ?></td>
+                                <td><?php echo $pedido['qtd_parcelas'] ?></td>
+                                <td><?php echo $pedido['valor_total'] ?></td>
+                                <td style="text-align: center;"><a href="pedido_view.php?id=<?php echo $pedido['id'] ?>" enabled="false"><i class="icon-eye" title="Visualizar Pedido"></i></a></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             <?php
             }
             ?>

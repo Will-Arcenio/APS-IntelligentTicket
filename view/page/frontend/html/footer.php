@@ -21,7 +21,7 @@
                         <span class="nlj">Av Jorge Elias de Lucca, 765, </span>
                         <span class="nlj">Ns da Salete / Criciúma - SC</span>
                     </div>
-                    <div>
+                    <div class="horario-funcionamento">
                         <span><strong class="show "><em class="icon-horario"></em>Horário de funcionamento</strong></span>
                         <p class="show">Segunda a sexta-feira<br>8h às 12h e 13h às 17h</p>
                     </div>

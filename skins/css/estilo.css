@@ -623,4 +623,36 @@ ul.dashboard-options li.last-dash-item {
     .rede-externa {
         margin: 5px 0px;
     }
+    .bg-eventos {
+        display: none;
+    }
+    .div-box-evento {
+        display: none;
+    }
+    .rodape-loja .box-atend {
+        margin-bottom: 30px;
+    }
+    .horario-funcionamento {
+        margin-top: 30px;
+    }
+    .rodape-loja .custom {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    footer.rodape {
+        background-color: #ff914d;
+        padding: 30px 50px;
+        margin-top: 6%;
+        bottom: 0px;
+        text-align: center;
+    }
+    .rodape-extra .logo-n {
+        margin: 15px 0px;
+    }
+    .table-content {
+        overflow: auto;
+    }
+    ul {
+        padding: 0;
+    }
 }
