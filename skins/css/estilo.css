@@ -640,6 +640,12 @@ ul.dashboard-options li.last-dash-item {
     background-color: #ff914d;
     color: #FFF;
 }
+.classificacao {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: -15px;
+    font-weight: 500;
+}
 
 /* INICIO ESTILO MOBILE */
 @media only screen and (max-width: 991px) {
