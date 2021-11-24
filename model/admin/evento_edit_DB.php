@@ -16,6 +16,9 @@
     $motivo                    = $_POST['evento_motivo_cancel'];
     $reembolso                 = (isset($_POST['evento_reembolso']) ? 'S' : 'N');
 
+    # Caso edite e não insira uma nova imagem.
+    // $temImagem = ($_POST['temImagem']) ? $_POST['temImagem'] : '';
+
     $reembolsoFeito = false;
     $qtdIngressos   = 0;
     $totalReembolso = 0;
@@ -55,16 +58,16 @@
         echo 'Imagem salva.';
     } else {
         echo 'Não foi possível salvar a imagem.';
-        if ($_FILES['imagem']['name'] == '') {
+        // if ($_FILES['imagem']['name'] == '' && $temImagem == '') {
             
-            # Caso não tenha imagem, pega a imagem anterior para, posteriormente, excluir do diretório
-            $sqlSelect   = "SELECT url_imagem FROM eventos WHERE id = '{$id}'";
-            $querySelect = mysqli_query($conexao, $sqlSelect);
-            $evt         = mysqli_fetch_array($querySelect, MYSQLI_ASSOC);
+        //     # Caso não tenha imagem, pega a imagem anterior para, posteriormente, excluir do diretório
+        //     $sqlSelect   = "SELECT url_imagem FROM eventos WHERE id = '{$id}'";
+        //     $querySelect = mysqli_query($conexao, $sqlSelect);
+        //     $evt         = mysqli_fetch_array($querySelect, MYSQLI_ASSOC);
 
-            # Excluir a imagem no Diretório
-            unlink($_SERVER['DOCUMENT_ROOT'] . '/IntelligentTicket/skins/images/eventos/' . $evt['url_imagem']);
-        }
+        //     # Excluir a imagem no Diretório
+        //     unlink($_SERVER['DOCUMENT_ROOT'] . '/IntelligentTicket/skins/images/eventos/' . $evt['url_imagem']);
+        // }
     }
 
     $query = mysqli_query($conexao, $sqlInstruct);
