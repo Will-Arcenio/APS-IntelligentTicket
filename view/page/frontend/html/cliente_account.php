@@ -36,7 +36,8 @@ include('../../../../Conexao/conexao.php');
         <div class="row">
             <div class="col-md-3 tabs-options">
                 <ul class="dashboard-options">
-                    <li class="first-dash-item"><a href="cliente_account.php">Informações da Conta</a></li>
+                    <li class="first-dash-item"><a href="cliente_dashboard.php">Dashboard</a></li>
+                    <li><a href="cliente_account.php">Informações da Conta</a></li>
                     <li class="last-dash-item"><a href="cliente_orders.php">Meus Pedidos</a></li>
                 </ul>
             </div>

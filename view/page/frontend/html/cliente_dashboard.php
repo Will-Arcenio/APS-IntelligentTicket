@@ -47,7 +47,8 @@ include('../../../../Conexao/conexao.php');
             <div class="row">
                 <div class="col-md-3 tabs-options">
                     <ul class="dashboard-options">
-                        <li class="first-dash-item"><a href="cliente_account.php">Informações da Conta</a></li>
+                        <li class="first-dash-item"><a href="cliente_dashboard.php">Dashboard</a></li>
+                        <li><a href="cliente_account.php">Informações da Conta</a></li>
                         <li class="last-dash-item"><a href="cliente_orders.php">Meus Pedidos</a></li>
                     </ul>
                 </div>
@@ -79,8 +80,6 @@ include('../../../../Conexao/conexao.php');
                                         <th>Nº Pedido</th>
                                         <th>Data Pedido</th>
                                         <th>Data Pagamento</th>
-                                        <th>Forma de Pagamento</th>
-                                        <th>Parcelas</th>
                                         <th>Valor Total</th>
                                     </tr>
                                 </thead>
@@ -91,10 +90,8 @@ include('../../../../Conexao/conexao.php');
                                 ?>
                                     <tr>
                                         <td><?php echo $pedido['id'] ?></td>
-                                        <td><?php echo $pedido['data_pedido'] ?></td>
-                                        <td><?php echo $pedido['data_pagamento'] ?></td>
-                                        <td><?php echo $pedido['forma_pagamento'] ?></td>
-                                        <td><?php echo $pedido['qtd_parcelas'] ?></td>
+                                        <td><?php echo date('d/m/Y H:i:s', strtotime($pedido['data_pedido'])) ?></td>
+                                        <td><?php echo ($pedido['data_pagamento'] == '0000-00-00 00:00:00' ? '-----' : date('d/m/Y H:i:s', strtotime($pedido['data_pagamento']))) ?></td>
                                         <td><?php echo $pedido['valor_total'] ?></td>
                                     </tr>
                                 <?php

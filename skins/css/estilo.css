@@ -626,6 +626,21 @@ ul.dashboard-options li.last-dash-item {
     color: #ff914d;
     opacity: 1;
 }
+.dash-pedido-info div.btn-back {
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+.a-button {
+    padding: 10px 12px;
+    opacity: 1;
+    border: 1px solid #ff914d;
+    color: #ff914d;
+}
+.a-button:hover {
+    background-color: #ff914d;
+    color: #FFF;
+}
+
 /* INICIO ESTILO MOBILE */
 @media only screen and (max-width: 991px) {
     button.btn-newsletter {

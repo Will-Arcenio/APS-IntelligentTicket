@@ -29,6 +29,20 @@
         </div>
     </div>
     <div class="container SeuCarrinho">
+    
+    <?php
+    if (!@$_SESSION['carrinho']) {
+    ?>
+        <div class="carrinho-vazio">
+            <span class="empty-cart-msg">Seu carrinho está vazio.</span>
+            <br>
+            <br>
+            <a href="homepage.php" class="a-button">Voltar para capa</a>
+        </div>
+    <?php
+    } else {
+    ?>
+
         <div class="conteudo col-md-8  col-xs-12">      
             <table id="shopping-cart-table" class="data-table cart-table">
                 <thead>
@@ -43,56 +57,56 @@
                     </tr>
                 </thead>
                 <tbody>
-    <?php
-        $total    = null;
-        $subTotal = 0;
-        if(!isset($_SESSION['carrinho'])){
-            $_SESSION['carrinho'] = array();
-        }
-        //criando um loop p sessao carrinho que recebe o id e a quant
-        foreach ($_SESSION['carrinho'] as $id => $qtd){
-            $sqlInstructCart = "SELECT * FROM `eventos` WHERE id='$id'";
-            $queryHome = mysqli_query($conexao, $sqlInstructCart);
-            $exibe = mysqli_fetch_array($queryHome, MYSQLI_ASSOC);
+                    <?php
+                    $total    = null;
+                    $subTotal = 0;
+                    if(!isset($_SESSION['carrinho'])){
+                        $_SESSION['carrinho'] = array();
+                    }
+                    //criando um loop p sessao carrinho que recebe o id e a quant
+                    foreach ($_SESSION['carrinho'] as $id => $qtd){
+                        $sqlInstructCart = "SELECT * FROM `eventos` WHERE id='$id'";
+                        $queryHome = mysqli_query($conexao, $sqlInstructCart);
+                        $exibe = mysqli_fetch_array($queryHome, MYSQLI_ASSOC);
 
-            $evento_nome = $exibe['nome'];
-            $preco  = number_format(($exibe['preco_unitario']),2,',','.');
-            $total = $exibe['preco_unitario'] * $qtd;
-            $subTotal += $exibe['preco_unitario'] * $qtd;           
+                        $evento_nome = $exibe['nome'];
+                        $preco  = number_format(($exibe['preco_unitario']),2,',','.');
+                        $total = $exibe['preco_unitario'] * $qtd;
+                        $subTotal += $exibe['preco_unitario'] * $qtd;           
 
- 
-    
-        $html = '<tr class="first last odd">
-                    <td class="img"><img class="img-responsive" width="70" src="../../../../skins/images/eventos/'.$exibe['url_imagem'].'"></td>
-                    <td colspan="2" class="product-name-td">
-                        <span class="product-name">'.$exibe['nome'].'</span>
-                    </td>
-                    <td class="unit-price">
-                        <span class="cart-price">
-                        <span class="price">R$'.$exibe['preco_unitario'].'</span>
-                        </span>
-                    </td>
-                    <td class="qtd-cart">
-                        <div class="qty-holder">
-                        '.$qtd.'
-                        </div>
-                    </td>
-                    <td class="td-total last">
-                        <span class="cart-price" id="ing">
-                            <span class="price">'.$total.'</span>
-                        </span>
-                    </td>
-                    <td class="td-total last">
-                        <span class="remover" id="ing">
-                            <a href="remove_carrinho.php?id='.$id.'">X</a>                            
-                        </span>
-                    </td>
-                </tr>';
-        echo $html;
-        }?>
-    </tbody>
-</table>
-    </div>
+            
+                
+                    $html = '<tr class="first last odd">
+                                <td class="img"><img class="img-responsive" width="70" src="../../../../skins/images/eventos/'.$exibe['url_imagem'].'"></td>
+                                <td colspan="2" class="product-name-td">
+                                    <span class="product-name">'.$exibe['nome'].'</span>
+                                </td>
+                                <td class="unit-price">
+                                    <span class="cart-price">
+                                    <span class="price">R$'.$exibe['preco_unitario'].'</span>
+                                    </span>
+                                </td>
+                                <td class="qtd-cart">
+                                    <div class="qty-holder">
+                                    '.$qtd.'
+                                    </div>
+                                </td>
+                                <td class="td-total last">
+                                    <span class="cart-price" id="ing">
+                                        <span class="price">'.$total.'</span>
+                                    </span>
+                                </td>
+                                <td class="td-total last">
+                                    <span class="remover" id="ing">
+                                        <a href="remove_carrinho.php?id='.$id.'">X</a>                            
+                                    </span>
+                                </td>
+                            </tr>';
+                    echo $html;
+                    }?>
+                </tbody>
+            </table>
+        </div>
         <div class="container">
             <div class="col-md-4 title col-xs-12" style="background-color:#f3f3f3;">
                 <h1 class="title">Valores da compra</h1>                
@@ -110,5 +124,9 @@
         </div>  
          
     </div>
+    
+    <?php
+    }
+    ?>
 
 </body>

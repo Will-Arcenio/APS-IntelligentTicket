@@ -22,8 +22,16 @@
                     <h1 class="logo"><a href="homepage.php" title="Blablabla" class="logo"><img src="../../../../skins/images/logo.png" alt="Blablabla" width="250px"></a></h1>
                 </div>
                 <div class="div-logo col-md-3 col-xs-12 icons">
-                    <div class="col-md-4 login-cad"><a href="../../frontend/html/login.php" ><i class="icon-user"></i></a></div>
-                    <div class="col-md-2 cart"><a href="../../frontend/html/carrinho.php"><i class="icon-cart"></i></a></div>
+                    <?php
+                    $userInfos = explode(' ', @$_SESSION['logged_front']['user_name']);
+                    $userName  = $userInfos[0];
+                    ?>
+                    <div class="col-md-4 login-cad">
+                        <a href="../../frontend/html/login.php" <?php if(@$_SESSION['logged_front']) { ?> title="<?php echo $userName; } ?>">
+                            <i class="icon-user"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-2 cart"><a href="../../frontend/html/carrinho.php" title="Meu Carrinho"><i class="icon-cart"></i></a></div>
                     <?php
                     if (@$_SESSION['logged_front']) {
                     ?>
