@@ -86,6 +86,31 @@
                 </div>
                 <div class="info-pedido cinza col-md-4 col-xs-12">
                 <div class="step-title step-1">Meu pedido</div>
+                <?php
+                $sqlPedidos = "SELECT COUNT(id) AS qtdPedidos FROM pedidos WHERE id_cliente = {$_SESSION['logged_front']['user_id']}";
+                // var_dump($sqlPedidos);
+                $queryQtdPedido = mysqli_query($conexao, $sqlPedidos);
+
+                # Qtd pedidos do cliente
+                $qtdPedido = mysqli_fetch_array($queryQtdPedido, MYSQLI_ASSOC);
+
+
+                $configQtdPedidos = 0;
+                $configPercentualDesconto = 0;
+
+                # Pega Config
+                $sqlConfig = "SELECT * FROM config";
+                $queryConfig = mysqli_query($conexao, $sqlConfig);
+                while ($configs = mysqli_fetch_array($queryConfig, MYSQLI_ASSOC)) {
+                    if ($configs['nome'] == 'qtd_pedidos') {
+                        $configQtdPedidos = $configs['valor'];
+                    } elseif($configs['nome'] == 'percentual_desconto') {
+                        $configPercentualDesconto = $configs['valor'];
+                    }
+                }
+                var_dump($configQtdPedidos);
+                var_dump($configPercentualDesconto);
+                ?>
                     <div class="step-body dados-user">
                     <?php
                         $total = null;
@@ -120,6 +145,14 @@
                                     </div>';
                                 echo $html;
                                 }?>
+                                <?php
+                                # Calcula total setiver desconto
+                                if (($qtdPedido['qtdPedidos'] == $configQtdPedidos) && ($total != 0)) {
+                                    if ($configQtdPedidos > 0 && $configPercentualDesconto > 0 && $configPercentualDesconto <= 100) {
+                                        $total = $total - ($total * ($configPercentualDesconto/100));
+                                    }
+                                }
+                                ?>
                                 <div class="conteudo-checkout-valores col-md-12 col-xs-12">
                                     <div class="total col-md-6 col-xs-6 text-left"><span>Total</span></div>
                                     <div class="preco col-md-6 col-xs-6 text-right"><span>R$<?php echo number_format(($total),2,',','.'); ?></span></div>                    
