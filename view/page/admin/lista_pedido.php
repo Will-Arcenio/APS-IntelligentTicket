@@ -7,11 +7,11 @@
 
     include('../../../Conexao/conexao.php');
 
-    $sqlInstruct = "SELECT pedidos.id, pedidos.data_pedido, pedidos.data_pagamento, fp.nome AS id_forma_pagamento, cli.nome AS cliente_id, pedidos.valor_total FROM pedidos INNER JOIN formas_pagamento AS fp ON (pedidos.id_formapagamento = fp.id) INNER JOIN clientes AS cli ON (pedidos.id_cliente = cli.id) ORDER BY pedidos.id DESC";
+    $sqlInstruct = "SELECT pedidos.id, pedidos.data_pedido, pedidos.data_pagamento, fp.nome AS id_forma_pagamento, pedidos.qtd_parcelas AS qtd_parcelas, cli.nome AS cliente_id, pedidos.valor_total FROM pedidos INNER JOIN formas_pagamento AS fp ON (pedidos.id_formapagamento = fp.id) INNER JOIN clientes AS cli ON (pedidos.id_cliente = cli.id) ORDER BY pedidos.id DESC";
 
     $query = mysqli_query($conexao, $sqlInstruct);
 
-    //  AQUI DENTRO PRECISA TER COMO CADASTRAR CATEGORIAS DE EVENTOS.
+    //  AQUI DENTRO PRECISA TER COMO CADASTRAR CATEGORIAS DE PEDIDOS.
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -96,27 +96,27 @@
                         ?>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <div class="acoes">
                             <div class="botoes">
-                                <a href="criar_evento.php" class="white-font">Criar Pedido</a>
+                                <a href="criar_pedido.php" class="white-font">Criar Pedido</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <table style="width: 100%;">
                     <thead>
                         <tr>
-                            <th colspan="9" class="table-title">EVENTOS</th>
+                            <th colspan="9" class="table-title">PEDIDOS</th>
                         </tr>
                         <tr>
                             <th>ID</th>
                             <th>Data Pedido</th>
                             <th>Data Pagamento</th>
                             <th>Forma de pagamento</th>
+                            <th>Parcelas</th>
                             <th>Cliente</th>
                             <th>Valor Total</th>
-                            <th class="th-action">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -132,12 +132,12 @@
                             while ($pedido = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                                 $html = '<tr>
                                             <td>' . $pedido['id'] . '</td>
-                                            <td>' . $pedido['data_pedido'] . '</td>
-                                            <td>' . $pedido['data_pagamento'] . '</td>
+                                            <td>' . date('d/m/Y H:i:s', strtotime($pedido['data_pedido'])) . '</td>
+                                            <td>' . ($pedido['data_pagamento'] == '0000-00-00 00:00:00' ? '-----' : date('d/m/Y H:i:s', strtotime($pedido['data_pagamento']))) . '</td>
                                             <td>' . $pedido['id_forma_pagamento'] . '</td>
+                                            <td>' . $pedido['qtd_parcelas'] . '</td>
                                             <td>' . $pedido['cliente_id'] . '</td>
                                             <td>' . $pedido['valor_total'] . '</td>
-                                            <td style="text-align: center"><a href="evento_edit.php?id=' . $pedido['id'] . '"><i class="icon-pencil"></i></a></td>
                                             </tr>';
                                 echo $html;
                             }
