@@ -38,22 +38,22 @@
         <div class="row">
             <div class="msg col-md-6">
                 <?php
-                    if (isset($_GET['updated']) && isset($_GET['event_id']) && !isset($_GET['reembolso'])) {
-                        if ($_GET['updated'] == 1) {
-                            if ($_GET['event_id']) {
+                    if (@$_SESSION['ev_updated']['updated'] && @$_SESSION['ev_updated']['event_id'] && !@$_SESSION['ev_updated']['reembolso']) {
+                        if (@$_SESSION['ev_updated']['updated'] == 1) {
+                            if (@$_SESSION['ev_updated']['event_id']) {
                 ?>
-                                <span class="success-message">Evento de ID <?php echo $_GET['event_id']; ?> atualizado.</span>
+                                <span class="success-message">Evento de ID <?php echo @$_SESSION['ev_updated']['event_id']; ?> atualizado.</span>
                 <?php
                             }
                         }
                         # Caso o Evento seja reembolsado
-                    } elseif (isset($_GET['updated']) && isset($_GET['event_id']) && isset($_GET['reembolso'])) {
-                        if ($_GET['updated'] == 1) {
-                            if ($_GET['event_id']) {
-                                if ($_GET['reembolso'] == 1) {
+                    } elseif (@$_SESSION['ev_updated']['updated'] && @$_SESSION['ev_updated']['event_id'] && @$_SESSION['ev_updated']['reembolso']) {
+                        if (@$_SESSION['ev_updated']['updated'] == 1) {
+                            if (@$_SESSION['ev_updated']['event_id']) {
+                                if (@$_SESSION['ev_updated']['reembolso'] == 1) {
                 ?>
                                     <span class="success-message">
-                                        Evento de ID <?php echo $_GET['event_id']; ?> atualizado.
+                                        Evento de ID <?php echo @$_SESSION['ev_updated']['event_id']; ?> atualizado.
                                         <br>
                                         O Evento foi cancelado e os ingressos comprados foram reembolsados.
                                     </span>
@@ -62,40 +62,44 @@
                             }
                         }
                     }
+                    unset($_SESSION['ev_updated']);
                 ?>
                 <?php
                     # Mensagem de Sucesso ao Criar Evento
-                    if (isset($_GET['success'])) {
-                        if ($_GET['success'] == 1) {
+                    if (@$_SESSION['ev_created']) {
+                        if (@$_SESSION['ev_created']['created'] == 1) {
                 ?>
                             <span class="success-message">Evento adicionado.</span>
                 <?php
                         }
                     }
+                    unset($_SESSION['ev_created']);
                 ?>
                 <?php
                     # Mensagem de Erro ao Criar Evento
-                    if (isset($_GET['error'])) {
-                        if ($_GET['error'] == 1) {
+                    if (@$_SESSION['ev_created']) {
+                        if (@$_SESSION['ev_created']['created'] == 0) {
                 ?>
                             <span class="erro-message">
                                 Ocorreu um problema ao adicionar o evento.
                                 <br>
-                                Erro: <?php echo $_GET['msg']; ?>
+                                Erro: <?php echo @$_SESSION['ev_created']['msg']; ?>
                             </span>
                 <?php
                         }
                     }
+                    unset($_SESSION['ev_created']);
                 ?>
                 <?php
                     # Mensagem de Sucesso ao Deletar Evento
-                    if (isset($_GET['deleted'])) {
-                        if ($_GET['deleted'] == 1) {
+                    if (@$_SESSION['ev_deleted']) {
+                        if (@$_SESSION['ev_deleted']['deleted'] == 1) {
                 ?>
                             <span class="success-message">Evento deletado.</span>
                 <?php
                         }
                     }
+                    unset($_SESSION['ev_deleted']);
                 ?>
             </div>
             <div class="col-md-12 lista-evento">

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include('../../Conexao/conexao.php');
 
@@ -10,7 +11,10 @@ if ($id) {
     
     $query = mysqli_query($conexao, $sqlInstruct);
     if ($query) {
-        header('Location: ../../view/page/admin/lista_evento.php?deleted=1');
+        $_SESSION['ev_deleted'] = [
+            'deleted' => 1
+        ];
+        header('Location: ../../view/page/admin/lista_evento.php');
     } else {
         echo $query.mysqli_error($conexao);
     }

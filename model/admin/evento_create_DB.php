@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
     include('../../Conexao/conexao.php');
 
@@ -62,9 +63,16 @@
     $query = mysqli_query($conexao, $sqlInstruct);
 
     if ($query) {
-        header('Location: ../../view/page/admin/lista_evento.php?success=1');
+        $_SESSION['ev_created'] = [
+            'created' => 1
+        ];
+        header('Location: ../../view/page/admin/lista_evento.php');
     } else {
-        header('Location: ../../view/page/admin/lista_evento.php?error=1&msg=' . mysqli_error($conexao));
+        $_SESSION['ev_created'] = [
+            'created' => 0,
+            'msg' => mysqli_error($conexao)
+        ];
+        header('Location: ../../view/page/admin/lista_evento.php');
     }
 
 ?>
