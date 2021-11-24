@@ -93,7 +93,7 @@
                 'reembolso' => 1
             ];
 
-            return header('Location: ../../view/page/admin/lista_evento.php?updated=1&event_id=' . $id . '&reembolso=' . $reembolsoFeito . '&qty=' . $qtdIngressos . '&total=' . $totalReembolso);
+            return header('Location: ../../view/page/admin/lista_evento.php');
         }
         $_SESSION['ev_updated'] = [
             'updated' => 1,
