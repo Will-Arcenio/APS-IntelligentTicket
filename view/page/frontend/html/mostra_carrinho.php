@@ -92,7 +92,7 @@
         }?>
     </tbody>
 </table>
-        </div>
+    </div>
         <div class="container">
             <div class="col-md-4 title col-xs-12" style="background-color:#f3f3f3;">
                 <h1 class="title">Valores da compra</h1>                
@@ -103,8 +103,12 @@
                 <div class="botaoComprar">
                     <a href="checkout.php" class="btnCheck">Finalizar </a>
                 </div>
+                <div class="go-back">            
+                    <a href="javascript:history.back()"><i class="icon-arrow-left2"></i> Continuar comprando</a>
+                </div> 
             </div>
-        </div>    
+        </div>  
+         
     </div>
 
 </body>

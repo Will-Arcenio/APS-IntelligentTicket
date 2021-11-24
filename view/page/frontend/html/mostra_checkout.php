@@ -69,11 +69,11 @@
                             $html = '';
 
                             while ($fpagamento = mysqli_fetch_array($queryPagamento, MYSQLI_ASSOC)) {
-                                $html =' <div class="col-md-12">
-                                            <div class="col-md-2"> 
+                                $html =' <div class="col-md-12 col-xs-12">
+                                            <div class="col-md-2 col-xs-2"> 
                                                 <input type="radio" id="'.$fpagamento['nome'].'" name="forma-pagamento" value="'.$fpagamento['nome'].'" checked="checked">
                                             </div>
-                                            <div class="col=md-10">
+                                            <div class="col=md-10 col-xs-10">
                                                 <span for="'.$fpagamento['nome'].'">'.$fpagamento['nome'].'</span>
                                             </div>
                                         </div>' ;
@@ -102,17 +102,17 @@
                             $preco  = number_format(($exibe['preco_unitario']),2,',','.');
                             $total += $exibe['preco_unitario'] * $qtd;                
                     
-                            $html = '<div class="col-md-12 pedidos">
-                                        <div class="col-md-3">
+                            $html = '<div class="col-md-12 col-xs-12 pedidos">
+                                        <div class="col-md-3 col-xs-3">
                                             <td class="img"><img class="img-responsive" width="70" src="../../../../skins/images/eventos/'.$exibe['url_imagem'].'"></td>
                                         </div>
-                                        <div class="col-md-3"> 
+                                        <div class="col-md-3 col-xs-3"> 
                                                 <span class="product-name">'.$exibe['nome'].'</span>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-xs-3">
                                             <span class="price">R$'.$exibe['preco_unitario'].'</span>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-xs-3">
                                                 <div class="qty-holder">
                                                     Qtd: '.$qtd.'
                                                 </div>

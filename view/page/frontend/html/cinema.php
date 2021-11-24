@@ -60,7 +60,7 @@
                             while ($evento = mysqli_fetch_array($queryEvent, MYSQLI_ASSOC)) {
                                 $html = '<div class="item col-md-3">
                                         <div class="evento-image-area">
-                                            <a href="!#" title="" class="evento-image">
+                                            <a href="../../frontend/html/view.php?id='.$evento['id'].'">
                                                 <img class="img-responsive" alt="'.$evento['nome'].'" src="../../../../skins/images/eventos/'.$evento['url_imagem'].'">
                                             </a>
                                         </div>

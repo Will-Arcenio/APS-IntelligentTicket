@@ -237,7 +237,7 @@ h1.logo {
     margin-top: 15px;
 }
 /*inicio botao comprar*/
-.botaoComprar a.btnFinalizar {
+a.btnFinalizar {
     color: #ffffff;
     border: 1px solid #34604c;
     padding: 12px 0;
@@ -253,7 +253,7 @@ h1.logo {
 .item.col-md-3 {
     padding: 0 30px 30px 0;
 }
-.botaoComprar a.btnFinalizar:hover {
+a.btnFinalizar:hover {
     color: #ffffff;
     border: 1px solid #213c30;
     padding: 12px 0;
@@ -614,6 +614,14 @@ ul.dashboard-options li.last-dash-item {
 .botaoComprar {
     margin-bottom: 30px;
 }
+.go-back a {
+    color: #787878;
+    opacity: 1;
+}
+.go-back a:hover {
+    color: #ff914d;
+    opacity: 1;
+}
 /* INICIO ESTILO MOBILE */
 @media only screen and (max-width: 991px) {
     button.btn-newsletter {
@@ -654,5 +662,33 @@ ul.dashboard-options li.last-dash-item {
     }
     ul {
         padding: 0;
+    }
+    .container-fluid.menu {
+        box-shadow:none;
+    }
+    li.nav-item {
+        padding: 10px 10px 0px 20px;
+    }
+    .div-logo.col-md-3.col-xs-12.icons {
+        margin-top: -95px;
+    }
+    .container.imagem-ingresso .conteudo.col-md-6.col-xs-12 {
+        text-align: -webkit-center;
+    }
+    .info-pagamento{
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .item.col-md-3{
+        padding: 0;
+    }
+    .container.SeuCarrinho .conteudo {
+        overflow: auto;
+    }
+    .logo-area {
+        z-index: 9999999;
+    }
+    .mp-details-pix-button {
+        width: 22%;
     }
 }

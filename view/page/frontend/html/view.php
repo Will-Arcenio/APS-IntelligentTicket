@@ -52,9 +52,8 @@
             <div class="info-evento col-md-6 col-xs-12">
                 <h1 class="nome-evento"><?php echo $eventoInfos['nome'] ?></h1>                
                 <div class="referencia"><span>Referência: <?php echo $eventoInfos['id'] ?></span></div>
-                <div class="preco"><span>R$ <?php echo $eventoInfos['preco_unitario'] ?></span></div>  
-                <div class="qty"><input type="number" name="qty" id="qty" maxlength="12" value="1" title="Qtd" class="input-text qty"></div>   
-                <a href="?adicionar=<?php echo $eventoInfos['id']?>" name="btnFinalizar">Adicionar ao carrinho </button>
+                <div class="preco"><span>R$ <?php echo $eventoInfos['preco_unitario'] ?></span></div>     
+                <a href="carrinho.php?id=<?php echo $eventoInfos['id']?>" class="btnFinalizar" name="btnFinalizar">Adicionar ao carrinho </a>
             </div>
         </div>    
     </div>
