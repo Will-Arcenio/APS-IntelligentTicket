@@ -504,9 +504,13 @@ div.container.content {
 .icon-exit:before {
     color: #ff914d;
     font-size: 27px;
+    margin-top: 25px;
 }
 .dash-logout-user {
     text-align: right;
+}
+.col-md-4.exit {
+    margin-top: 28px;
 }
 .tabs-options {
     max-height: 40rem;
@@ -690,5 +694,8 @@ ul.dashboard-options li.last-dash-item {
     }
     .mp-details-pix-button {
         width: 22%;
+    }
+    .col-md-4.exit {
+        float: right;
     }
 }
