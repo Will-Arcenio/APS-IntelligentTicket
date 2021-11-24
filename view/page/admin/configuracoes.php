@@ -46,21 +46,23 @@
                     <div class="row">
                         <div class="msg col-md-6">
                         <?php
-                            if (isset($_GET['error'])) {
-                                if ($_GET['error'] == 1) {
+                            if (@$_SESSION['config_updated']) {
+                                if (@$_SESSION['config_updated']['updated'] == 0) {
                         ?>
                                     <span class="erro-message">Digite um valor INTEIRO entre 0 e 100.</span>
                         <?php
+                                    unset($_SESSION['config_updated']);
                                 }
                             }
                         ?>
 
                         <?php
-                            if (isset($_GET['success'])) {
-                                if ($_GET['success'] == 1) {
+                            if (@$_SESSION['config_updated']) {
+                                if (@$_SESSION['config_updated']['updated'] == 1) {
                         ?>
                                     <span class="success-message">Configurações atualizadas.</span>
                         <?php
+                                    unset($_SESSION['config_updated']);
                                 }
                             }
                         ?>
