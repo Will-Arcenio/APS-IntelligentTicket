@@ -108,8 +108,8 @@
                         $configPercentualDesconto = $configs['valor'];
                     }
                 }
-                var_dump($configQtdPedidos);
-                var_dump($configPercentualDesconto);
+                // var_dump($configQtdPedidos);
+                // var_dump($configPercentualDesconto);
                 ?>
                     <div class="step-body dados-user">
                     <?php
