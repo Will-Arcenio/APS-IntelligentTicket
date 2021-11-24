@@ -36,47 +36,51 @@
         <div class="row">
             <div class="msg col-md-6">
                 <?php
-                    if (isset($_GET['updated']) && isset($_GET['categoria_id'])) {
-                        if ($_GET['updated'] == 1) {
-                            if ($_GET['categoria_id']) {
+                    if (@$_SESSION['cat_updated']['updated'] && @$_SESSION['cat_updated']['categoria_id']) {
+                        if (@$_SESSION['cat_updated']['updated'] == 1) {
+                            if (@$_SESSION['cat_updated']['categoria_id']) {
                 ?>
-                                <span class="success-message">Categoria de ID <?php echo $_GET['categoria_id']; ?> atualizada.</span>
+                                <span class="success-message">Categoria de ID <?php echo @$_SESSION['cat_updated']['categoria_id']; ?> atualizada.</span>
                 <?php
+                                unset($_SESSION['cat_updated']);
                             }
                         }
                     }
                 ?>
                 <?php
                     # Mensagem de Sucesso ao Criar Categoria
-                    if (isset($_GET['success'])) {
-                        if ($_GET['success'] == 1) {
+                    if (@$_SESSION['cat_created']) {
+                        if (@$_SESSION['cat_created']['created'] == 1) {
                 ?>
                             <span class="success-message">Categoria adicionada.</span>
                 <?php
+                            unset($_SESSION['cat_created']);
                         }
                     }
                 ?>
                 <?php
                     # Mensagem de Erro ao Criar Categoria
-                    if (isset($_GET['error'])) {
-                        if ($_GET['error'] == 1) {
+                    if (@$_SESSION['cat_created']) {
+                        if (@$_SESSION['cat_created']['created'] == 0) {
                 ?>
                             <span class="erro-message">
                                 Ocorreu um problema ao adicionar a categoria.
                                 <br>
-                                Erro: <?php echo $_GET['msg']; ?>
+                                Erro: <?php echo @$_SESSION['cat_created']['msg']; ?>
                             </span>
                 <?php
+                            unset($_SESSION['cat_created']);
                         }
                     }
                 ?>
                 <?php
                     # Mensagem de Sucesso ao Deletar Categoria
-                    if (isset($_GET['deleted'])) {
-                        if ($_GET['deleted'] == 1) {
+                    if (@$_SESSION['cat_deleted']['deleted']) {
+                        if (@$_SESSION['cat_deleted']['deleted'] == 1) {
                 ?>
                             <span class="success-message">Categoria deletada.</span>
                 <?php
+                            unset($_SESSION['cat_deleted']);
                         }
                     }
                 ?>

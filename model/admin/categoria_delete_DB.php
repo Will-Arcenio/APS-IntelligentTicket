@@ -15,7 +15,10 @@ if ($id) {
     $sqlInstruct = "DELETE FROM categorias WHERE id = '{$id}'";
     $query = mysqli_query($conexao, $sqlInstruct);
     if ($query) {
-        header('Location: ../../view/page/admin/lista_categoria.php?deleted=1');
+        $_SESSION['cat_deleted'] = [
+            'deleted' => 1
+        ];
+        header('Location: ../../view/page/admin/lista_categoria.php');
     } else {
         echo $query.mysqli_error($conexao);
     }
