@@ -34,19 +34,19 @@
     // $ingressos_tot = round($amb_qtdPublico * ($percentual / 100));
 
     # Criando ambiente
-    $sqlInstruct = "INSERT INTO ambientes (nome, endereco, qtd_publico, ambiente_fechado) VALUES ('{$nome}', '{$endereco}', '{$qtd_publico}', '{$ambiente_fechado}')";
+    $sqlInstruct = "UPDATE ambientes SET nome = '{$nome}', endereco = '{$endereco}', qtd_publico = '{$qtd_publico}', ambiente_fechado = '{$ambiente_fechado}' WHERE id = '{$id}'";
 
     $query = mysqli_query($conexao, $sqlInstruct);
 
     if ($query) {
-        $_SESSION['amb_created'] = [
-            'created'     => 1,
+        $_SESSION['amb_updated'] = [
+            'updated'     => 1,
             'ambiente_id' => $id
         ];
         header('Location: ../../view/page/admin/lista_ambiente.php');
     } else {
-        $_SESSION['amb_created'] = [
-            'created'     => 0,
+        $_SESSION['amb_updated'] = [
+            'updated'     => 0,
             'ambiente_id' => $id,
             'msg'         => mysqli_error($conexao)
         ];

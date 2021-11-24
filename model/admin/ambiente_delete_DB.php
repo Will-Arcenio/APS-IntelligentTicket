@@ -15,7 +15,10 @@ if ($id) {
     $sqlInstruct = "DELETE FROM ambientes WHERE id = '{$id}'";
     $query = mysqli_query($conexao, $sqlInstruct);
     if ($query) {
-        header('Location: ../../view/page/admin/lista_ambiente.php?deleted=1');
+        $_SESSION['amb_deleted'] = [
+            'deleted' => 1
+        ];
+        header('Location: ../../view/page/admin/lista_ambiente.php');
     } else {
         echo $query.mysqli_error($conexao);
     }

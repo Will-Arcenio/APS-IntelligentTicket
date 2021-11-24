@@ -37,47 +37,51 @@
         <div class="row">
             <div class="msg col-md-6">
                 <?php
-                    if (isset($_GET['updated']) && isset($_GET['event_id'])) {
-                        if ($_GET['updated'] == 1) {
-                            if ($_GET['event_id']) {
+                    if (@$_SESSION['amb_updated']['updated'] && @$_SESSION['amb_updated']['ambiente_id']) {
+                        if (@$_SESSION['amb_updated']['updated'] == 1) {
+                            if (@$_SESSION['amb_updated']['ambiente_id']) {
                 ?>
-                                <span class="success-message">Ambiente de ID <?php echo $_GET['event_id']; ?> atualizado.</span>
+                                <span class="success-message">Ambiente de ID <?php echo @$_SESSION['amb_updated']['ambiente_id']; ?> atualizado.</span>
                 <?php
+                                unset($_SESSION['amb_updated']);
                             }
                         }
                     }
                 ?>
                 <?php
                     # Mensagem de Sucesso ao Criar Ambiente
-                    if (isset($_GET['success'])) {
-                        if ($_GET['success'] == 1) {
+                    if (@$_SESSION['amb_created']['created']) {
+                        if (@$_SESSION['amb_created']['created'] == 1) {
                 ?>
                             <span class="success-message">Ambiente adicionado.</span>
                 <?php
+                            unset($_SESSION['amb_created']);
                         }
                     }
                 ?>
                 <?php
                     # Mensagem de Erro ao Criar Ambiente
-                    if (isset($_GET['error'])) {
-                        if ($_GET['error'] == 1) {
+                    if (@$_SESSION['amb_created']['created']) {
+                        if ($_SESSION['amb_created']['created'] == 0) {
                 ?>
                             <span class="erro-message">
                                 Ocorreu um problema ao adicionar o ambiente.
                                 <br>
-                                Erro: <?php echo $_GET['msg']; ?>
+                                Erro: <?php echo @$_SESSION['amb_created']['msg']; ?>
                             </span>
                 <?php
+                            unset($_SESSION['amb_created']);
                         }
                     }
                 ?>
                 <?php
                     # Mensagem de Sucesso ao Deletar Ambiente
-                    if (isset($_GET['deleted'])) {
-                        if ($_GET['deleted'] == 1) {
+                    if (@$_SESSION['amb_deleted']) {
+                        if (@$_SESSION['amb_deleted']['deleted'] == 1) {
                 ?>
                             <span class="success-message">Ambiente deletado.</span>
                 <?php
+                            unset($_SESSION['amb_deleted']);
                         }
                     }
                 ?>
