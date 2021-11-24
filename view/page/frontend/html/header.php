@@ -1,4 +1,6 @@
 <?php
+    @session_start();
+
     include('../../../../Conexao/conexao.php');
 
     $sqlInstruct = "SELECT * FROM categorias ORDER BY categorias.id DESC";
@@ -22,7 +24,15 @@
                 <div class="div-logo col-md-3 col-xs-12 icons">
                     <div class="col-md-4 login-cad"><a href="../../frontend/html/login.php" ><i class="icon-user"></i></a></div>
                     <div class="col-md-2 cart"><a href="../../frontend/html/carrinho.php"><i class="icon-cart"></i></a></div>
-                    <div class="col-md-4 exit"> <a href="logout.php"><i class="icon-exit" title="Desconectar"></i></a></div>
+                    <?php
+                    if (@$_SESSION['logged_front']) {
+                    ?>
+                        <div class="col-md-4 exit">
+                            <a href="logout.php"><i class="icon-exit" title="Desconectar"></i></a>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div> 
         </div>

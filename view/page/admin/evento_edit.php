@@ -135,6 +135,7 @@
                             ?>
                                 <img src="../../../skins/images/eventos/<?php echo $evento['url_imagem'] ?>" alt="<?php echo $evento['url_imagem'] ?>" width="22px" height="22px" title="<?php echo $evento['url_imagem'] ?>"/>
                                 <input type="file" id="imagem" name="imagem" value="<?php echo $evento['url_imagem'] ?>" style="display: inline; width: 92%;">
+                                <input type="text" id="temImagem" name="temImagem" value="<?php echo $evento['url_imagem'] ?>" style="display: none !important;">
                             <?php
                             } else {
                             ?>

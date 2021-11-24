@@ -56,9 +56,6 @@ include('../../../../Conexao/conexao.php');
                         <div class="dash-hello-user col-md-10">
                             <h3 class="dash-title">Olá, <?php echo $_SESSION['logged_front']['user_name'] ?>!</h3>
                         </div>
-                        <div class="dash-logout-user col-md-2">
-                            <a href="logout.php"><i class="icon-exit" title="Desconectar"></i></a>
-                        </div>
                     </div>
 
                     <?php
