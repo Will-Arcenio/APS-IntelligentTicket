@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	include ('../../Conexao/conexao.php');
 ?>
 
@@ -19,7 +21,11 @@
 		$query = mysqli_query($conexao, $sql);
 
 		if ($query) {
-			header('Location: ../../view/page/admin/lista_cliente.php?updated=1&user_id=' . $id);
+			$_SESSION['cli_updated'] = [
+				'updated' => 1,
+				'user_id' => $id
+			];
+			header('Location: ../../view/page/admin/lista_cliente.php');
 		} else {
 			echo "Erro: " . mysqli_error($conexao);
 		}

@@ -14,7 +14,10 @@ if ($id) {
     $sqlInstruct = "DELETE FROM clientes WHERE id = '{$id}'";
     $query = mysqli_query($conexao, $sqlInstruct);
     if ($query) {
-        header('Location: ../../view/page/admin/lista_cliente.php?deleted=1');
+        $_SESSION['cli_deleted'] = [
+            'deleted' => 1
+        ];
+        header('Location: ../../view/page/admin/lista_cliente.php');
     } else {
         echo $query.mysqli_error($conexao);
     }

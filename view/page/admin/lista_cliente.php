@@ -35,25 +35,27 @@
         <div class="row">
             <div class="msg col-md-6">
                 <?php
-                    if (isset($_GET['updated']) && isset($_GET['user_id'])) {
-                        if ($_GET['updated'] == 1) {
-                            if ($_GET['user_id']) {
+                    if (@$_SESSION['cli_updated']['updated'] && @$_SESSION['cli_updated']['user_id']) {
+                        if (@$_SESSION['cli_updated']['updated'] == 1) {
+                            if (@$_SESSION['cli_updated']['user_id']) {
                 ?>
-                                <span class="success-message">Cliente de ID <?php echo $_GET['user_id']; ?> atualizado.</span>
+                                <span class="success-message">Cliente de ID <?php echo @$_SESSION['cli_updated']['user_id']; ?> atualizado.</span>
                 <?php
                             }
                         }
                     }
+                    unset($_SESSION['cli_updated']);
                 ?>
                 <?php
                     # Mensagem de Sucesso ao Deletar Cliente
-                    if (isset($_GET['deleted'])) {
-                        if ($_GET['deleted'] == 1) {
+                    if (@$_SESSION['cli_deleted']) {
+                        if (@$_SESSION['cli_deleted']['deleted'] == 1) {
                 ?>
                             <span class="success-message">Cliente deletado.</span>
                 <?php
                         }
                     }
+                    unset($_SESSION['cli_deleted']);
                 ?>
             </div>
             <div class="col-md-12 lista-cliente">
