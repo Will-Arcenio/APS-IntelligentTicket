@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
     include('../../Conexao/conexao.php');
 
@@ -16,15 +17,17 @@
     $motivo                    = $_POST['evento_motivo_cancel'];
     $reembolso                 = (isset($_POST['evento_reembolso']) ? 'S' : 'N');
 
-    # Caso edite e não insira uma nova imagem.
-    // $temImagem = ($_POST['temImagem']) ? $_POST['temImagem'] : '';
-
     $reembolsoFeito = false;
     $qtdIngressos   = 0;
     $totalReembolso = 0;
     
     # Pega o nome da Imagem
     $nome_imagem               = $_FILES['imagem']['name'];
+
+    if (!$nome_imagem) {
+        # Caso edite e não insira uma nova imagem pega a imagem anterior (se tiver).
+        $nome_imagem = ($_POST['temImagem'] != '') ? $_POST['temImagem'] : '';
+    }
 
     # Pega o local temporário da Imagem
     $imagem_temp               = $_FILES['imagem']['tmp_name'];
@@ -58,16 +61,16 @@
         echo 'Imagem salva.';
     } else {
         echo 'Não foi possível salvar a imagem.';
-        // if ($_FILES['imagem']['name'] == '' && $temImagem == '') {
+        if ($_FILES['imagem']['name'] == '' && $temImagem == '') {
             
-        //     # Caso não tenha imagem, pega a imagem anterior para, posteriormente, excluir do diretório
-        //     $sqlSelect   = "SELECT url_imagem FROM eventos WHERE id = '{$id}'";
-        //     $querySelect = mysqli_query($conexao, $sqlSelect);
-        //     $evt         = mysqli_fetch_array($querySelect, MYSQLI_ASSOC);
+            # Caso não tenha imagem, pega a imagem anterior
+            $sqlSelect   = "SELECT url_imagem FROM eventos WHERE id = '{$id}'";
+            $querySelect = mysqli_query($conexao, $sqlSelect);
+            $evt         = mysqli_fetch_array($querySelect, MYSQLI_ASSOC);
 
-        //     # Excluir a imagem no Diretório
-        //     unlink($_SERVER['DOCUMENT_ROOT'] . '/IntelligentTicket/skins/images/eventos/' . $evt['url_imagem']);
-        // }
+            # Excluir a imagem no Diretório
+            // unlink($_SERVER['DOCUMENT_ROOT'] . '/IntelligentTicket/skins/images/eventos/' . $evt['url_imagem']);
+        }
     }
 
     $query = mysqli_query($conexao, $sqlInstruct);
@@ -83,9 +86,20 @@
             $qtdIngressos   = $selectReembolso['qtd_ingressos'];
             $totalReembolso = $selectReembolso['valor_total_reembolso'];;
             $reembolsoFeito = true;
+
+            $_SESSION['ev_updated'] = [
+                'updated' => 1,
+                'event_id' => $id,
+                'reembolso' => 1
+            ];
+
             return header('Location: ../../view/page/admin/lista_evento.php?updated=1&event_id=' . $id . '&reembolso=' . $reembolsoFeito . '&qty=' . $qtdIngressos . '&total=' . $totalReembolso);
         }
-        header('Location: ../../view/page/admin/lista_evento.php?updated=1&event_id=' . $id);
+        $_SESSION['ev_updated'] = [
+            'updated' => 1,
+            'event_id' => $id
+        ];
+        header('Location: ../../view/page/admin/lista_evento.php');
     } else {
         echo "Erro: " . mysqli_error($conexao);
     }
