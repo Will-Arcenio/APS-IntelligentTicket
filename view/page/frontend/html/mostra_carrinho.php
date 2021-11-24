@@ -28,8 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="container SeuCarrinho">
-    
+    <div class="container SeuCarrinho">    
     <?php
     if (!@$_SESSION['carrinho']) {
     ?>
@@ -39,10 +38,10 @@
             <br>
             <a href="homepage.php" class="a-button">Voltar para capa</a>
         </div>
+    </div>
     <?php
     } else {
     ?>
-
         <div class="conteudo col-md-8  col-xs-12">      
             <table id="shopping-cart-table" class="data-table cart-table">
                 <thead>
